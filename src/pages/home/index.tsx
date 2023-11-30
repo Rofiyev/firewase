@@ -1,6 +1,6 @@
 //?=== IMPORT HOME CSS FILE ===?//
 import "./index.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Layout from "../../layout";
 import home__image from "../../assets/home__image.jpg";
 import { animated } from "react-spring";
@@ -10,7 +10,7 @@ import { use3dEffect } from "use-3d-effect";
 export default function Home() {
   const ref = useRef<null>(null);
   const { style, ...mouseHandlers } = use3dEffect(ref);
-  const [bgIsActive, setBgIsActive] = useState<boolean>(false);
+  // const [bgIsActive, setBgIsActive] = useState<boolean>(false);
 
   useEffect(() => {}, []);
 
