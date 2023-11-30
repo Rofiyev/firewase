@@ -13,6 +13,11 @@
   height: 100%;
 }
 
+.line {
+  border-color: rgba(234, 234, 234, 0.4) !important;
+  margin-block: 2rem;
+}
+
 :root {
   --dark_green: #164234;
   --light__green: #69c04b;

@@ -1,0 +1,110 @@
+footer {
+  background-color: rgb(7, 43, 24);
+  padding: 2rem;
+}
+footer .row {
+  display: flex;
+  align-items: flex-start;
+}
+footer .col-1 {
+  width: 40%;
+}
+footer .col-1 img {
+  filter: grayscale(100%) sepia(100%) hue-rotate(90deg);
+  width: 120px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+}
+footer .col-1 h5 {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+}
+footer .col-1 .newsletter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.8rem;
+}
+footer .col-1 .newsletter input {
+  width: 300px !important;
+  height: 2.5rem !important;
+  margin-top: 0.6rem;
+  background: transparent;
+  border: 1px solid #fff;
+  color: white;
+  outline: none;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  font-size: 1rem;
+  margin: 0;
+}
+footer .col-1 .newsletter input::placeholder {
+  color: rgb(218, 216, 216);
+}
+footer .col-1 .newsletter .btn {
+  padding: 0.6rem 2.2rem;
+  background-color: transparent;
+  border: 1px solid var(--light__green);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: white;
+  letter-spacing: 1.01px;
+  transition: 0.4s ease-in-out;
+}
+footer .col-1 .newsletter .btn:hover {
+  background-color: var(--light__green);
+  color: white;
+}
+footer .col-1 .socials {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.5rem;
+}
+footer .col-1 .socials .icon {
+  background-color: var(--light__green);
+  color: rgb(7, 43, 24);
+  height: 2rem;
+  width: 2rem;
+  padding: 0.4rem;
+  border-radius: 50%;
+  transition: var(--ease__transition);
+  cursor: pointer;
+}
+footer .col-1 .socials .icon:hover {
+  background-color: white;
+}
+footer .col-2 {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+}
+footer .col-2 .menu_title {
+  list-style-type: none;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 0.6rem;
+  text-decoration: none !important;
+  cursor: auto !important;
+}
+footer .col-2 ul li {
+  list-style-type: none;
+  color: var(--light__green);
+  cursor: pointer;
+  transition: var(--ease__transition);
+  margin: 0.4rem 0;
+}
+footer .col-2 ul li:hover {
+  text-decoration: underline;
+  color: white;
+}
+footer .copyright {
+  text-align: center;
+}
+footer .copyright span {
+  color: white;
+  font-family: inherit;
+}

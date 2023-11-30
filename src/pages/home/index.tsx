@@ -4,9 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import Layout from "../../layout";
 import home__image from "../../assets/home__image.jpg";
 import { animated } from "react-spring";
-import logo from "../../assets/logo.png";
-import box_image from "../../assets/Revenue-Accuracy.svg"
+import box_image from "../../assets/Revenue-Accuracy.svg";
 import { use3dEffect } from "use-3d-effect";
+import partners_1 from "../../assets/partners_1.webp";
+import partners_2 from "../../assets/partners_2.webp";
 
 export default function Home() {
   const ref = useRef<null>(null);
@@ -19,6 +20,13 @@ export default function Home() {
       else setBgIsActive(false);
     });
   }, []);
+
+  const handleScroll = () => {
+    window.scrollTo({
+      top: window.innerHeight * 1.9,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <Layout>
@@ -59,73 +67,90 @@ export default function Home() {
             Powering Top Accounting Teams with Automated Revenue Recognition
           </p>
         </div>
-        <div className="logos">
+        <div
+          className="logos"
+          style={{ position: bgIsActive ? "static" : "relative" }}
+        >
           <div className="logos-slide">
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
+            <img src={partners_1} alt="logo" />
+            <img src={partners_2} alt="logo" />
+            <img src={partners_1} alt="logo" />
+            <img src={partners_2} alt="logo" />
           </div>
           <div className="logos-slide">
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
-            <img src={logo} alt="logo" />
+            <img src={partners_1} alt="logo" />
+            <img src={partners_2} alt="logo" />
+            <img src={partners_1} alt="logo" />
+            <img src={partners_2} alt="logo" />
+            <img src={partners_1} alt="logo" />
+            <img src={partners_2} alt="logo" />
+            <img src={partners_1} alt="logo" />
+            <img src={partners_1} alt="logo" />
+            <img src={partners_2} alt="logo" />
+            <img src={partners_1} alt="logo" />
+            <img src={partners_2} alt="logo" />
+            <img src={partners_1} alt="logo" />
+            <img src={partners_2} alt="logo" />
+            <img src={partners_1} alt="logo" />
+            <img src={partners_2} alt="logo" />
           </div>
         </div>
       </section>
-      <section className="home_2">
-<div className="container">
-        <div className="home_2_titles">
-          <p>Take control of your revenue…the right way.</p>
-           <p>Achieve ASC 606 / IFRS 15 compliance with unmatched speed and scalability.</p>
+      <section
+        className="home_2"
+        style={{ background: bgIsActive ? "#fff" : "var(--dark_green)" }}
+      >
+        <div className="arrow__container" onClick={handleScroll}>
+          <div className="chevron"></div>
+          <div className="chevron"></div>
+          <div className="chevron"></div>
         </div>
-       <div className="home_2_box">
-       <div className="box">
-       <img src={box_image} alt="" />
-       <p>Revenue Accuracy</p>  
-       
-       <p>You can’t risk inaccurate revenue accounting. Eliminate errors and minimize audit risk by 
-        automating revenue recognition. Streamline sales and revenue data for accurate revenue metrics 
-        at your fingertips so you can make decisions that maximize profits and drive growth.</p>
-      
-       </div>
-       <div className="box">
-       <img src={box_image} alt="" />
-       <p>Revenue Accuracy</p>  
-       <p>You can’t risk inaccurate revenue accounting. Eliminate errors and minimize audit risk by 
-        automating revenue recognition. Streamline sales and revenue data for accurate revenue metrics 
-        at your fingertips so you can make decisions that maximize profits and drive growth.</p>
-       </div>
-       <div className="box">
-       <img src={box_image} alt="" />
-       <p>Revenue Accuracy</p>  
-       <p>You can’t risk inaccurate revenue accounting. Eliminate errors and minimize audit risk by 
-        automating revenue recognition. Streamline sales and revenue data for accurate revenue metrics 
-        at your fingertips so you can make decisions that maximize profits and drive growth.</p>
-       </div> 
-       </div>
-       </div> 
+        <div className="container">
+          <div className="home_2_titles">
+            <h3>Take control of your revenue…the right way.</h3>
+            <p>
+              Achieve ASC 606 / IFRS 15 compliance with unmatched speed and
+              scalability.
+            </p>
+          </div>
+          <div className="home_2_box">
+            <div className="box">
+              <img src={box_image} alt="" />
+              <p>Revenue Accuracy</p>
+
+              <p>
+                You can`t risk inaccurate revenue accounting. Eliminate errors
+                and minimize audit risk by automating revenue recognition.
+                Streamline sales and revenue data for accurate revenue metrics
+                at your fingertips so you can make decisions that maximize
+                profits and drive growth.
+              </p>
+            </div>
+            <div className="box">
+              <img src={box_image} alt="" />
+              <p>Revenue Accuracy</p>
+              <p>
+                You can`t risk inaccurate revenue accounting. Eliminate errors
+                and minimize audit risk by automating revenue recognition.
+                Streamline sales and revenue data for accurate revenue metrics
+                at your fingertips so you can make decisions that maximize
+                profits and drive growth.
+              </p>
+            </div>
+            <div className="box">
+              <img src={box_image} alt="" />
+              <p>Revenue Accuracy</p>
+              <p>
+                You can`t risk inaccurate revenue accounting. Eliminate errors
+                and minimize audit risk by automating revenue recognition.
+                Streamline sales and revenue data for accurate revenue metrics
+                at your fingertips so you can make decisions that maximize
+                profits and drive growth.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
-      
     </Layout>
   );
 }

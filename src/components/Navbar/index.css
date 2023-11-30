@@ -69,6 +69,12 @@
   color: var(--light__green) !important;
   width: 100%;
 }
+.header nav ul li.active a::before,
+.header nav ul li.active a::after,
+.header nav ul li.active a {
+  color: var(--light__green) !important;
+  width: 100%;
+}
 
 .header .nav__btn button {
   padding: 8px 36px;

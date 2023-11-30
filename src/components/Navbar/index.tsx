@@ -1,13 +1,14 @@
 //?=== IMPORT CSS FILE HEADER ===?//
 import "./index.css";
 import logo from "../../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { navbarMenu } from "../../constants";
 import { INavberMenu } from "../../interface";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [sticky, setSticky] = useState<boolean>(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -33,7 +34,10 @@ export default function Navbar() {
           <nav>
             <ul>
               {navbarMenu.map(({ id, label, route }: INavberMenu) => (
-                <li key={id}>
+                <li
+                  key={id}
+                  className={`${route === pathname ? "active" : ""}`}
+                >
                   <Link to={route}>{label}</Link>
                 </li>
               ))}

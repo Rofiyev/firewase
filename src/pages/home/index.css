@@ -156,7 +156,6 @@
   background-color: var(--light__green);
 }
 
-/*?=== MEDIA CSS RESPONSIVE ===?*/
 @keyframes slide {
   0% {
     transform: translateX(0);
@@ -167,10 +166,10 @@
 }
 
 .logos {
-  overflow: hidden;
+  overflow-x: hidden;
   padding: 0 0;
   white-space: nowrap;
-  min-height: 100%;
+  height: 200px;
   position: relative;
   display: flex;
   gap: 0px;
@@ -180,16 +179,10 @@
 .logos::after {
   content: "";
   position: absolute;
-  top: 0%;
-  height: 100%;
   width: 120px;
   z-index: 2;
   position: absolute;
-  top: 0%;
-  height: 100%;
   top: 0;
-  width: 120px;
-  z-index: 2;
 }
 
 .logos:before {
@@ -213,13 +206,14 @@
 .logos-slide {
   display: inline-block;
   display: flex;
-  animation: 30s slide infinite linear;
+  animation: 80s slide infinite linear;
   width: 100%;
   margin: 0 10px;
 }
 
 .logos-slide img {
-  height: 80px;
+  height: 60px;
+  object-fit: contain;
   margin: 0 10px;
 }
 
@@ -235,18 +229,114 @@
   color: #fff;
   margin-bottom: 52px;
 }
+.arrow__container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 60px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.arrow__container .chevron {
+  position: absolute;
+  top: -15px;
+  left: 10%;
+  width: calc(0.6rem * 3);
+  height: calc(0.6rem * 0.2);
+  opacity: 0;
+  transform: scale(0.8);
+  animation: move-chevron 3s ease-out infinite;
+}
+
+.arrow__container .chevron:first-child {
+  animation: move-chevron 3s ease-out 1s infinite;
+}
+
+.arrow__container .chevron:nth-child(2) {
+  animation: move-chevron 3s ease-out 2s infinite;
+}
+
+.arrow__container .chevron:before,
+.arrow__container .chevron:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: var(--light__green);
+}
+
+.arrow__container .chevron:before {
+  left: 0;
+  transform: skewY(30deg);
+}
+
+.arrow__container .chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skewY(-30deg);
+}
+
+@keyframes move-chevron {
+  25% {
+    opacity: 1;
+  }
+  33.3% {
+    opacity: 1;
+    transform: translateY(calc(0.6rem * 3.8));
+  }
+  66.6% {
+    opacity: 1;
+    transform: translateY(calc(0.6rem * 5.2));
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(calc(0.6rem * 8)) scale(0.5);
+  }
+}
+.home__bottom {
+  position: relative;
+  background-color: var(--dark_green);
+  margin-top: 3rem;
+  padding: 4rem 0;
+  transition: background 0.5s ease;
+}
+
+.home_2 {
+  background-color: var(--dark_green);
+  padding-top: 2rem;
+  transition: background 0.5s ease;
+}
 
 .home_2_titles {
   width: 100%;
   text-align: center;
   margin-top: 100px;
 }
-.home_2_titles p:nth-child(1) {
+.home_2_titles h3 {
   color: rgb(7, 43, 24);
+  width: 80%;
+  text-wrap: wrap;
   margin-bottom: 20px;
-  font-size: 60px;
+  font-size: 3.7rem;
   line-height: 106%;
   letter-spacing: -3px;
+  margin: 0 auto;
+  background: radial-gradient(
+      circle,
+      rgb(105, 192, 75) 14%,
+      rgb(7, 43, 24) 57%,
+      rgb(105, 192, 75) 100%
+    )
+    0% 0% / 200%;
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite;
+  font-weight: 500 !important;
 }
 .home_2_titles p:nth-child(2) {
   font-weight: 400;
@@ -262,7 +352,6 @@
   align-items: center;
   width: 100%;
   gap: 2%;
-
   margin-top: 70px;
   padding: 50px 0;
 }
@@ -291,12 +380,4 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
-}
-
-.home__bottom {
-  position: relative;
-  background-color: var(--dark_green);
-  margin-top: 3rem;
-  padding: 4rem 0;
-  transition: background 0.2s ease;
 }
