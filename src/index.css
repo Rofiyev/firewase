@@ -23,3 +23,16 @@ body {
   position: relative;
   width: 100%;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #164234c9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light__green);
+  border-radius: 20px;
+}

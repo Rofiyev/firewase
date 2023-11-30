@@ -15,7 +15,16 @@ export default function Home() {
       <section id="home" className="home">
         <div className="home__main">
           <div className="info">
-            <h1>Hello world!</h1>
+            <h1>Powerful Revenue Recognition Software</h1>
+            <p>
+              Gain confidence in your revenue so you can close the books 5X
+              faster, maintain ASC 606 / IFRS 15 compliance, and deliver
+              insights that drive growth.
+            </p>
+            <div className="btns__info">
+              <button>Request a Demo</button>
+              <button>Watch Video</button>
+            </div>
           </div>
           <div className="images__wrapper">
             <animated.div
