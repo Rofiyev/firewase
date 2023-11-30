@@ -158,53 +158,57 @@
 
 /*?=== MEDIA CSS RESPONSIVE ===?*/
 @keyframes slide {
-  
-  0%{
-     transform: translateX(0);
+  0% {
+    transform: translateX(0);
   }
-  100%{
-     transform: translateX(calc(-250px * 9));
+  100% {
+    transform: translateX(calc(-250px * 9));
   }
 }
 
-
-
-.logos{
+.logos {
   overflow: hidden;
-  padding:0 0;
+  padding: 0 0;
   white-space: nowrap;
-  height: 200px;
+  min-height: 100%;
   position: relative;
   display: flex;
   gap: 0px;
 }
 
-
 .logos:before,
-.logos::after{
+.logos::after {
   content: "";
-position: absolute;
-top: 0%;
-height: 100%;  
-top: 0;
-width: 120px;
-z-index: 2;
+  position: absolute;
+  top: 0%;
+  height: 100%;
+  top: 0;
+  width: 120px;
+  z-index: 2;
 }
 
-.logos:before{
+.logos:before {
   left: 0;
-  background: linear-gradient(to left, rgba(255,255,255,0), rgba(22, 66, 52, 0.85) 57%);
+  background: linear-gradient(
+    90deg,
+    rgb(21, 66, 52) 0%,
+    rgba(21, 66, 52, 0) 100%
+  );
 }
 
-.logos:after{
-  right:  0;
-  background: linear-gradient(to right, rgba(255,255,255,0), rgba(22, 66, 52, 0.85) 57%);
+.logos:after {
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(21, 66, 52, 0) 0%,
+    rgb(21, 66, 52) 100%
+  );
 }
 
-.logos-slide{
+.logos-slide {
   display: inline-block;
- display: flex;
-  animation: 30s slide infinite linear; 
+  display: flex;
+  animation: 30s slide infinite linear;
   width: 100%;
   margin: 0 10px;
 }
@@ -214,22 +218,22 @@ z-index: 2;
   margin: 0 10px;
 }
 
-.slider-title{
+.slider-title {
   width: 100%;
   text-align: center;
   font-weight: 400;
-    font-size: 18px;
-    line-height: 120%;
-    letter-spacing: 3px;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 3px;
 }
 .slider-title p {
   color: #fff;
   margin-bottom: 52px;
 }
-
 .home__bottom {
   position: relative;
-  min-height: 100vh;
   background-color: var(--dark_green);
   margin-top: 3rem;
+  min-height: 200vh;
+  transition: background 0.2s ease;
 }

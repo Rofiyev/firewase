@@ -1,6 +1,6 @@
 //?=== IMPORT HOME CSS FILE ===?//
 import "./index.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Layout from "../../layout";
 import home__image from "../../assets/home__image.jpg";
 import { animated } from "react-spring";
@@ -10,9 +10,14 @@ import { use3dEffect } from "use-3d-effect";
 export default function Home() {
   const ref = useRef<null>(null);
   const { style, ...mouseHandlers } = use3dEffect(ref);
-  // const [bgIsActive, setBgIsActive] = useState<boolean>(false);
+  const [bgIsActive, setBgIsActive] = useState<boolean>(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > window.innerHeight / 0.8) setBgIsActive(true);
+      else setBgIsActive(false);
+    });
+  }, []);
 
   return (
     <Layout>
@@ -44,7 +49,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home__bottom">
+      <section
+        className="home__bottom"
+        style={{ background: bgIsActive ? "#fff" : "#164234" }}
+      >
         <div className="slider-title">
           <p>
             Powering Top Accounting Teams with Automated Revenue Recognition
