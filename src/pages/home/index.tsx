@@ -72,27 +72,22 @@ export default function Home() {
           style={{ position: bgIsActive ? "static" : "relative" }}
         >
           <div className="logos-slide">
-            <img src={partners_1} alt="logo" />
-            <img src={partners_2} alt="logo" />
-            <img src={partners_1} alt="logo" />
-            <img src={partners_2} alt="logo" />
+            {[...Array(6)].map((_, i) => (
+              <img
+                key={i}
+                src={`${i % 2 === 0 ? partners_1 : partners_2}`}
+                alt="logo"
+              />
+            ))}
           </div>
           <div className="logos-slide">
-            <img src={partners_1} alt="logo" />
-            <img src={partners_2} alt="logo" />
-            <img src={partners_1} alt="logo" />
-            <img src={partners_2} alt="logo" />
-            <img src={partners_1} alt="logo" />
-            <img src={partners_2} alt="logo" />
-            <img src={partners_1} alt="logo" />
-            <img src={partners_1} alt="logo" />
-            <img src={partners_2} alt="logo" />
-            <img src={partners_1} alt="logo" />
-            <img src={partners_2} alt="logo" />
-            <img src={partners_1} alt="logo" />
-            <img src={partners_2} alt="logo" />
-            <img src={partners_1} alt="logo" />
-            <img src={partners_2} alt="logo" />
+            {[...Array(15)].map((_, i) => (
+              <img
+                key={i}
+                src={`${i % 2 === 0 ? partners_1 : partners_2}`}
+                alt="logo"
+              />
+            ))}
           </div>
         </div>
       </section>

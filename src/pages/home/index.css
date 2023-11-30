@@ -105,6 +105,7 @@
   animation: textclip 10s linear infinite;
   font-size: 4rem;
   line-height: 4rem;
+  font-weight: 500;
 }
 
 @keyframes textclip {
