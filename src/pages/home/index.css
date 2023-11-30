@@ -1,5 +1,5 @@
 .home {
-  min-height: 150vh;
+  min-height: 100vh;
   width: 100%;
   background-color: var(--dark_green);
   position: absolute;
@@ -158,17 +158,15 @@
 
 /*?=== MEDIA CSS RESPONSIVE ===?*/
 @keyframes slide {
-  0%{
-     transform: translateX(0);
+  0% {
+    transform: translateX(0);
   }
-  100%{
-     transform: translateX(calc(-250px * 9));
+  100% {
+    transform: translateX(calc(-250px * 9));
   }
 }
 
-
-
-.logos{
+.logos {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
@@ -176,35 +174,47 @@
   gap: 0px;
 }
 
-
 .logos:before,
-.logos::after{
-position: absolute;
-top: 0;
-width: 120px;
-height: 100%;  
-content: "";
-z-index: 2;
+.logos::after {
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  content: "";
+  z-index: 2;
 }
 
-.logos:before{
+.logos:before {
   left: 0;
-  background: linear-gradient(to left, rgba(255,255,255,0), rgba(22, 66, 52, 0.85) 57%);
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    rgba(22, 66, 52, 0.85) 57%
+  );
 }
 
-.logos:after{
-  right:  0;
-  background: linear-gradient(to right, rgba(255,255,255,0), rgba(22, 66, 52, 0.85) 57%);
+.logos:after {
+  right: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(22, 66, 52, 0.85) 57%
+  );
 }
 
-.logos-slide{
- display: flex;
-  animation: 30s slide infinite linear; 
+.logos-slide {
+  display: flex;
+  animation: 30s slide infinite linear;
   width: 100%;
   margin: 0 10px;
 }
 
-.logos-slide img{
+.logos-slide img {
   height: 80px;
   margin: 0 10px;
+}
+
+.home__bottom {
+  position: relative;
+  min-hieght: 100vh;
 }

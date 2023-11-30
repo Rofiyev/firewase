@@ -1,6 +1,6 @@
 //?=== IMPORT HOME CSS FILE ===?//
 import "./index.css";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Layout from "../../layout";
 import home__image from "../../assets/home__image.jpg";
 import { animated } from "react-spring";
@@ -10,10 +10,13 @@ import { use3dEffect } from "use-3d-effect";
 export default function Home() {
   const ref = useRef<null>(null);
   const { style, ...mouseHandlers } = use3dEffect(ref);
+  const [bgIsActive, setBgIsActive] = useState<boolean>(false);
+
+  useEffect(() => {}, []);
 
   return (
     <Layout>
-      <section id="home" className="home">
+      <section id="home" className="home" style={{}}>
         <div className="home__main">
           <div className="info">
             <h1>Powerful Revenue Recognition Software</h1>
@@ -39,9 +42,14 @@ export default function Home() {
             </animated.div>
           </div>
         </div>
+      </section>
+
+      <section className="home__bottom">
         <div className="slider-title">
-        <p>Powering Top Accounting Teams with Automated Revenue Recognition</p>    
-       </div> 
+          <p>
+            Powering Top Accounting Teams with Automated Revenue Recognition
+          </p>
+        </div>
         <div className="logos">
           <div className="logos-slide">
             <img src={logo} alt="logo" />
