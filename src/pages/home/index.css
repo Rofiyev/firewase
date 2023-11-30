@@ -186,7 +186,6 @@
 position: absolute;
 top: 0%;
 height: 100%;  
-top: 0;
 width: 120px;
 z-index: 2;
 }
@@ -226,6 +225,27 @@ z-index: 2;
   color: #fff;
   margin-bottom: 52px;
 }
+
+.home_2_titles{
+  width: 100%;
+  text-align: center;
+  margin-top: 100px; 
+}
+.home_2_titles p:nth-child(1){
+  color: rgb(7, 43, 24);
+  margin-bottom: 20px;
+  font-size: 60px;
+  line-height: 106%;
+  letter-spacing: -3px
+}
+.home_2_titles p:nth-child(2){
+  font-weight: 400;
+  color: white;
+  font-size: 18px;
+  color: rgb(22, 66, 52);
+    line-height: 150%;
+}
+
 
 .home__bottom {
   position: relative;

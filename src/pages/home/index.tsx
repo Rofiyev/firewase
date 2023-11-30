@@ -82,6 +82,10 @@ export default function Home() {
             <img src={logo} alt="logo" />
           </div>
         </div>
+        <div className="home_2_titles">
+          <p>Take control of your revenue…the right way.</p>
+           <p>Achieve ASC 606 / IFRS 15 compliance with unmatched speed and scalability.</p>
+        </div>
       </section>
     </Layout>
   );
