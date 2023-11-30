@@ -4,7 +4,8 @@ import { useRef } from "react";
 import Layout from "../../layout";
 import home__image from "../../assets/home__image.jpg";
 import { animated } from "react-spring";
-import { use3dEffect } from "use-3d-effect";
+import logo from "../../assets/logo.png";
+import { use3dEffect } from 'use-3d-effect';
 
 export default function Home() {
   const ref = useRef<null>(null);
@@ -15,7 +16,7 @@ export default function Home() {
       <section id="home" className="home">
         <div className="home__main">
           <div className="info">
-            <h1>Hello world!</h1>
+            <h1>Salom</h1>
           </div>
           <div className="images__wrapper">
             <animated.div
@@ -27,9 +28,33 @@ export default function Home() {
             >
               <img src={home__image} alt="Certificate" />
             </animated.div>
-          </div>
-        </div>
+          </div> 
+         </div>
+        
       </section>
+      <div className='logos'>
+        <div className="logos-slide">
+         <img src={logo} alt="logo"  />
+         <img src={logo} alt="logo" />
+         <img src={logo} alt="logo" />
+         <img src={logo} alt="logo" />
+         <img src={logo} alt="logo"  />
+         <img src={logo} alt="logo" />
+         <img src={logo} alt="logo"  />
+         <img src={logo} alt="logo" />
+         <img src={logo} alt="logo" />
+         <img src={logo} alt="logo"  />
+         <img src={logo} alt="logo" />
+         <img src={logo} alt="logo"  />
+         <img src={logo} alt="logo" />
+         <img src={logo} alt="logo" />
+         <img src={logo} alt="logo"  />
+         <img src={logo} alt="logo" />
+         <img src={logo} alt="logo"  />
+         <img src={logo} alt="logo" />
+         <img src={logo} alt="logo" />
+        </div>
+        </div>
     </Layout>
   );
 }
