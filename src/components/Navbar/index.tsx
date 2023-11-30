@@ -4,10 +4,25 @@ import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { navbarMenu } from "../../constants";
 import { INavberMenu } from "../../interface";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [sticky, setSticky] = useState<boolean>(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 80) setSticky(true);
+      else setSticky(false);
+    });
+  }, []);
+
   return (
-    <div className="header__fon">
+    <div
+      className="header__fon"
+      style={{
+        background: sticky ? "rgba(22, 66, 52,0.9)" : "rgba(22, 66, 52,1)",
+      }}
+    >
       <div className="container">
         <header className="header">
           <Link to="/">
