@@ -215,8 +215,14 @@ export default function Home() {
       </section>
       <section className="feedback-wrapper">
       <div className="container">
+        <div className="row_1">
         <div className="feedback-title">
           <h2 className="linear_gradient_title">Don`t just take our word for it. Read what our customers are saying.</h2>
+        </div>
+
+        </div>
+        <div className="row_2">
+
         </div>
       </div>
       </section>
