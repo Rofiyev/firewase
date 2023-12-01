@@ -201,7 +201,12 @@ export default function Home() {
             </h3>
             <p>We do the hard part for you</p>
           </div>
-          <div className="cards_two"></div>
+          <div className="cards_two">
+            <div className="cards_two_titles">
+              <h2>Own your revenue from start to finish</h2>
+              <p>Automate every use case for maximum performance</p>
+            </div>
+          </div>
         </div>
       </section>
     </Layout>
