@@ -20,7 +20,7 @@
 
 :root {
   --dark_green: #164234;
-  --light__green: #69c04b;
+  --light__green: rgb(103, 191, 74);
   --ease__transition: 0.3s ease-in-out;
 }
 

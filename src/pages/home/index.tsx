@@ -10,8 +10,8 @@ import box_image_3 from "../../assets/Scalable-Revenue-Recognition.svg";
 import { use3dEffect } from "use-3d-effect";
 import partners_1 from "../../assets/partners_1.webp";
 import partners_2 from "../../assets/partners_2.webp";
-import { accordionData } from "../../constants";
-import { IAccordionGallery } from "../../interface";
+import { accordionData, cardOneItems } from "../../constants";
+import { IAccordionGallery, ICardOneItems } from "../../interface";
 
 export default function Home() {
   const ref = useRef<null>(null);
@@ -204,6 +204,19 @@ export default function Home() {
               Automated revenue recognition solutions
             </h3>
             <p>We do the hard part for you</p>
+            <div className="cards">
+              {cardOneItems.map((item: ICardOneItems) => (
+                <div key={item.id} className="card">
+                  <div className="card-body">
+                    <span>{item.span_title}</span>
+                    <img src={item.img} alt="Image" />
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                    <button type="submit">Lear More</button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="cards_two"></div>
         </div>

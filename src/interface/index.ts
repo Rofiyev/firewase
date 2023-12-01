@@ -11,3 +11,11 @@ export interface IAccordionGallery {
   body_desc: string;
   img: string;
 }
+
+export interface ICardOneItems {
+  id: number;
+  span_title: string;
+  img: string;
+  title: string;
+  desc: string;
+}
