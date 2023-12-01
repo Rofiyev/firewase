@@ -8,11 +8,14 @@ import box_image from "../../assets/Revenue-Accuracy.svg";
 import { use3dEffect } from "use-3d-effect";
 import partners_1 from "../../assets/partners_1.webp";
 import partners_2 from "../../assets/partners_2.webp";
+import { accordionData } from "../../constants";
+import { IAccordionGallery } from "../../interface";
 
 export default function Home() {
   const ref = useRef<null>(null);
   const { style, ...mouseHandlers } = use3dEffect(ref);
   const [bgIsActive, setBgIsActive] = useState<boolean>(false);
+  const [accordionActive, setAccordionActive] = useState(1);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -91,6 +94,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section
         className="home_2"
         style={{ background: bgIsActive ? "#fff" : "var(--dark_green)" }}
@@ -143,6 +147,38 @@ export default function Home() {
                 profits and drive growth.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="accordion">
+        <div className="container">
+          <div className="accordion_image_gallery">
+            {accordionData.map((item: IAccordionGallery) => (
+              <div
+                key={item.id}
+                className={`accordion_item ${
+                  item.id === accordionActive && "active"
+                }`}
+                onClick={() => setAccordionActive(item.id)}
+              >
+                <div className="left">
+                  <div className="accordion-header">
+                    <span className="numbers">{item.number}</span>
+                    <span className="title">{item.header_title}</span>
+                  </div>
+                  <div className="accordion-body">
+                    <div className="accordion-caption">
+                      <h4>{item.body_title}</h4>
+                      <p>{item.body_desc}</p>
+                    </div>
+                    <div className="accordion-images">
+                      <img src={item.img} alt="Accordion image 01" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
