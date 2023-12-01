@@ -213,6 +213,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="testimonials-wrapper">
+        <div className="row-1"></div>
+        <div className="row-2"></div>
+      </section>
     </Layout>
   );
 }
