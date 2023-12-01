@@ -421,3 +421,130 @@
     animation: textclip 8s linear infinite;
 }
 
+
+/***? Accordion style ?***/
+.accordion .accordion_image_gallery {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  padding-block: 2rem;
+}
+.accordion .accordion_image_gallery .accordion_item {
+  max-height: 800px;
+  min-height: 500px;
+  cursor: pointer;
+  background-color: rgb(240, 255, 238);
+  color: rgb(22, 66, 52);
+  margin: 0 10px;
+  border-radius: 1.2rem;
+  flex: 0.5;
+  padding: 1rem;
+  transition: 1s ease-in-out;
+}
+.accordion .accordion_image_gallery .accordion_item.active {
+  flex: 5;
+}
+.accordion .accordion_image_gallery .accordion_item .left {
+  display: flex;
+  height: 100%;
+}
+.accordion .accordion_image_gallery .accordion_item .left .accordion-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.7rem;
+}
+.accordion .accordion_image_gallery .accordion_item .left .numbers {
+  color: var(--light__green);
+}
+.accordion .accordion_image_gallery .accordion_item .left .title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 1.3rem;
+}
+.accordion .accordion_image_gallery .accordion_item .left .accordion-body {
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  display: none;
+  opacity: 0;
+  transition: 0.7s ease-in-out;
+}
+.accordion
+  .accordion_image_gallery
+  .accordion_item.active
+  .left
+  .accordion-body {
+  animation: accordion-animate 2s ease-in-out alternate;
+  display: flex;
+  opacity: 1;
+}
+@keyframes accordion-animate {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  50% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    display: flex;
+  }
+}
+.accordion .accordion_image_gallery .accordion_item.active {
+  background-color: rgb(22, 66, 52);
+}
+.accordion .accordion_image_gallery .accordion_item.active {
+  color: white;
+}
+.accordion
+  .accordion_image_gallery
+  .accordion_item
+  .left
+  .accordion-body
+  .accordion-images,
+.accordion
+  .accordion_image_gallery
+  .accordion_item
+  .left
+  .accordion-body
+  .accordion-caption {
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+.accordion
+  .accordion_image_gallery
+  .accordion_item
+  .left
+  .accordion-body
+  .accordion-caption {
+  width: 70%;
+}
+.accordion
+  .accordion_image_gallery
+  .accordion_item
+  .left
+  .accordion-body
+  .accordion-caption
+  h4 {
+  font-size: 2.3rem;
+  letter-spacing: -1.5px;
+  font-weight: 400;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.accordion
+  .accordion_image_gallery
+  .accordion_item
+  .left
+  .accordion-body
+  .accordion-images
+  img {
+  width: 100%;
+}
