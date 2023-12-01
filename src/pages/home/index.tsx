@@ -10,8 +10,9 @@ import box_image_3 from "../../assets/Scalable-Revenue-Recognition.svg";
 import { use3dEffect } from "use-3d-effect";
 import partners_1 from "../../assets/partners_1.webp";
 import partners_2 from "../../assets/partners_2.webp";
-import { accordionData } from "../../constants";
+import { accordionData, cardCantrol, cardsTwoBox } from "../../constants";
 import { IAccordionGallery } from "../../interface";
+import { ICard } from "../../interface";
 
 export default function Home() {
   const ref = useRef<null>(null);
@@ -119,39 +120,13 @@ export default function Home() {
             </p>
           </div>
           <div className="home_2_box">
-            <div className="box">
-              <img src={box_image} alt="" />
-              <p>Revenue Accuracy</p>
-
-              <p>
-                You can`t risk inaccurate revenue accounting. Eliminate errors
-                and minimize audit risk by automating revenue recognition.
-                Streamline sales and revenue data for accurate revenue metrics
-                at your fingertips so you can make decisions that maximize
-                profits and drive growth.
-              </p>
-            </div>
-            <div className="box">
-              <img src={box_image_2} alt="" />
-              <p>Real-Time Visibility</p>
-              <p>
-                Gain a complete picture of your financial health in real-time.
-                Present your financials with confidence knowing you have full
-                visibility into revenue contract metrics for recognized,
-                planned, and unplanned revenue.
-              </p>
-            </div>
-            <div className="box">
-              <img src={box_image_3} alt="" />
-              <p>Scalable Revenue Recognition</p>
-              <p>
-                As your business grows, rev rec gets more complicated. Ensure
-                you can adapt to current and future revenue models like
-                subscription, usage, services, or a hybrid. RightRev can process
-                hundreds of millions of transactions for any revenue model in
-                minutes- performance unmatched by any other solution.
-              </p>
-            </div>
+            {cardCantrol.map(({ id, title, desc, img }: ICard) => (
+              <div key={id} className="box">
+                <img src={img} alt={title} />
+                <p>{title}</p>
+                <p>{desc}</p>
+              </div>
+            ))}
           </div>
           <div style={{ textAlign: "center", marginBottom: "50px" }}>
             <button className="home_2_btn">Why RIGHTREV</button>
@@ -206,9 +181,20 @@ export default function Home() {
             <p>We do the hard part for you</p>
           </div>
           <div className="cards_two">
-            <div className="cards_two_titles">
-              <h2>Own your revenue from start to finish</h2>
+            <div className="cards_two_titles" style={{marginBottom:"70px"}}>
+              <h2 className="linear_gradient_title__light">
+                Own your revenue from start to finish
+              </h2>
               <p>Automate every use case for maximum performance</p>
+            </div>
+            <div className="box_cards_two">
+              {cardsTwoBox.map(({ id, title, desc, img }: ICard) => (
+                <div className="box" key={id}>
+                  <img src={img} alt="" />
+                  <p>{title}</p>
+                  <p>{desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
