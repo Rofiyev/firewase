@@ -90,21 +90,6 @@
 
 .home .home__main .info h1 {
   text-transform: uppercase;
-  background: radial-gradient(
-      circle,
-      rgb(255, 255, 255) 14%,
-      rgb(105, 192, 75) 57%,
-      rgb(255, 255, 255) 100%
-    )
-    0% 0% / 200%;
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 10s linear infinite;
-  font-size: 4rem;
-  line-height: 4rem;
   font-weight: 500;
 }
 
@@ -381,7 +366,6 @@
   color: rgb(105, 192, 75);
 }
 
-
 /***? Accordion style ?***/
 .accordion .accordion_image_gallery {
   width: 90%;
@@ -512,4 +496,9 @@
 .cards_wrapper {
   min-height: 150vh;
   background-color: rgb(22, 66, 52);
+  padding-block: 2rem;
+}
+.cards_wrapper .cards_one h3 {
+  font-weight: 400;
+  text-align: center;
 }
