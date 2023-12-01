@@ -1,7 +1,21 @@
-import { IAccordionGallery, ICardOneItems, INavberMenu } from "../interface";
+import {
+  IAccordionGallery,
+  INavberMenu,
+  ICard,
+  ICardOneItems,
+} from "../interface";
 import accordion_img_01 from "../assets/accordion_image_1.png";
 import accordion_img_02 from "../assets/accordion_image_2.png";
 import accordion_img_03 from "../assets/accordion_image_3.png";
+import Icard_image_1 from "../assets/Revenue-Accuracy.svg";
+import Icard_image_2 from "../assets/Real-Time-Visibility.svg";
+import Icard_image_3 from "../assets/Scalable-Revenue-Recognition.svg";
+import cards_two_box_image_1 from "../assets/Configurable-Revenue-Rules.svg";
+import cards_two_box_image_2 from "../assets/Event-Based-Revenue-Recognition_Light_v2.svg";
+import cards_two_box_image_3 from "../assets/SSP-Calculations-Analysis.svg";
+import cards_two_box_image_4 from "../assets/Contract-Modifications.svg";
+import cards_two_box_image_5 from "../assets/GAAP-Revenue-Reporting.svg";
+import cards_two_box_image_6 from "../assets/Journal-Entries.svg";
 import card_one_image_01 from "../assets/card-item-image-01.png";
 import card_one_image_02 from "../assets/card-item-image-02.png";
 
@@ -58,6 +72,64 @@ export const accordionData: IAccordionGallery[] = [
   },
 ];
 
+export const cardCantrol: ICard[] = [
+  {
+    id: 1,
+    title: "Revenue Accuracy",
+    desc: "You can’t risk inaccurate revenue accounting. Eliminate errors and minimize audit risk by automating revenue recognition. Streamline sales and revenue data for accurate revenue metrics at your fingertips so you can make decisions that maximize profits and drive growth.",
+    img: Icard_image_1,
+  },
+  {
+    id: 2,
+    title: "Real-Time Visibility",
+    desc: "Gain a complete picture of your financial health in real-time. Present your financials with confidence knowing you have full visibility into revenue contract metrics for recognized, planned, and unplanned revenue.",
+    img: Icard_image_2,
+  },
+  {
+    id: 1,
+    title: "Scalable Revenue Recognition",
+    desc: "As your business grows, rev rec gets more complicated. Ensure you can adapt to current and future revenue models like subscription, usage, services, or a hybrid. RightRev can process hundreds of millions of transactions for any revenue model in minutes- performance unmatched by any other solution.",
+    img: Icard_image_3,
+  },
+];
+export const cardsTwoBox: ICard[] = [
+  {
+    id: 1,
+    title: "Configurable Revenue Rules",
+    desc: "Identify performance obligations and assign proper revenue rules for separate performance obligations in a single revenue contract.",
+    img: cards_two_box_image_1,
+  },
+  {
+    id: 2,
+    title: "Event-Based Revenue Recognition",
+    desc: "Don’t limit revenue recognition to only bookings or billings; instead, configure unlimited events, such as product delivery, completed milestones, percentage of completion, provisioning, etc.",
+    img: cards_two_box_image_2,
+  },
+  {
+    id: 3,
+    title: "SSP Calculations & Analysis",
+    desc: "Automate tedious SSP calculations using intelligent historical analysis. Automatically apply SSPs to performance obligations and allocate across bundled contracts, saving you time and headaches.",
+    img: cards_two_box_image_3,
+  },
+  {
+    id: 4,
+    title: "Contract Modifications",
+    desc: "Contract modifications occur at any time during a contract’s lifecycle. RightRev’s predefined modification categories make this process easy by automatically detecting various changes, applying revenue rules, and recalculating revenue if necessary.",
+    img: cards_two_box_image_4,
+  },
+  {
+    id: 5,
+    title: "GAAP Revenue Reporting and Waterfall",
+    desc: "RightRev comes with out-of-the-box dashboards and  hundreds of pre-calculated metrics to enable ad-hoc reporting. Revenue Waterfall reports provide visibility for planned and recognized revenue.",
+    img: cards_two_box_image_5,
+  },
+  {
+    id: 6,
+    title: "Journal Entries",
+    desc: "RightRev integrates with your ERP to automatically post daily or periodic revenue Journal Entries to your General Ledger. Conveniently create Topside Journal Entries directly in RightRev.",
+    img: cards_two_box_image_6,
+  },
+];
 export const cardOneItems: ICardOneItems[] = [
   {
     id: 1,
