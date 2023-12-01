@@ -4,15 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import Layout from "../../layout";
 import home__image from "../../assets/home__image.jpg";
 import { animated } from "react-spring";
-import box_image from "../../assets/Revenue-Accuracy.svg";
-import box_image_2 from "../../assets/Real-Time-Visibility.svg";
-import box_image_3 from "../../assets/Scalable-Revenue-Recognition.svg";
 import { use3dEffect } from "use-3d-effect";
 import partners_1 from "../../assets/partners_1.webp";
 import partners_2 from "../../assets/partners_2.webp";
-import { accordionData, cardCantrol, cardsTwoBox } from "../../constants";
-import { IAccordionGallery } from "../../interface";
-import { ICard } from "../../interface";
+import {
+  accordionData,
+  cardOneItems,
+  cardCantrol,
+  cardsTwoBox,
+} from "../../constants";
+import { IAccordionGallery, ICardOneItems, ICard } from "../../interface";
 
 export default function Home() {
   const ref = useRef<null>(null);
@@ -179,9 +180,22 @@ export default function Home() {
               Automated revenue recognition solutions
             </h3>
             <p>We do the hard part for you</p>
+            <div className="cards">
+              {cardOneItems.map((item: ICardOneItems) => (
+                <div key={item.id} className="card">
+                  <div className="card-body">
+                    <span>{item.span_title}</span>
+                    <img src={item.img} alt="Image" />
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                    <button type="submit">Lear More</button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="cards_two">
-            <div className="cards_two_titles" style={{marginBottom:"70px"}}>
+            <div className="cards_two_titles" style={{ margin: "150px 0 70px" }}>
               <h2 className="linear_gradient_title__light">
                 Own your revenue from start to finish
               </h2>
@@ -198,6 +212,13 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="feedback-wrapper">
+      <div className="container">
+        <div className="feedback-title">
+          <h2 className="linear_gradient_title">Don’t just take our word for it. Read what our customers are saying.</h2>
+        </div>
+      </div>
       </section>
     </Layout>
   );
