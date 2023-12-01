@@ -38,7 +38,9 @@ export default function Home() {
       <section id="home" className="home" style={{}}>
         <div className="home__main">
           <div className="info">
-            <h1>Powerful Revenue Recognition Software</h1>
+            <h1 className="linear_gradient_title__light">
+              Powerful Revenue Recognition Software
+            </h1>
             <p>
               Gain confidence in your revenue so you can close the books 5X
               faster, maintain ASC 606 / IFRS 15 compliance, and deliver
@@ -108,7 +110,9 @@ export default function Home() {
         </div>
         <div className="container">
           <div className="home_2_titles">
-            <h3 className="linear_gradient_title">Take control of your revenue…the right way.</h3>
+            <h3 className="linear_gradient_title">
+              Take control of your revenue…the right way.
+            </h3>
             <p>
               Achieve ASC 606 / IFRS 15 compliance with unmatched speed and
               scalability.
@@ -152,7 +156,7 @@ export default function Home() {
           <div style={{ textAlign: "center", marginBottom: "50px" }}>
             <button className="home_2_btn">Why RIGHTREV</button>
           </div>
-          <div style={{margin: '10rem 0 5rem 0'}}>
+          <div style={{ margin: "10rem 0 5rem 0" }}>
             <h3 className="linear_gradient_title">
               Revenue recognition is becoming more complex. Traditional methods
               fail to meet you where you are and where you want to go.
@@ -196,7 +200,7 @@ export default function Home() {
       <section className="cards_wrapper">
         <div className="container">
           <div className="cards_one">
-            <h3 className="linear_gradient_title">
+            <h3 className="linear_gradient_title__light">
               Automated revenue recognition solutions
             </h3>
             <p>We do the hard part for you</p>
