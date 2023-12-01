@@ -195,7 +195,10 @@ export default function Home() {
             </div>
           </div>
           <div className="cards_two">
-            <div className="cards_two_titles" style={{ margin: "150px 0 70px" }}>
+            <div
+              className="cards_two_titles"
+              style={{ margin: "150px 0 70px" }}
+            >
               <h2 className="linear_gradient_title__light">
                 Own your revenue from start to finish
               </h2>
@@ -214,9 +217,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="testimonials-wrapper">
-        <div className="row-1"></div>
-        <div className="row-2"></div>
+      <section className="feedback-wrapper">
+        <div className="container">
+          <div className="feedback-title">
+            <h2 className="linear_gradient_title">
+              Don`t just take our word for it. Read what our customers are
+              saying.
+            </h2>
+          </div>
+        </div>
       </section>
     </Layout>
   );

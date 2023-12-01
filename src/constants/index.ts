@@ -1,9 +1,4 @@
-import {
-  IAccordionGallery,
-  INavberMenu,
-  ICard,
-  ICardOneItems,
-} from "../interface";
+import { IAccordionGallery, INavberMenu, ICard,ICardOneItems, } from "../interface";
 import accordion_img_01 from "../assets/accordion_image_1.png";
 import accordion_img_02 from "../assets/accordion_image_2.png";
 import accordion_img_03 from "../assets/accordion_image_3.png";
