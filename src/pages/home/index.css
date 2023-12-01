@@ -316,35 +316,14 @@
   text-align: center;
   margin-top: 100px;
 }
-.home_2_titles h3 {
-  color: rgb(7, 43, 24);
-  width: 80%;
-  text-wrap: wrap;
-  margin-bottom: 20px;
-  font-size: 3.7rem;
-  line-height: 106%;
-  letter-spacing: -3px;
-  margin: 0 auto;
-  background: radial-gradient(
-      circle,
-      rgb(105, 192, 75) 14%,
-      rgb(7, 43, 24) 57%,
-      rgb(105, 192, 75) 100%
-    )
-    0% 0% / 200%;
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 10s linear infinite;
-  font-weight: 500 !important;
-}
-.home_2_titles p:nth-child(2) {
+
+.home_2_titles p {
   font-weight: 400;
   color: white;
   font-size: 18px;
   color: rgb(22, 66, 52);
   line-height: 150%;
+  margin-top: 1rem;
 }
 
 .home_2_box {
@@ -400,25 +379,6 @@
   background-color: rgb(7, 43, 24);
   border-color: rgb(7, 43, 24);
   color: rgb(105, 192, 75);
-}
-.home_2_under_btn_title {
-  color: rgb(7, 43, 24);
-  margin-bottom: 20px;
-  font-size: 60px;
-  line-height: 106%;
-  letter-spacing: -3px;
-  background: radial-gradient(
-      circle,
-      rgb(105, 192, 75) 14%,
-      rgb(7, 43, 24) 57%,
-      rgb(105, 192, 75) 100%
-    )
-    0% 0% / 200%;
-    background-size: 180% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-    animation: textclip 8s linear infinite;
 }
 
 
@@ -547,4 +507,9 @@
   .accordion-images
   img {
   width: 100%;
+}
+
+.cards_wrapper {
+  min-height: 150vh;
+  background-color: rgb(22, 66, 52);
 }

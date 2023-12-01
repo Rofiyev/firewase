@@ -41,3 +41,38 @@ body {
   background: var(--light__green);
   border-radius: 20px;
 }
+.linear_gradient_title {
+  color: rgb(7, 43, 24);
+  width: 80%;
+  text-wrap: wrap;
+  margin-bottom: 20px;
+  font-size: 3.7rem;
+  line-height: 106%;
+  letter-spacing: -3px;
+  margin: 0 auto;
+  background: radial-gradient(
+      circle,
+      rgb(105, 192, 75) 14%,
+      rgb(7, 43, 24) 57%,
+      rgb(105, 192, 75) 100%
+    )
+    0% 0% / 200%;
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite;
+  font-weight: 400 !important;
+}
+
+@keyframes textclip {
+  0% {
+    background-position: 100%;
+  }
+  50% {
+    background-position: 200%;
+  }
+  100% {
+    background-position: 300%;
+  }
+}

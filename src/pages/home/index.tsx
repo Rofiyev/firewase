@@ -5,8 +5,8 @@ import Layout from "../../layout";
 import home__image from "../../assets/home__image.jpg";
 import { animated } from "react-spring";
 import box_image from "../../assets/Revenue-Accuracy.svg";
-import box_image_2 from "../../assets/Real-Time-Visibility.svg"
-import box_image_3 from "../../assets/Scalable-Revenue-Recognition.svg"
+import box_image_2 from "../../assets/Real-Time-Visibility.svg";
+import box_image_3 from "../../assets/Scalable-Revenue-Recognition.svg";
 import { use3dEffect } from "use-3d-effect";
 import partners_1 from "../../assets/partners_1.webp";
 import partners_2 from "../../assets/partners_2.webp";
@@ -108,7 +108,7 @@ export default function Home() {
         </div>
         <div className="container">
           <div className="home_2_titles">
-            <h3>Take control of your revenue…the right way.</h3>
+            <h3 className="linear_gradient_title">Take control of your revenue…the right way.</h3>
             <p>
               Achieve ASC 606 / IFRS 15 compliance with unmatched speed and
               scalability.
@@ -131,25 +131,32 @@ export default function Home() {
               <img src={box_image_2} alt="" />
               <p>Real-Time Visibility</p>
               <p>
-               Gain a complete picture of your financial health in real-time. Present
-               your financials with confidence knowing you have full visibility into 
-               revenue contract metrics for recognized, planned, and unplanned revenue.
+                Gain a complete picture of your financial health in real-time.
+                Present your financials with confidence knowing you have full
+                visibility into revenue contract metrics for recognized,
+                planned, and unplanned revenue.
               </p>
             </div>
             <div className="box">
               <img src={box_image_3} alt="" />
               <p>Scalable Revenue Recognition</p>
               <p>
-              As your business grows, rev rec gets more complicated. Ensure you can adapt to 
-              current and future revenue models like subscription, usage, services, or a hybrid. 
-              RightRev can process hundreds of millions of transactions for any revenue model in 
-              minutes- performance unmatched by any other solution.
+                As your business grows, rev rec gets more complicated. Ensure
+                you can adapt to current and future revenue models like
+                subscription, usage, services, or a hybrid. RightRev can process
+                hundreds of millions of transactions for any revenue model in
+                minutes- performance unmatched by any other solution.
               </p>
             </div>
           </div>
-          <div style={{textAlign:"center", marginBottom:"50px"}}><button className="home_2_btn">Why RIGHTREV</button></div>
-          <div style={{marginLeft:"10%", width:'83%',padding:"0 ,40px"}}>
-            <h3 className="home_2_under_btn_title">Revenue recognition is becoming more complex. Traditional methods fail to meet you where you are and where you want to go.</h3>
+          <div style={{ textAlign: "center", marginBottom: "50px" }}>
+            <button className="home_2_btn">Why RIGHTREV</button>
+          </div>
+          <div style={{margin: '10rem 0 5rem 0'}}>
+            <h3 className="linear_gradient_title">
+              Revenue recognition is becoming more complex. Traditional methods
+              fail to meet you where you are and where you want to go.
+            </h3>
           </div>
         </div>
       </section>
@@ -183,6 +190,18 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="cards_wrapper">
+        <div className="container">
+          <div className="cards_one">
+            <h3 className="linear_gradient_title">
+              Automated revenue recognition solutions
+            </h3>
+            <p>We do the hard part for you</p>
+          </div>
+          <div className="cards_two"></div>
         </div>
       </section>
     </Layout>
