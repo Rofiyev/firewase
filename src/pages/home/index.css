@@ -586,7 +586,7 @@
 .feedback-wrapper {
   width: 100%;
   min-height: 100vh;
-  padding: 8rem 0;
+  padding: 8rem 0 1rem;
   position: relative;
 }
 .feedback-wrapper::before {
@@ -609,6 +609,7 @@
   align-items: center;
   width: 90%;
   margin: 3rem auto 0;
+  margin-bottom: 10rem !important;
 }
 
 .documents .box {

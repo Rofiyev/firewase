@@ -14,10 +14,8 @@ export default function About() {
   const { style, ...mouseHandlers } = use3dEffect(ref);
 
   const handleScroll = () => {
-    window.scrollTo({
-      top: window.innerHeight * 1.2,
-      behavior: "smooth",
-    });
+    const elem = document.querySelector(".about_2") as HTMLDivElement;
+    elem.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

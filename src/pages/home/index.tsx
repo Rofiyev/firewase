@@ -14,6 +14,7 @@ import {
   documentItems,
 } from "../../constants";
 import { IAccordionGallery, ICard } from "../../interface";
+import { Newsletter } from "../../components";
 
 export default function Home() {
   const ref = useRef<null>(null);
@@ -29,10 +30,8 @@ export default function Home() {
   }, []);
 
   const handleScroll = () => {
-    window.scrollTo({
-      top: window.innerHeight * 1.9,
-      behavior: "smooth",
-    });
+    const elem = document.querySelector(".home_2") as HTMLDivElement;
+    elem.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -157,7 +156,13 @@ export default function Home() {
         </section>
       </section>
 
-      <section className="accordion">
+      <section className="accordion" style={{ paddingTop: "2rem" }}>
+        <h2
+          className="linear_gradient_title"
+          style={{ marginBottom: "1rem", textAlign: "center" }}
+        >
+          Own your revenue from start to finish
+        </h2>
         <div className="container">
           <div className="accordion_image_gallery">
             {accordionData.map((item: IAccordionGallery) => (
@@ -209,6 +214,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <Newsletter />
       </section>
     </Layout>
   );
