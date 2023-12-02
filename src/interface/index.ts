@@ -30,3 +30,7 @@ export interface ICardOneItems {
   title: string;
   desc: string;
 }
+export interface IProductCategory {
+  id:number,
+  title:string
+}

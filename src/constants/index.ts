@@ -1,4 +1,4 @@
-import { IAccordionGallery, INavberMenu, ICard,ICardOneItems, FCard, } from "../interface";
+import { IAccordionGallery, INavberMenu, ICard,ICardOneItems, FCard, IProductCategory, } from "../interface";
 import accordion_img_01 from "../assets/accordion_image_1.png";
 import accordion_img_02 from "../assets/accordion_image_2.png";
 import accordion_img_03 from "../assets/accordion_image_3.png";
@@ -19,6 +19,7 @@ import FImage_3 from "../assets/drata_logo-green.png";
 import FUImage_1 from "../assets/Headhsot_Laura-Brodie_Docebo.png"
 import FUImage_2 from "../assets/Chris-Neidlinger.png"
 import FUImage_3 from "../assets/Headshot_Alex-Amaya_Epicor.png"
+import productsImage from "../assets/imageproducts.png"
 
 export const navbarMenu: INavberMenu[] = [
   {
@@ -169,6 +170,83 @@ export const CardF: FCard[] = [
     img:FImage_3,
     userImg:FUImage_3
   }
+]
+export const categoryProduct: IProductCategory[] = [
+  {
+    id:1,
+    title:"Панели пожарной сигнализации"
+  },
+  {
+    id:2,
+    title:"Дополнительное ПО для GST-IFP4M"
+  },
+  {
+    id:3,
+    title:"Система обратной связи"
+  },
+  {
+    id:4,
+    title:"Системы пожаротушения"
+  },
+  {
+    id:5,
+    title:" Пожарные извещатели"
+  },
+  {
+    id:6,
+    title:"Ручные извещатели"
+  },
+  {
+    id:7,
+    title:"Оповещатели"
+  },
+  {
+    id:8,
+    title:"Изоляторы"
+  },
+  {
+    id:9,
+    title:"Модули управления"
+  },
+  {
+    id:10,
+    title:"Блоки питания"
+  },
+  {
+    id:11,
+    title:"Взрывозащищенное оборудование"
+  },
+  {
+    id:12,
+    title:"Извещатели утечки газа"
+  },
+  {
+    id:13,
+    title:"Дополнительные комплектующие"
+  }
+]
+export const cardFiltered: ICardOneItems[] = [
+  {
+    id:1,
+    span_title:"Accounting, Revenue Recognition",
+    title:"Intro to Revenue Recognition: GAAP Principles",
+    desc:"Despite all the potential complexities, businesses must recognize revenue according to established industry standards to stay legally compliant and report their financials accurately and transparently. Performed correctly, revenue recognition follows several generally accepted accounting principles (GAAP) that we will discuss in more detail.",
+    img:productsImage
+  },
+  {
+    id:2,
+    span_title:"Accounting, Revenue Recognition",
+    title:"Intro to Revenue Recognition: GAAP Principles",
+    desc:"Despite all the potential complexities, businesses must recognize revenue according to established industry standards to stay legally compliant and report their financials accurately and transparently. Performed correctly, revenue recognition follows several generally accepted accounting principles (GAAP) that we will discuss in more detail.",
+    img:productsImage
+  },
+  {
+    id:3,
+    span_title:"Accounting, Revenue Recognition",
+    title:"Intro to Revenue Recognition: GAAP Principles",
+    desc:"Despite all the potential complexities, businesses must recognize revenue according to established industry standards to stay legally compliant and report their financials accurately and transparently. Performed correctly, revenue recognition follows several generally accepted accounting principles (GAAP) that we will discuss in more detail.",
+    img:productsImage
+  },
 ]
 export const cardOneItems: ICardOneItems[] = [
   {
