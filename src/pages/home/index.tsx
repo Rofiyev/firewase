@@ -231,31 +231,7 @@ export default function Home() {
                 saying.
               </h2>
             </div>
-            <Swiper
-
-              slidesPerView={1.9}
-              centeredSlides={true}
-              autoplay={ {delay:2000,disableOnInteraction: false,}}
-              loop={true}
-              className="swiper"
-              navigation={true}
-              modules={[Pagination, Autoplay]}
-            >
-              {
-                CardF.map(({id,desc,img,userImg}:FCard)=>
-                
-              <SwiperSlide className="swiper-slide" key={id} style={{width:"300px"}}>
-                <div className="card_feedback" style={{paddingBottom:"20px"}}>
-                  <div className="logo_and_desc_cardfeedback">
-                  <img src={img} alt="title" />
-                  <p>{desc}</p>
-                  </div>
-                  <img src={userImg} width={"56px"} height={"56px"} style={{borderRadius:"10px",}} alt="title"/>
-                </div>
-              </SwiperSlide>
-                )
-              }
-            </Swiper>
+            
           </div>
           <div className="row_2"></div>
         </div>
