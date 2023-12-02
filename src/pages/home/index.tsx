@@ -189,7 +189,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="documents" className="feedback-wrapper">
+      <section id="documentation" className="feedback-wrapper">
         <div className="container">
           <div className="row_1">
             <div className="feedback-title">

@@ -11,6 +11,9 @@ import cards_two_box_image_3 from "../assets/SSP-Calculations-Analysis.svg";
 import cards_two_box_image_4 from "../assets/Contract-Modifications.svg";
 import cards_two_box_image_5 from "../assets/GAAP-Revenue-Reporting.svg";
 import cards_two_box_image_6 from "../assets/Journal-Entries.svg";
+import about_card_image_01 from "../assets/heart.png";
+import about_card_image_02 from "../assets/star.png";
+import about_card_image_03 from "../assets/support.png";
 
 export const navbarMenu: INavberMenu[] = [
   {
@@ -20,7 +23,7 @@ export const navbarMenu: INavberMenu[] = [
   },
   {
     id: 2,
-    route: "#documents",
+    route: "#documentation",
     label: "Документация",
   },
   {
@@ -134,7 +137,7 @@ export const documentItems: ICard[] = [
   {
     id: 1,
     title: "Документация",
-    desc: "Identify performance obligations and assign proper revenue rules for separate performance obligations in a single revenue contract.",
+    desc: "Identify performance obligations and assign proper revenue rules for separate performance obligations in a single revenue assign proper revenue rules for separate obligations in a single revenue contract.",
     img: cards_two_box_image_6,
   },
   {
@@ -148,5 +151,44 @@ export const documentItems: ICard[] = [
     title: " Типовые проекты",
     desc: "Automate tedious SSP calculations using intelligent historical analysis. Automatically apply SSPs to performance obligations and allocate across bundled contracts, saving you time and headaches.",
     img: cards_two_box_image_6,
+  },
+];
+
+export const aboutItems: ICard[] = [
+  {
+    id: 1,
+    title: "Integrity",
+    desc: "Always making decisions with our clients’ best interests at heart best interests at heart nterests at heart",
+    img: about_card_image_01,
+  },
+  {
+    id: 2,
+    title: "Value",
+    desc: "We constantly seek new ways to incorporate value-adding features tailored to our clients’ needs.",
+    img: about_card_image_02,
+  },
+  {
+    id: 3,
+    title: "Support",
+    desc: "Offering custom-tailored attention, placing customers in the best position possible to get the most out of our software.",
+    img: about_card_image_03,
+  },
+  {
+    id: 1,
+    title: "Integrity",
+    desc: "Always making decisions with our clients’ best interests at heart best interests at heart nterests at heart",
+    img: about_card_image_01,
+  },
+  {
+    id: 2,
+    title: "Value",
+    desc: "We constantly seek new ways to incorporate value-adding features tailored to our clients’ needs.",
+    img: about_card_image_02,
+  },
+  {
+    id: 3,
+    title: "Support",
+    desc: "Offering custom-tailored attention, placing customers in the best position possible to get the most out of our software.",
+    img: about_card_image_03,
   },
 ];
