@@ -12,14 +12,9 @@ import {
   cardOneItems,
   cardCantrol,
   cardsTwoBox,
-  CardF,
 } from "../../constants";
-import { IAccordionGallery, ICardOneItems, ICard, FCard } from "../../interface";
-import { Swiper, SwiperSlide, } from "swiper/react";
-import "swiper/css"
-import "swiper/css/autoplay"
+import { IAccordionGallery, ICardOneItems, ICard,  } from "../../interface";
 // import required modules
-import { Pagination, Autoplay } from "swiper/modules";
 
 export default function Home() {
   const ref = useRef<null>(null);
