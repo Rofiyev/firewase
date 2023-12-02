@@ -17,6 +17,12 @@ export interface ICard {
   desc: string;
   img: string;
 }
+export interface FCard{
+  id:number;
+  desc:string;
+  img:string;
+  userImg:string;
+}
 export interface ICardOneItems {
   id: number;
   span_title: string;

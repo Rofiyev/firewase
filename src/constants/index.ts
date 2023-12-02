@@ -1,4 +1,4 @@
-import { IAccordionGallery, INavberMenu, ICard,ICardOneItems, } from "../interface";
+import { IAccordionGallery, INavberMenu, ICard,ICardOneItems, FCard, } from "../interface";
 import accordion_img_01 from "../assets/accordion_image_1.png";
 import accordion_img_02 from "../assets/accordion_image_2.png";
 import accordion_img_03 from "../assets/accordion_image_3.png";
@@ -13,6 +13,12 @@ import cards_two_box_image_5 from "../assets/GAAP-Revenue-Reporting.svg";
 import cards_two_box_image_6 from "../assets/Journal-Entries.svg";
 import card_one_image_01 from "../assets/card-item-image-01.png";
 import card_one_image_02 from "../assets/card-item-image-02.png";
+import FImage_1 from "../assets/Docebo_logo-green.png";
+import FImage_2 from "../assets/Epicor_Logo_green_new.png";
+import FImage_3 from "../assets/drata_logo-green.png";
+import FUImage_1 from "../assets/Headhsot_Laura-Brodie_Docebo.png"
+import FUImage_2 from "../assets/Chris-Neidlinger.png"
+import FUImage_3 from "../assets/Headshot_Alex-Amaya_Epicor.png"
 
 export const navbarMenu: INavberMenu[] = [
   {
@@ -81,7 +87,7 @@ export const cardCantrol: ICard[] = [
     img: Icard_image_2,
   },
   {
-    id: 1,
+    id: 3,
     title: "Scalable Revenue Recognition",
     desc: "As your business grows, rev rec gets more complicated. Ensure you can adapt to current and future revenue models like subscription, usage, services, or a hybrid. RightRev can process hundreds of millions of transactions for any revenue model in minutes- performance unmatched by any other solution.",
     img: Icard_image_3,
@@ -125,6 +131,45 @@ export const cardsTwoBox: ICard[] = [
     img: cards_two_box_image_6,
   },
 ];
+
+export const CardF: FCard[] = [
+  {
+    id:1,
+    desc:"“Combining front-end and back-end motions in Salesforce Revenue Cloud and RightRev for automated revenue recognition will optimize our accounting processes for maximum efficiency; saving time, reducing errors, and allowing us to close the books faster.”",
+    img:FImage_1,
+    userImg:FUImage_1
+  },
+  {
+    id:2,
+    desc:"“From the start of our conversations through go-live, the RightRev team has been fully committed to our success and we appreciate the investment they made in us. We challenged the implementation team with some unique requirements, and they came up with solutions for everything we presented.”",
+    img:FImage_2,
+    userImg:FUImage_2
+  },
+  {
+    id:3,
+    desc:"“After considering various Revenue Recognition Platforms, we chose RightRev for its ability to handle our complex business needs like allocations, contract modifications, de-bundling of product SKU’s, and SSP Analysis, all of which have proven to be manual and complex tasks to perform.”",
+    img:FImage_3,
+    userImg:FUImage_3
+  },
+  {
+    id:4,
+    desc:"“Combining front-end and back-end motions in Salesforce Revenue Cloud and RightRev for automated revenue recognition will optimize our accounting processes for maximum efficiency; saving time, reducing errors, and allowing us to close the books faster.”",
+    img:FImage_1,
+    userImg:FUImage_1
+  },
+  {
+    id:5,
+    desc:"“From the start of our conversations through go-live, the RightRev team has been fully committed to our success and we appreciate the investment they made in us. We challenged the implementation team with some unique requirements, and they came up with solutions for everything we presented.”",
+    img:FImage_2,
+    userImg:FUImage_2
+  },
+  {
+    id:6,
+    desc:"“After considering various Revenue Recognition Platforms, we chose RightRev for its ability to handle our complex business needs like allocations, contract modifications, de-bundling of product SKU’s, and SSP Analysis, all of which have proven to be manual and complex tasks to perform.”",
+    img:FImage_3,
+    userImg:FUImage_3
+  }
+]
 export const cardOneItems: ICardOneItems[] = [
   {
     id: 1,

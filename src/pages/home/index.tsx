@@ -12,8 +12,14 @@ import {
   cardOneItems,
   cardCantrol,
   cardsTwoBox,
+  CardF,
 } from "../../constants";
-import { IAccordionGallery, ICardOneItems, ICard } from "../../interface";
+import { IAccordionGallery, ICardOneItems, ICard, FCard } from "../../interface";
+import { Swiper, SwiperSlide, } from "swiper/react";
+import "swiper/css"
+import "swiper/css/autoplay"
+// import required modules
+import { Pagination, Autoplay } from "swiper/modules";
 
 export default function Home() {
   const ref = useRef<null>(null);
@@ -195,7 +201,10 @@ export default function Home() {
             </div>
           </div>
           <div className="cards_two">
-            <div className="cards_two_titles" style={{ margin: "150px 0 70px" }}>
+            <div
+              className="cards_two_titles"
+              style={{ margin: "150px 0 70px" }}
+            >
               <h2 className="linear_gradient_title__light">
                 Own your revenue from start to finish
               </h2>
@@ -214,17 +223,42 @@ export default function Home() {
         </div>
       </section>
       <section className="feedback-wrapper">
-      <div className="container">
-        <div className="row_1">
-        <div className="feedback-title">
-          <h2 className="linear_gradient_title">Don`t just take our word for it. Read what our customers are saying.</h2>
-        </div>
+        <div className="container">
+          <div className="row_1">
+            <div className="feedback-title">
+              <h2 className="linear_gradient_title">
+                Don`t just take our word for it. Read what our customers are
+                saying.
+              </h2>
+            </div>
+            <Swiper
 
+              slidesPerView={1.9}
+              centeredSlides={true}
+              autoplay={ {delay:2000,disableOnInteraction: false,}}
+              loop={true}
+              className="swiper"
+              navigation={true}
+              modules={[Pagination, Autoplay]}
+            >
+              {
+                CardF.map(({id,desc,img,userImg}:FCard)=>
+                
+              <SwiperSlide className="swiper-slide" key={id} style={{width:"300px"}}>
+                <div className="card_feedback" style={{paddingBottom:"20px"}}>
+                  <div className="logo_and_desc_cardfeedback">
+                  <img src={img} alt="title" />
+                  <p>{desc}</p>
+                  </div>
+                  <img src={userImg} width={"56px"} height={"56px"} style={{borderRadius:"10px",}} alt="title"/>
+                </div>
+              </SwiperSlide>
+                )
+              }
+            </Swiper>
+          </div>
+          <div className="row_2"></div>
         </div>
-        <div className="row_2">
-
-        </div>
-      </div>
       </section>
     </Layout>
   );
