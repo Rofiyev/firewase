@@ -55,7 +55,7 @@ export default function About() {
           <div className="chevron"></div>
           <div className="chevron"></div>
         </div>
-        <div className="container">
+        <div className="container" style={{ marginTop: "4rem" }}>
           <div className="about_2_titles">
             <h3
               className="linear_gradient_title"

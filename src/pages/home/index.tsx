@@ -112,11 +112,10 @@ export default function Home() {
         <div className="container">
           <div className="home_2_titles">
             <h3 className="linear_gradient_title">
-              Take control of your revenue…the right way.
+              Take control of your revenue… the right way.
             </h3>
             <p>
-              Achieve ASC 606 / IFRS 15 compliance with unmatched speed and
-              scalability.
+              Achieve ASC 606 / IFRS 15 compliance with unmatched speed and scalability.
             </p>
           </div>
           <div className="home_2_box">

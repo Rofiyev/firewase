@@ -14,13 +14,15 @@ export default function Footer() {
             <Link to={"/"}>
               <img src={brand} alt="Brand" />
             </Link>
-            <h5>Sign up for our newsletter</h5>
-            <form className="newsletter">
-              <input type="text" placeholder="Enter your email" />
-              <button className="btn" type="submit">
-                Submit
-              </button>
-            </form>
+            <div className="wrap">
+              <h5>Sign up for our newsletter</h5>
+              <form className="newsletter">
+                <input type="text" placeholder="Enter your email" />
+                <button className="btn" type="submit">
+                  Submit
+                </button>
+              </form>
+            </div>
             <div className="socials">
               <FaFacebook className="icon" />
               <FaYoutube className="icon" />
