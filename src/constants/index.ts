@@ -1,4 +1,11 @@
-import { IAccordionGallery, INavberMenu, ICard } from "../interface";
+import {
+  IAccordionGallery,
+  INavberMenu,
+  ICard,
+  ICardOneItems,
+  FCard,
+  IProductCategory,
+} from "../interface";
 import accordion_img_01 from "../assets/accordion_image_1.png";
 import accordion_img_02 from "../assets/accordion_image_2.png";
 import accordion_img_03 from "../assets/accordion_image_3.png";
@@ -14,6 +21,13 @@ import cards_two_box_image_6 from "../assets/Journal-Entries.svg";
 import about_card_image_01 from "../assets/heart.png";
 import about_card_image_02 from "../assets/star.png";
 import about_card_image_03 from "../assets/support.png";
+import FImage_1 from "../assets/Docebo_logo-green.png";
+import FImage_2 from "../assets/Epicor_Logo_green_new.png";
+import FImage_3 from "../assets/drata_logo-green.png";
+import FUImage_1 from "../assets/Headhsot_Laura-Brodie_Docebo.png";
+import FUImage_2 from "../assets/Chris-Neidlinger.png";
+import FUImage_3 from "../assets/Headshot_Alex-Amaya_Epicor.png";
+import productsImage from "../assets/imageproducts.png";
 
 export const navbarMenu: INavberMenu[] = [
   {
@@ -87,7 +101,7 @@ export const cardCantrol: ICard[] = [
     img: Icard_image_2,
   },
   {
-    id: 1,
+    id: 3,
     title: "Scalable Revenue Recognition",
     desc: "As your business grows, rev rec gets more complicated. Ensure you can adapt to current and future revenue models like subscription, usage, services, or a hybrid. RightRev can process hundreds of millions of transactions for any revenue model in minutes- performance unmatched by any other solution.",
     img: Icard_image_3,
@@ -133,7 +147,124 @@ export const cardsTwoBox: ICard[] = [
   },
 ];
 
-export const documentItems: ICard[] = [
+export const CardF: FCard[] = [
+  {
+    id: 1,
+    desc: "“Combining front-end and back-end motions in Salesforce Revenue Cloud and RightRev for automated revenue recognition will optimize our accounting processes for maximum efficiency; saving time, reducing errors, and allowing us to close the books faster.”",
+    img: FImage_1,
+    userImg: FUImage_1,
+  },
+  {
+    id: 2,
+    desc: "“From the start of our conversations through go-live, the RightRev team has been fully committed to our success and we appreciate the investment they made in us. We challenged the implementation team with some unique requirements, and they came up with solutions for everything we presented.”",
+    img: FImage_2,
+    userImg: FUImage_2,
+  },
+  {
+    id: 3,
+    desc: "“After considering various Revenue Recognition Platforms, we chose RightRev for its ability to handle our complex business needs like allocations, contract modifications, de-bundling of product SKU’s, and SSP Analysis, all of which have proven to be manual and complex tasks to perform.”",
+    img: FImage_3,
+    userImg: FUImage_3,
+  },
+  {
+    id: 4,
+    desc: "“Combining front-end and back-end motions in Salesforce Revenue Cloud and RightRev for automated revenue recognition will optimize our accounting processes for maximum efficiency; saving time, reducing errors, and allowing us to close the books faster.”",
+    img: FImage_1,
+    userImg: FUImage_1,
+  },
+  {
+    id: 5,
+    desc: "“From the start of our conversations through go-live, the RightRev team has been fully committed to our success and we appreciate the investment they made in us. We challenged the implementation team with some unique requirements, and they came up with solutions for everything we presented.”",
+    img: FImage_2,
+    userImg: FUImage_2,
+  },
+  {
+    id: 6,
+    desc: "“After considering various Revenue Recognition Platforms, we chose RightRev for its ability to handle our complex business needs like allocations, contract modifications, de-bundling of product SKU’s, and SSP Analysis, all of which have proven to be manual and complex tasks to perform.”",
+    img: FImage_3,
+    userImg: FUImage_3,
+  },
+];
+
+export const categoryProduct: IProductCategory[] = [
+  {
+    id: 1,
+    title: "Панели пожарной сигнализации",
+  },
+  {
+    id: 2,
+    title: "Дополнительное ПО для GST-IFP4M",
+  },
+  {
+    id: 3,
+    title: "Система обратной связи",
+  },
+  {
+    id: 4,
+    title: "Системы пожаротушения",
+  },
+  {
+    id: 5,
+    title: " Пожарные извещатели",
+  },
+  {
+    id: 6,
+    title: "Ручные извещатели",
+  },
+  {
+    id: 7,
+    title: "Оповещатели",
+  },
+  {
+    id: 8,
+    title: "Изоляторы",
+  },
+  {
+    id: 9,
+    title: "Модули управления",
+  },
+  {
+    id: 10,
+    title: "Блоки питания",
+  },
+  {
+    id: 11,
+    title: "Взрывозащищенное оборудование",
+  },
+  {
+    id: 12,
+    title: "Извещатели утечки газа",
+  },
+  {
+    id: 13,
+    title: "Дополнительные комплектующие",
+  },
+];
+export const cardFiltered: ICardOneItems[] = [
+  {
+    id: 1,
+    span_title: "Accounting, Revenue Recognition",
+    title: "Intro to Revenue Recognition: GAAP Principles",
+    desc: "Despite all the potential complexities, businesses must recognize revenue according to established industry standards to stay legally compliant and report their financials accurately and transparently. Performed correctly, revenue recognition follows several generally accepted accounting principles (GAAP) that we will discuss in more detail.",
+    img: productsImage,
+  },
+  {
+    id: 2,
+    span_title: "Accounting, Revenue Recognition",
+    title: "Intro to Revenue Recognition: GAAP Principles",
+    desc: "Despite all the potential complexities, businesses must recognize revenue according to established industry standards to stay legally compliant and report their financials accurately and transparently. Performed correctly, revenue recognition follows several generally accepted accounting principles (GAAP) that we will discuss in more detail.",
+    img: productsImage,
+  },
+  {
+    id: 3,
+    span_title: "Accounting, Revenue Recognition",
+    title: "Intro to Revenue Recognition: GAAP Principles",
+    desc: "Despite all the potential complexities, businesses must recognize revenue according to established industry standards to stay legally compliant and report their financials accurately and transparently. Performed correctly, revenue recognition follows several generally accepted accounting principles (GAAP) that we will discuss in more detail.",
+    img: productsImage,
+  },
+];
+
+export const documentItems = [
   {
     id: 1,
     title: "Документация",

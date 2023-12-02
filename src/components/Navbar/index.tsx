@@ -39,7 +39,11 @@ export default function Navbar() {
                   className={`${route === pathname ? "active" : ""}`}
                 >
                   {route === "#documentation" ? (
-                    <a href={route}>{label}</a>
+                    pathname === "/" ? (
+                      <a href={route}>{label}</a>
+                    ) : (
+                      <Link to={'/'}>{label}</Link>
+                    )
                   ) : (
                     <Link to={route}>{label}</Link>
                   )}

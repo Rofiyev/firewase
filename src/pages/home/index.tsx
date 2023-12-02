@@ -198,11 +198,11 @@ export default function Home() {
                 saying.
               </h2>
               <div className="documents">
-                {documentItems.map(({ id, title, img }: ICard) => (
+                {documentItems.map(({ id, title, desc, img }: ICard) => (
                   <div className="box" key={id}>
-                    <img src={img} alt={title} />
-                    <h3>{title}</h3>
-                    {/* <p>{desc}</p> */}
+                    <img src={img} alt="Documents image" />
+                    <p>{title}</p>
+                    <p>{desc}</p>
                   </div>
                 ))}
               </div>

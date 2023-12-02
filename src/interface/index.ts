@@ -17,10 +17,20 @@ export interface ICard {
   desc: string;
   img: string;
 }
+export interface FCard{
+  id:number;
+  desc:string;
+  img:string;
+  userImg:string;
+}
 export interface ICardOneItems {
   id: number;
   span_title: string;
   img: string;
   title: string;
   desc: string;
+}
+export interface IProductCategory {
+  id:number,
+  title:string
 }
