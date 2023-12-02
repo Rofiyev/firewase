@@ -9,11 +9,11 @@ import partners_1 from "../../assets/partners_1.webp";
 import partners_2 from "../../assets/partners_2.webp";
 import {
   accordionData,
-  cardOneItems,
   cardCantrol,
   cardsTwoBox,
+  documentItems,
 } from "../../constants";
-import { IAccordionGallery, ICardOneItems, ICard } from "../../interface";
+import { IAccordionGallery, ICard } from "../../interface";
 
 export default function Home() {
   const ref = useRef<null>(null);
@@ -132,13 +132,29 @@ export default function Home() {
           <div style={{ textAlign: "center", marginBottom: "50px" }}>
             <button className="home_2_btn">Why RIGHTREV</button>
           </div>
-          <div style={{ margin: "10rem 0 5rem 0" }}>
-            <h3 className="linear_gradient_title">
-              Revenue recognition is becoming more complex. Traditional methods
-              fail to meet you where you are and where you want to go.
-            </h3>
-          </div>
         </div>
+
+        <section className="cards_wrapper">
+          <div className="container">
+            <div className="cards_two">
+              <div className="cards_two_titles">
+                <h2 className="linear_gradient_title__light">
+                  Own your revenue from start to finish
+                </h2>
+                <p>Automate every use case for maximum performance</p>
+              </div>
+              <div className="box_cards_two">
+                {cardsTwoBox.map(({ id, title, desc, img }: ICard) => (
+                  <div className="box" key={id}>
+                    <img src={img} alt="" />
+                    <p>{title}</p>
+                    <p>{desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
 
       <section className="accordion">
@@ -173,50 +189,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cards_wrapper">
-        <div className="container">
-          <div className="cards_one">
-            <h3 className="linear_gradient_title__light">
-              Automated revenue recognition solutions
-            </h3>
-            <p>We do the hard part for you</p>
-            <div className="cards">
-              {cardOneItems.map((item: ICardOneItems) => (
-                <div key={item.id} className="card">
-                  <div className="card-body">
-                    <span>{item.span_title}</span>
-                    <img src={item.img} alt="Image" />
-                    <h3>{item.title}</h3>
-                    <p>{item.desc}</p>
-                    <button type="submit">Lear More</button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="cards_two">
-            <div
-              className="cards_two_titles"
-              style={{ margin: "150px 0 70px" }}
-            >
-              <h2 className="linear_gradient_title__light">
-                Own your revenue from start to finish
-              </h2>
-              <p>Automate every use case for maximum performance</p>
-            </div>
-            <div className="box_cards_two">
-              {cardsTwoBox.map(({ id, title, desc, img }: ICard) => (
-                <div className="box" key={id}>
-                  <img src={img} alt="" />
-                  <p>{title}</p>
-                  <p>{desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="feedback-wrapper">
+      <section id="documents" className="feedback-wrapper">
         <div className="container">
           <div className="row_1">
             <div className="feedback-title">
@@ -224,9 +197,17 @@ export default function Home() {
                 Don`t just take our word for it. Read what our customers are
                 saying.
               </h2>
+              <div className="documents">
+                {documentItems.map(({ id, title, img }: ICard) => (
+                  <div className="box" key={id}>
+                    <img src={img} alt={title} />
+                    <h3>{title}</h3>
+                    {/* <p>{desc}</p> */}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="row_2"></div>
         </div>
       </section>
     </Layout>

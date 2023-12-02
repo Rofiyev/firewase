@@ -1,4 +1,4 @@
-import { IAccordionGallery, INavberMenu, ICard,ICardOneItems, } from "../interface";
+import { IAccordionGallery, INavberMenu, ICard } from "../interface";
 import accordion_img_01 from "../assets/accordion_image_1.png";
 import accordion_img_02 from "../assets/accordion_image_2.png";
 import accordion_img_03 from "../assets/accordion_image_3.png";
@@ -11,8 +11,6 @@ import cards_two_box_image_3 from "../assets/SSP-Calculations-Analysis.svg";
 import cards_two_box_image_4 from "../assets/Contract-Modifications.svg";
 import cards_two_box_image_5 from "../assets/GAAP-Revenue-Reporting.svg";
 import cards_two_box_image_6 from "../assets/Journal-Entries.svg";
-import card_one_image_01 from "../assets/card-item-image-01.png";
-import card_one_image_02 from "../assets/card-item-image-02.png";
 
 export const navbarMenu: INavberMenu[] = [
   {
@@ -22,16 +20,21 @@ export const navbarMenu: INavberMenu[] = [
   },
   {
     id: 2,
+    route: "#documents",
+    label: "Документация",
+  },
+  {
+    id: 3,
     route: "/products",
     label: "Продукты",
   },
   {
-    id: 3,
+    id: 4,
     route: "/company",
     label: "О компании",
   },
   {
-    id: 4,
+    id: 5,
     route: "/simple-projects",
     label: "Типовые проекты",
   },
@@ -87,6 +90,7 @@ export const cardCantrol: ICard[] = [
     img: Icard_image_3,
   },
 ];
+
 export const cardsTwoBox: ICard[] = [
   {
     id: 1,
@@ -125,21 +129,24 @@ export const cardsTwoBox: ICard[] = [
     img: cards_two_box_image_6,
   },
 ];
-export const cardOneItems: ICardOneItems[] = [
+
+export const documentItems: ICard[] = [
   {
     id: 1,
-    span_title: "Revenue Recognition Software For Anyone",
-    img: card_one_image_01,
-    title:
-      "Ingest Quote-to-Cash transactions and run revenue rules that comply with ASC 606 / IFRS 15.",
-    desc: "RightRev was created to be flexible. Our revenue recognition software is built on an API-first model and easily ingests data from upstream sources. Automate your revenue recognition using pre-defined rules, such as upon bookings, billings, or user-defined events, and distribute revenue on a point-in-time or ratable basis—no customization, data transformation, or custom scripting required.",
+    title: "Документация",
+    desc: "Identify performance obligations and assign proper revenue rules for separate performance obligations in a single revenue contract.",
+    img: cards_two_box_image_6,
   },
   {
     id: 2,
-    span_title: "Revenue Recognition Software For Salesforce",
-    img: card_one_image_02,
-    title:
-      "Seamless revenue recognition automation and reporting, all in Salesforce.",
-    desc: "Our Salesforce app requires zero integration! RightRev for Salesforce natively operates across all use cases supported by the Force.com platform. Your Rev Rec process runs alongside Salesforce, autonomously executing calculations based on pre-defined rules within Salesforce. Revenue reporting is extremely reliable with unified data and flexible based on your needs.",
+    title: " Сертификаты",
+    desc: "Don’t limit revenue recognition to only bookings or billings; instead, configure unlimited events, such as product delivery, completed milestones, percentage of completion, provisioning, etc.",
+    img: cards_two_box_image_6,
+  },
+  {
+    id: 3,
+    title: " Типовые проекты",
+    desc: "Automate tedious SSP calculations using intelligent historical analysis. Automatically apply SSPs to performance obligations and allocate across bundled contracts, saving you time and headaches.",
+    img: cards_two_box_image_6,
   },
 ];
