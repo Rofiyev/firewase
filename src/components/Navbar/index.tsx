@@ -44,10 +44,12 @@ export default function Navbar() {
                   className={`${route === pathname ? "active" : ""}`}
                 >
                   {route === "#documentation" ? (
-                    pathname === "/" && (
+                    pathname === "/" ? (
                       <a href={route} onClick={() => setBarsIsActive(false)}>
                         {label}
                       </a>
+                    ) : (
+                      <Link to={"/"}>{label}</Link>
                     )
                   ) : (
                     <Link to={route}>{label}</Link>

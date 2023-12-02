@@ -50,11 +50,6 @@ export const navbarMenu: INavberMenu[] = [
     route: "/company",
     label: "О компании",
   },
-  {
-    id: 5,
-    route: "/simple-projects",
-    label: "Типовые проекты",
-  },
 ];
 
 export const accordionData: IAccordionGallery[] = [
@@ -240,6 +235,7 @@ export const categoryProduct: IProductCategory[] = [
     title: "Дополнительные комплектующие",
   },
 ];
+
 export const cardFiltered: ICardOneItems[] = [
   {
     id: 1,
