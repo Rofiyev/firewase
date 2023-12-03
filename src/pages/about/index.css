@@ -119,3 +119,27 @@
 .about_2_titles p {
   text-align: center;
 }
+
+/*?=== Responsive ===?*/
+
+@media only screen and (max-width: 900px) {
+  .about .about__main {
+    flex-direction: column-reverse !important;
+  }
+  .about .about__main .info {
+    width: 100%;
+  }
+  .about .about__main .images__wrapper {
+    width: 100%;
+    height: 60vh;
+    padding-block: 1rem;
+    background: none !important;
+  }
+  .about .about__main .images__wrapper img {
+    width: 200px !important;
+  }
+  .about .about__main .info {
+    height: 70vh;
+    padding: 0 20px !important;
+  }
+}

@@ -13,8 +13,9 @@ import {
   cardsTwoBox,
   documentItems,
 } from "../../constants";
-import { IAccordionGallery, ICard } from "../../interface";
+import { IAccordionGallery, ICard, IDocumentItems } from "../../interface";
 import { Newsletter } from "../../components";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const ref = useRef<null>(null);
@@ -115,7 +116,8 @@ export default function Home() {
               Take control of your revenue… the right way.
             </h3>
             <p>
-              Achieve ASC 606 / IFRS 15 compliance with unmatched speed and scalability.
+              Achieve ASC 606 / IFRS 15 compliance with unmatched speed and
+              scalability.
             </p>
           </div>
           <div className="home_2_box">
@@ -202,13 +204,20 @@ export default function Home() {
                 saying.
               </h2>
               <div className="documents">
-                {documentItems.map(({ id, title, desc, img }: ICard) => (
-                  <div className="box" key={id}>
-                    <img src={img} alt="Documents image" />
-                    <p>{title}</p>
-                    <p>{desc}</p>
-                  </div>
-                ))}
+                {documentItems.map(
+                  ({ id, title, desc, img, params }: IDocumentItems) => (
+                    <div key={id} className="box">
+                      <Link
+                        to={`/documents/${params}`}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <img src={img} alt="Documents image" />
+                        <h3>{title}</h3>
+                        <p>{desc}</p>
+                      </Link>
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </div>

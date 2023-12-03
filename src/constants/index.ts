@@ -5,6 +5,7 @@ import {
   ICardOneItems,
   FCard,
   IProductCategory,
+  IDocumentItems,
 } from "../interface";
 import accordion_img_01 from "../assets/accordion_image_1.png";
 import accordion_img_02 from "../assets/accordion_image_2.png";
@@ -260,24 +261,27 @@ export const cardFiltered: ICardOneItems[] = [
   },
 ];
 
-export const documentItems = [
+export const documentItems: IDocumentItems[] = [
   {
     id: 1,
     title: "Документация",
     desc: "Identify performance obligations and assign proper revenue rules for separate performance obligations in a single revenue assign proper revenue rules for separate obligations in a single revenue contract.",
     img: cards_two_box_image_6,
+    params: "document",
   },
   {
     id: 2,
-    title: " Сертификаты",
+    title: "Сертификаты",
     desc: "Don’t limit revenue recognition to only bookings or billings; instead, configure unlimited events, such as product delivery, completed milestones, percentage of completion, provisioning, etc.",
     img: cards_two_box_image_6,
+    params: "certificate",
   },
   {
     id: 3,
-    title: " Типовые проекты",
+    title: "Типовые проекты",
     desc: "Automate tedious SSP calculations using intelligent historical analysis. Automatically apply SSPs to performance obligations and allocate across bundled contracts, saving you time and headaches.",
     img: cards_two_box_image_6,
+    params: "typical_projects",
   },
 ];
 
