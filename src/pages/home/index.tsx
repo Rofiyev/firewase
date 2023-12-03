@@ -144,7 +144,10 @@ export default function Home() {
                 <p>Automate every use case for maximum performance</p>
               </div>
               <div className="box_cards_two">
-                {cardsTwoBox.map(({ id, title, desc, img }: ICard) => (
+                {[
+                  ...cardsTwoBox,
+                  ...cardsTwoBox.slice(0, cardsTwoBox.length - 1),
+                ].map(({ id, title, desc, img }: ICard) => (
                   <div className="box" key={id}>
                     <img src={img} alt="" />
                     <p>{title}</p>
