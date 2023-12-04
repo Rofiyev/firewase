@@ -1,0 +1,123 @@
+.contacts{
+    min-height: 80vh;
+    background-color: var(--dark_green);
+    top: calc(100vh - 87vh);
+    position: relative;
+    width: 100%;
+}
+.contacts-main{
+    margin-left: 4%;
+}
+.contacts-main .contact .contact_titles h2{
+    width: 34%;
+    font-size: 80px;
+    line-height: 106%;
+    letter-spacing: -3px;
+    margin-bottom: 40px;
+    padding-top: 130px;
+    background: radial-gradient(
+        circle,
+        rgb(255, 255, 255) 14%,
+        rgb(105, 192, 75) 57%,
+        rgb(255, 255, 255) 100%
+      )
+      0% 0% / 200%;
+      background-size: 200% auto;
+      color: #fff;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textclip 10s linear infinite;
+      font-weight: 500;
+}
+.contacts_2{
+    min-height: 90vh;
+    background-color: white;
+    top: calc(100vh - 98vh);
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 50px;
+}
+.contacts_2 .contacts_left_sides{
+    padding-top: 10%;
+    width: 39%;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 150%;
+    color: #164234;
+    padding-left: 7%;
+}
+.contacts_2 .contacts_left_sides p {
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+.contacts_2 .contacts_left_sides .infoContact{
+    display: flex;
+    font-size: 17px;
+    width: 100%;
+}
+.contacts_2 .contacts_left_sides .infoContact p:nth-child(1){
+    font-weight: bold;
+    margin-right: 5px;
+}
+.contacts_2 .contacts_right_sides {
+    border: 1px solid #69c04b;
+    border-radius: 10px;
+    background-color: #f0ffee;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    width: 43%;
+    margin-top: -430px;
+    margin-left: 10%;
+    height: 800px;
+}
+.contacts_2 .contacts_right_sides h4{
+    margin-bottom: 50px;
+    font-size: 40px;
+    line-height: 106%;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: #164234;
+}
+.contacts_2 .contacts_right_sides input{
+    border: 1px solid #69c04b;
+    padding: 12px 16px;
+    color: #072b18;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 300;
+    background-color: #fff;
+    border-radius: 7px;
+    width: 100%;
+    margin: 10px 0;
+    outline: #69c04b;
+}
+.contacts_2 .contacts_right_sides textarea{
+    border: 1px solid #69c04b;
+    padding: 12px 16px;
+    color: #072b18;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 300;
+    background-color: #fff;
+    min-height: 150px;
+    width: 100%;
+    border-radius: 7px;
+    outline: #69c04b;
+}
+.contacts_2 .contacts_right_sides button{
+    cursor: pointer;
+    padding: 16px 32px;
+    text-decoration: none;
+    border-radius: 32px;
+    font-size: 13px;
+    line-height: 120%;
+    letter-spacing: 2px;
+    background-color: #69c04b;
+    border-color: #69c04b;
+    color: #072b18;
+    text-transform: uppercase;
+    border: 1px solid rgba(0,0,0,0);
+}

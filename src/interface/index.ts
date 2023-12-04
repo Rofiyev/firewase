@@ -34,3 +34,8 @@ export interface IProductCategory {
   id:number,
   title:string
 }
+export interface Contactdetails {
+  id:number,
+  title:string,
+  desc:string
+}

@@ -39,7 +39,11 @@ export default function Navbar() {
                   className={`${route === pathname ? "active" : ""}`}
                 >
                   {route === "#documentation" ? (
-                    <a href={route}>{label}</a>
+                    pathname === "/" ? (
+                      <a href={route}>{label}</a>
+                    ) : (
+                      <Link to={'/'}>{label}</Link>
+                    )
                   ) : (
                     <Link to={route}>{label}</Link>
                   )}
@@ -48,7 +52,7 @@ export default function Navbar() {
             </ul>
           </nav>
           <div className="nav__btn">
-            <button>Где купить</button>
+            <Link to={"/contacts"}><button>Где купить</button></Link>
           </div>
         </header>
       </div>

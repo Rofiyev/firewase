@@ -1,4 +1,12 @@
-import { IAccordionGallery, INavberMenu, ICard,ICardOneItems, FCard, IProductCategory, } from "../interface";
+import {
+  IAccordionGallery,
+  INavberMenu,
+  ICard,
+  ICardOneItems,
+  FCard,
+  IProductCategory,
+  Contactdetails,
+} from "../interface";
 import accordion_img_01 from "../assets/accordion_image_1.png";
 import accordion_img_02 from "../assets/accordion_image_2.png";
 import accordion_img_03 from "../assets/accordion_image_3.png";
@@ -11,15 +19,16 @@ import cards_two_box_image_3 from "../assets/SSP-Calculations-Analysis.svg";
 import cards_two_box_image_4 from "../assets/Contract-Modifications.svg";
 import cards_two_box_image_5 from "../assets/GAAP-Revenue-Reporting.svg";
 import cards_two_box_image_6 from "../assets/Journal-Entries.svg";
-import card_one_image_01 from "../assets/card-item-image-01.png";
-import card_one_image_02 from "../assets/card-item-image-02.png";
+import about_card_image_01 from "../assets/heart.png";
+import about_card_image_02 from "../assets/star.png";
+import about_card_image_03 from "../assets/support.png";
 import FImage_1 from "../assets/Docebo_logo-green.png";
 import FImage_2 from "../assets/Epicor_Logo_green_new.png";
 import FImage_3 from "../assets/drata_logo-green.png";
-import FUImage_1 from "../assets/Headhsot_Laura-Brodie_Docebo.png"
-import FUImage_2 from "../assets/Chris-Neidlinger.png"
-import FUImage_3 from "../assets/Headshot_Alex-Amaya_Epicor.png"
-import productsImage from "../assets/imageproducts.png"
+import FUImage_1 from "../assets/Headhsot_Laura-Brodie_Docebo.png";
+import FUImage_2 from "../assets/Chris-Neidlinger.png";
+import FUImage_3 from "../assets/Headshot_Alex-Amaya_Epicor.png";
+import productsImage from "../assets/imageproducts.png";
 
 export const navbarMenu: INavberMenu[] = [
   {
@@ -42,6 +51,11 @@ export const navbarMenu: INavberMenu[] = [
     route: "/simple-projects",
     label: "Типовые проекты",
   },
+  {
+    id:5,
+    route:"/contacts",
+    label:"Contacts"
+  }
 ];
 
 export const accordionData: IAccordionGallery[] = [
@@ -135,134 +149,209 @@ export const cardsTwoBox: ICard[] = [
 
 export const CardF: FCard[] = [
   {
-    id:1,
-    desc:"“Combining front-end and back-end motions in Salesforce Revenue Cloud and RightRev for automated revenue recognition will optimize our accounting processes for maximum efficiency; saving time, reducing errors, and allowing us to close the books faster.”",
-    img:FImage_1,
-    userImg:FUImage_1
-  },
-  {
-    id:2,
-    desc:"“From the start of our conversations through go-live, the RightRev team has been fully committed to our success and we appreciate the investment they made in us. We challenged the implementation team with some unique requirements, and they came up with solutions for everything we presented.”",
-    img:FImage_2,
-    userImg:FUImage_2
-  },
-  {
-    id:3,
-    desc:"“After considering various Revenue Recognition Platforms, we chose RightRev for its ability to handle our complex business needs like allocations, contract modifications, de-bundling of product SKU’s, and SSP Analysis, all of which have proven to be manual and complex tasks to perform.”",
-    img:FImage_3,
-    userImg:FUImage_3
-  },
-  {
-    id:4,
-    desc:"“Combining front-end and back-end motions in Salesforce Revenue Cloud and RightRev for automated revenue recognition will optimize our accounting processes for maximum efficiency; saving time, reducing errors, and allowing us to close the books faster.”",
-    img:FImage_1,
-    userImg:FUImage_1
-  },
-  {
-    id:5,
-    desc:"“From the start of our conversations through go-live, the RightRev team has been fully committed to our success and we appreciate the investment they made in us. We challenged the implementation team with some unique requirements, and they came up with solutions for everything we presented.”",
-    img:FImage_2,
-    userImg:FUImage_2
-  },
-  {
-    id:6,
-    desc:"“After considering various Revenue Recognition Platforms, we chose RightRev for its ability to handle our complex business needs like allocations, contract modifications, de-bundling of product SKU’s, and SSP Analysis, all of which have proven to be manual and complex tasks to perform.”",
-    img:FImage_3,
-    userImg:FUImage_3
-  }
-]
-export const categoryProduct: IProductCategory[] = [
-  {
-    id:1,
-    title:"Панели пожарной сигнализации"
-  },
-  {
-    id:2,
-    title:"Дополнительное ПО для GST-IFP4M"
-  },
-  {
-    id:3,
-    title:"Система обратной связи"
-  },
-  {
-    id:4,
-    title:"Системы пожаротушения"
-  },
-  {
-    id:5,
-    title:" Пожарные извещатели"
-  },
-  {
-    id:6,
-    title:"Ручные извещатели"
-  },
-  {
-    id:7,
-    title:"Оповещатели"
-  },
-  {
-    id:8,
-    title:"Изоляторы"
-  },
-  {
-    id:9,
-    title:"Модули управления"
-  },
-  {
-    id:10,
-    title:"Блоки питания"
-  },
-  {
-    id:11,
-    title:"Взрывозащищенное оборудование"
-  },
-  {
-    id:12,
-    title:"Извещатели утечки газа"
-  },
-  {
-    id:13,
-    title:"Дополнительные комплектующие"
-  }
-]
-export const cardFiltered: ICardOneItems[] = [
-  {
-    id:1,
-    span_title:"Accounting, Revenue Recognition",
-    title:"Intro to Revenue Recognition: GAAP Principles",
-    desc:"Despite all the potential complexities, businesses must recognize revenue according to established industry standards to stay legally compliant and report their financials accurately and transparently. Performed correctly, revenue recognition follows several generally accepted accounting principles (GAAP) that we will discuss in more detail.",
-    img:productsImage
-  },
-  {
-    id:2,
-    span_title:"Accounting, Revenue Recognition",
-    title:"Intro to Revenue Recognition: GAAP Principles",
-    desc:"Despite all the potential complexities, businesses must recognize revenue according to established industry standards to stay legally compliant and report their financials accurately and transparently. Performed correctly, revenue recognition follows several generally accepted accounting principles (GAAP) that we will discuss in more detail.",
-    img:productsImage
-  },
-  {
-    id:3,
-    span_title:"Accounting, Revenue Recognition",
-    title:"Intro to Revenue Recognition: GAAP Principles",
-    desc:"Despite all the potential complexities, businesses must recognize revenue according to established industry standards to stay legally compliant and report their financials accurately and transparently. Performed correctly, revenue recognition follows several generally accepted accounting principles (GAAP) that we will discuss in more detail.",
-    img:productsImage
-  },
-]
-export const cardOneItems: ICardOneItems[] = [
-  {
     id: 1,
-    span_title: "Revenue Recognition Software For Anyone",
-    img: card_one_image_01,
-    title:
-      "Ingest Quote-to-Cash transactions and run revenue rules that comply with ASC 606 / IFRS 15.",
-    desc: "RightRev was created to be flexible. Our revenue recognition software is built on an API-first model and easily ingests data from upstream sources. Automate your revenue recognition using pre-defined rules, such as upon bookings, billings, or user-defined events, and distribute revenue on a point-in-time or ratable basis—no customization, data transformation, or custom scripting required.",
+    desc: "“Combining front-end and back-end motions in Salesforce Revenue Cloud and RightRev for automated revenue recognition will optimize our accounting processes for maximum efficiency; saving time, reducing errors, and allowing us to close the books faster.”",
+    img: FImage_1,
+    userImg: FUImage_1,
   },
   {
     id: 2,
-    span_title: "Revenue Recognition Software For Salesforce",
-    img: card_one_image_02,
-    title:
-      "Seamless revenue recognition automation and reporting, all in Salesforce.",
-    desc: "Our Salesforce app requires zero integration! RightRev for Salesforce natively operates across all use cases supported by the Force.com platform. Your Rev Rec process runs alongside Salesforce, autonomously executing calculations based on pre-defined rules within Salesforce. Revenue reporting is extremely reliable with unified data and flexible based on your needs.",
+    desc: "“From the start of our conversations through go-live, the RightRev team has been fully committed to our success and we appreciate the investment they made in us. We challenged the implementation team with some unique requirements, and they came up with solutions for everything we presented.”",
+    img: FImage_2,
+    userImg: FUImage_2,
+  },
+  {
+    id: 3,
+    desc: "“After considering various Revenue Recognition Platforms, we chose RightRev for its ability to handle our complex business needs like allocations, contract modifications, de-bundling of product SKU’s, and SSP Analysis, all of which have proven to be manual and complex tasks to perform.”",
+    img: FImage_3,
+    userImg: FUImage_3,
+  },
+  {
+    id: 4,
+    desc: "“Combining front-end and back-end motions in Salesforce Revenue Cloud and RightRev for automated revenue recognition will optimize our accounting processes for maximum efficiency; saving time, reducing errors, and allowing us to close the books faster.”",
+    img: FImage_1,
+    userImg: FUImage_1,
+  },
+  {
+    id: 5,
+    desc: "“From the start of our conversations through go-live, the RightRev team has been fully committed to our success and we appreciate the investment they made in us. We challenged the implementation team with some unique requirements, and they came up with solutions for everything we presented.”",
+    img: FImage_2,
+    userImg: FUImage_2,
+  },
+  {
+    id: 6,
+    desc: "“After considering various Revenue Recognition Platforms, we chose RightRev for its ability to handle our complex business needs like allocations, contract modifications, de-bundling of product SKU’s, and SSP Analysis, all of which have proven to be manual and complex tasks to perform.”",
+    img: FImage_3,
+    userImg: FUImage_3,
+  },
+];
+
+export const categoryProduct: IProductCategory[] = [
+  {
+    id: 1,
+    title: "Панели пожарной сигнализации",
+  },
+  {
+    id: 2,
+    title: "Дополнительное ПО для GST-IFP4M",
+  },
+  {
+    id: 3,
+    title: "Система обратной связи",
+  },
+  {
+    id: 4,
+    title: "Системы пожаротушения",
+  },
+  {
+    id: 5,
+    title: " Пожарные извещатели",
+  },
+  {
+    id: 6,
+    title: "Ручные извещатели",
+  },
+  {
+    id: 7,
+    title: "Оповещатели",
+  },
+  {
+    id: 8,
+    title: "Изоляторы",
+  },
+  {
+    id: 9,
+    title: "Модули управления",
+  },
+  {
+    id: 10,
+    title: "Блоки питания",
+  },
+  {
+    id: 11,
+    title: "Взрывозащищенное оборудование",
+  },
+  {
+    id: 12,
+    title: "Извещатели утечки газа",
+  },
+  {
+    id: 13,
+    title: "Дополнительные комплектующие",
+  },
+];
+export const cardFiltered: ICardOneItems[] = [
+  {
+    id: 1,
+    span_title: "Accounting, Revenue Recognition",
+    title: "Intro to Revenue Recognition: GAAP Principles",
+    desc: "Despite all the potential complexities, businesses must recognize revenue according to established industry standards to stay legally compliant and report their financials accurately and transparently. Performed correctly, revenue recognition follows several generally accepted accounting principles (GAAP) that we will discuss in more detail.",
+    img: productsImage,
+  },
+  {
+    id: 2,
+    span_title: "Accounting, Revenue Recognition",
+    title: "Intro to Revenue Recognition: GAAP Principles",
+    desc: "Despite all the potential complexities, businesses must recognize revenue according to established industry standards to stay legally compliant and report their financials accurately and transparently. Performed correctly, revenue recognition follows several generally accepted accounting principles (GAAP) that we will discuss in more detail.",
+    img: productsImage,
+  },
+  {
+    id: 3,
+    span_title: "Accounting, Revenue Recognition",
+    title: "Intro to Revenue Recognition: GAAP Principles",
+    desc: "Despite all the potential complexities, businesses must recognize revenue according to established industry standards to stay legally compliant and report their financials accurately and transparently. Performed correctly, revenue recognition follows several generally accepted accounting principles (GAAP) that we will discuss in more detail.",
+    img: productsImage,
+  },
+];
+
+export const infoContact: Contactdetails[] = [
+  {
+    id:1,
+    title:"Название фирмы",
+    desc:"ООО НЭЛТ ДИСТРИБЬЮЦИЯ"
+  },
+  {
+    id:2,
+    title:"Адрес",
+    desc:"129090, г. Москва, Грохольский переулок, 28, помещение 2/2"
+  },
+  {
+    id:3,
+    title:"Метро",
+    desc:"Проспект Мира, Сухаревская"
+  },
+  {
+    id:4,
+    title:"Телефон",
+    desc:"+7 495 796 92 14 	+7 495 796 92 14"
+  },
+  {
+    id:5,
+    title:"E-mail",
+    desc:"	info@m.nelt.ru"
+  },
+  {
+    id:6,
+    title:"Website",
+    desc:"	http://www.nelt.ru/"
+  },
+]
+
+export const documentItems = [
+  {
+    id: 1,
+    title: "Документация",
+    desc: "Identify performance obligations and assign proper revenue rules for separate performance obligations in a single revenue assign proper revenue rules for separate obligations in a single revenue contract.",
+    img: cards_two_box_image_6,
+  },
+  {
+    id: 2,
+    title: " Сертификаты",
+    desc: "Don’t limit revenue recognition to only bookings or billings; instead, configure unlimited events, such as product delivery, completed milestones, percentage of completion, provisioning, etc.",
+    img: cards_two_box_image_6,
+  },
+  {
+    id: 3,
+    title: " Типовые проекты",
+    desc: "Automate tedious SSP calculations using intelligent historical analysis. Automatically apply SSPs to performance obligations and allocate across bundled contracts, saving you time and headaches.",
+    img: cards_two_box_image_6,
+  },
+];
+export const aboutItems: ICard[] = [
+  {
+    id: 1,
+    title: "Integrity",
+    desc: "Always making decisions with our clients’ best interests at heart best interests at heart nterests at heart",
+    img: about_card_image_01,
+  },
+  {
+    id: 2,
+    title: "Value",
+    desc: "We constantly seek new ways to incorporate value-adding features tailored to our clients’ needs.",
+    img: about_card_image_02,
+  },
+  {
+    id: 3,
+    title: "Support",
+    desc: "Offering custom-tailored attention, placing customers in the best position possible to get the most out of our software.",
+    img: about_card_image_03,
+  },
+  {
+    id: 1,
+    title: "Integrity",
+    desc: "Always making decisions with our clients’ best interests at heart best interests at heart nterests at heart",
+    img: about_card_image_01,
+  },
+  {
+    id: 2,
+    title: "Value",
+    desc: "We constantly seek new ways to incorporate value-adding features tailored to our clients’ needs.",
+    img: about_card_image_02,
+  },
+  {
+    id: 3,
+    title: "Support",
+    desc: "Offering custom-tailored attention, placing customers in the best position possible to get the most out of our software.",
+    img: about_card_image_03,
   },
 ];

@@ -81,7 +81,29 @@ export default function About() {
           </div>
         </div>
       </section>
-
+      <section>
+        <div className="container" style={{textAlign:"center"}}>
+          <div style={{textAlign:"left",marginLeft:"23%"}}>
+        <p>Кроссовое оборудование, АТС, SIP телефония, телекоммуникационные стойки и шкафы.</p>
+          <a href="tel:+79166028402">+7 916 6028402</a>
+          <p style={{width:"40%",}}>Системы пожарной сигнализации ESMI, GST, Систем-сенсор, Schrack Seconet. Системы оповещения (СОУЭ) TOA, Honeywell (INTEVIO). СКУД и видеонаблюдение Hanwha, системы часофикации, системы конферен-связи, турникеты, калитки и автоматические шлюзовые кабины.</p>
+          <h5 style={{fontSize:"16px"}}>Чечёткин Алексей Анатольевич - <a href="tel:+79261615958"> +7 926 161 59 58</a></h5>
+          </div>
+        <div className="map_styles">
+        <h5 className="map_title">Схема проезда</h5> 
+        <iframe src="https://yandex.ru/map-widget/v1/?lang=ru_RU&scroll=false&um=constructor%3Abec71da5496075704655c41de91ed168045adc6800832f7886dfe8a4ad77b714" className="map_about" allowFullScreen={true} width={"720px"} height={"490px"}></iframe>
+        </div>
+        <div className="info_map">
+          
+          <h4>Дилерская сеть GST на территории РФ.</h4>
+          <h4>Свердловская обл., Пермская обл., Ханты-Мансийский автономный округ.</h4>
+          <p>ООО "Азия-Рубеж"</p>
+          <p>тел. (343) 345-0202</p>
+          <p>Белов Вячеслав Леонидович</p>
+          <a href="mailto:asiaek@mail.ru">asiaek@mail.ru</a>
+        </div>
+        </div>
+      </section>
       <Newsletter />
     </Layout>
   );
