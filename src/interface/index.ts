@@ -47,3 +47,9 @@ export interface Contactdetails {
   title:string,
   desc:string
 }
+export interface Category {
+  id:number,
+  title:string,
+  image:string,
+  description:string
+}

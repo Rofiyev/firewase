@@ -7,7 +7,7 @@ export const getCategorys = async () => {
     console.log(data);
     return { success: true, data };
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return { success: false, data: [] };
   }
 };

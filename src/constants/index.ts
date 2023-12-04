@@ -12,11 +12,6 @@ import accordion_img_03 from "../assets/accordion_image_3.png";
 import Icard_image_1 from "../assets/Revenue-Accuracy.svg";
 import Icard_image_2 from "../assets/Real-Time-Visibility.svg";
 import Icard_image_3 from "../assets/Scalable-Revenue-Recognition.svg";
-import cards_two_box_image_1 from "../assets/Configurable-Revenue-Rules.svg";
-import cards_two_box_image_2 from "../assets/Event-Based-Revenue-Recognition_Light_v2.svg";
-import cards_two_box_image_3 from "../assets/SSP-Calculations-Analysis.svg";
-import cards_two_box_image_4 from "../assets/Contract-Modifications.svg";
-import cards_two_box_image_5 from "../assets/GAAP-Revenue-Reporting.svg";
 import cards_two_box_image_6 from "../assets/Journal-Entries.svg";
 import about_card_image_01 from "../assets/heart.png";
 import about_card_image_02 from "../assets/star.png";
@@ -102,44 +97,7 @@ export const cardCantrol: ICard[] = [
     img: Icard_image_3,
   },
 ];
-export const cardsTwoBox: ICard[] = [
-  {
-    id: 1,
-    title: "Configurable Revenue Rules",
-    desc: "Identify performance obligations and assign proper revenue rules for separate performance obligations in a single revenue contract.",
-    img: cards_two_box_image_1,
-  },
-  {
-    id: 2,
-    title: "Event-Based Revenue Recognition",
-    desc: "Don’t limit revenue recognition to only bookings or billings; instead, configure unlimited events, such as product delivery, completed milestones, percentage of completion, provisioning, etc.",
-    img: cards_two_box_image_2,
-  },
-  {
-    id: 3,
-    title: "SSP Calculations & Analysis",
-    desc: "Automate tedious SSP calculations using intelligent historical analysis. Automatically apply SSPs to performance obligations and allocate across bundled contracts, saving you time and headaches.",
-    img: cards_two_box_image_3,
-  },
-  {
-    id: 4,
-    title: "Contract Modifications",
-    desc: "Contract modifications occur at any time during a contract’s lifecycle. RightRev’s predefined modification categories make this process easy by automatically detecting various changes, applying revenue rules, and recalculating revenue if necessary.",
-    img: cards_two_box_image_4,
-  },
-  {
-    id: 5,
-    title: "GAAP Revenue Reporting and Waterfall",
-    desc: "RightRev comes with out-of-the-box dashboards and  hundreds of pre-calculated metrics to enable ad-hoc reporting. Revenue Waterfall reports provide visibility for planned and recognized revenue.",
-    img: cards_two_box_image_5,
-  },
-  {
-    id: 6,
-    title: "Journal Entries",
-    desc: "RightRev integrates with your ERP to automatically post daily or periodic revenue Journal Entries to your General Ledger. Conveniently create Topside Journal Entries directly in RightRev.",
-    img: cards_two_box_image_6,
-  },
-];
+
 
 export const CardF: FCard[] = [
   {

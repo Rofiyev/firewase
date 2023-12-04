@@ -8,22 +8,35 @@ import {
   accordionData,
   cardCantrol,
   documentItems,
-  cardsTwoBox
 } from "../../constants";
-import { IAccordionGallery, ICard, IDocumentItems } from "../../interface";
+import {
+  Category,
+  IAccordionGallery,
+  ICard,
+  IDocumentItems,
+} from "../../interface";
 import { Newsletter } from "../../components";
 import { Link } from "react-router-dom";
 import home_svg from "../../assets/home_svg.svg";
+import { getCategorys } from "../../api/api";
 
 export default function Home() {
   const [bgIsActive, setBgIsActive] = useState<boolean>(false);
   const [accordionActive, setAccordionActive] = useState(1);
+  const [category, setCategory] = useState([]);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > window.innerHeight / 0.8) setBgIsActive(true);
       else setBgIsActive(false);
     });
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await getCategorys();
+      setCategory(data);
+    })();
   }, []);
 
   const handleScroll = () => {
@@ -125,45 +138,42 @@ export default function Home() {
               Revenue recognition is becoming more complex. Traditional methods
               fail to meet you where you are and where you want to go.
             </h3>
+          </div>
         </div>
+      </section>
+      <section className="cards_wrapper">
+        <div className="container">
+          <div className="cards_two">
+            <div className="cards_two_titles">
+              <h2 className="linear_gradient_title__light">
+                Own your revenue from start to finish
+              </h2>
+              <p>Automate every use case for maximum performance</p>
+            </div>
+            <div className="box_cards_two">
+              {category?.map(({ title, id, image, description }: Category) => (
+                <Link
+                  to={"/products"}
+                  key={id}
+                  style={{ cursor: "pointer", textDecoration: "none" }}
+                >
+                  <div className="box">
+                    <img src={image} alt={title} />
+                    <p>{title}</p>
+                    <p>{description}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
-</section>
-        <section className="cards_wrapper">
-          <div className="container">
-            <div className="cards_two">
-              <div className="cards_two_titles">
-                <h2 className="linear_gradient_title__light">
-                  Own your revenue from start to finish
-                </h2>
-                <p>Automate every use case for maximum performance</p>
-              </div>
-              <div className="box_cards_two">
-                {[
-                  ...cardsTwoBox,
-                  ...cardsTwoBox.slice(0, cardsTwoBox.length - 1),
-                ].map(({ title, desc, img }: ICard, i: number) => (
-                  <Link
-                    to={"/products"}
-                    key={i}
-                    style={{ cursor: "pointer", textDecoration: "none" }}
-                  >
-                    <div className="box">
-                      <img src={img} alt="" />
-                      <p>{title}</p>
-                      <p>{desc}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            </div>
-        
       </section>
 
       <section className="accordion" style={{ paddingTop: "2rem" }}>
         <h2
           className="linear_gradient_title"
-          style={{ marginBottom: "1rem", textAlign: "center" }}>
+          style={{ marginBottom: "1rem", textAlign: "center" }}
+        >
           Own your revenue from start to finish
         </h2>
         <div className="container">
