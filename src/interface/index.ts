@@ -17,11 +17,11 @@ export interface ICard {
   desc: string;
   img: string;
 }
-export interface FCard{
-  id:number;
-  desc:string;
-  img:string;
-  userImg:string;
+export interface FCard {
+  id: number;
+  desc: string;
+  img: string;
+  userImg: string;
 }
 export interface ICardOneItems {
   id: number;
@@ -31,8 +31,16 @@ export interface ICardOneItems {
   desc: string;
 }
 export interface IProductCategory {
-  id:number,
-  title:string
+  id: number;
+  title: string;
+}
+
+export interface IDocumentItems {
+  id: number;
+  title: string;
+  desc: string;
+  img: string;
+  params: string;
 }
 export interface Contactdetails {
   id:number,

@@ -1,13 +1,15 @@
-//?=== IMPORT CSS FILE HEADER ===?//
 import "./index.css";
 import logo from "../../assets/logo.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link,  useLocation } from "react-router-dom";
 import { navbarMenu } from "../../constants";
 import { INavberMenu } from "../../interface";
 import { useEffect, useState } from "react";
+import { HiMiniBars3BottomLeft } from "react-icons/hi2";
+import { IoCloseOutline } from "react-icons/io5";
 
 export default function Navbar() {
   const [sticky, setSticky] = useState<boolean>(false);
+  const [barsIsActive, setBarsIsActive] = useState<boolean>(false);
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -16,6 +18,8 @@ export default function Navbar() {
       else setSticky(false);
     });
   }, []);
+
+  const toggleBars = () => setBarsIsActive((prev: boolean) => !prev);
 
   return (
     <div
@@ -31,7 +35,7 @@ export default function Navbar() {
               <img src={logo} alt="Brand" />
             </div>
           </Link>
-          <nav>
+          <nav className={`${barsIsActive && "active"}`}>
             <ul>
               {navbarMenu.map(({ id, label, route }: INavberMenu) => (
                 <li
@@ -40,22 +44,37 @@ export default function Navbar() {
                 >
                   {route === "#documentation" ? (
                     pathname === "/" ? (
-                      <a href={route}>{label}</a>
+                      <a href={route} onClick={() => setBarsIsActive(false)}>
+                        {label}
+                      </a>
                     ) : (
-                      <Link to={'/'}>{label}</Link>
+                      <Link to={"/"}>{label}</Link>
                     )
                   ) : (
                     <Link to={route}>{label}</Link>
                   )}
                 </li>
               ))}
+              <li>
+                <div className="nav__btn">
+                  <button>Где купить</button>
+                </div>
+              </li>
             </ul>
           </nav>
+          <div className="bars">
+            {!barsIsActive ? (
+              <HiMiniBars3BottomLeft onClick={toggleBars} className="icon" />
+            ) : (
+              <IoCloseOutline onClick={toggleBars} className="icon" />
+            )}
+          </div>
           <div className="nav__btn">
-            <Link to={"/contacts"}><button>Где купить</button></Link>
+            <button>Где купить</button>
           </div>
         </header>
+        </div>
       </div>
-    </div>
+  
   );
 }

@@ -14,10 +14,8 @@ export default function About() {
   const { style, ...mouseHandlers } = use3dEffect(ref);
 
   const handleScroll = () => {
-    window.scrollTo({
-      top: window.innerHeight * 1.2,
-      behavior: "smooth",
-    });
+    const elem = document.querySelector(".about_2") as HTMLDivElement;
+    elem.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -57,7 +55,7 @@ export default function About() {
           <div className="chevron"></div>
           <div className="chevron"></div>
         </div>
-        <div className="container">
+        <div className="container" style={{ marginTop: "4rem" }}>
           <div className="about_2_titles">
             <h3
               className="linear_gradient_title"

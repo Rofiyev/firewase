@@ -1,22 +1,21 @@
 //?=== IMPORT HOME CSS FILE ===?//
 import "./index.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../../layout";
-import home__image from "../../assets/home__image.jpg";
-import { animated } from "react-spring";
-import { use3dEffect } from "use-3d-effect";
 import partners_1 from "../../assets/partners_1.webp";
 import partners_2 from "../../assets/partners_2.webp";
 import {
   accordionData,
   cardCantrol,
   documentItems,
+  cardsTwoBox
 } from "../../constants";
-import { IAccordionGallery, ICard } from "../../interface";
+import { IAccordionGallery, ICard, IDocumentItems } from "../../interface";
+import { Newsletter } from "../../components";
+import { Link } from "react-router-dom";
+import home_svg from "../../assets/home_svg.svg";
 
 export default function Home() {
-  const ref = useRef<null>(null);
-  const { style, ...mouseHandlers } = use3dEffect(ref);
   const [bgIsActive, setBgIsActive] = useState<boolean>(false);
   const [accordionActive, setAccordionActive] = useState(1);
 
@@ -28,10 +27,8 @@ export default function Home() {
   }, []);
 
   const handleScroll = () => {
-    window.scrollTo({
-      top: window.innerHeight * 1.9,
-      behavior: "smooth",
-    });
+    const elem = document.querySelector(".home_2") as HTMLDivElement;
+    elem.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -53,15 +50,7 @@ export default function Home() {
             </div>
           </div>
           <div className="images__wrapper">
-            <animated.div
-              ref={ref}
-              style={{
-                ...style,
-              }}
-              {...mouseHandlers}
-            >
-              <img src={home__image} alt="Certificate" />
-            </animated.div>
+            <img src={home_svg} alt="Home" />
           </div>
         </div>
       </section>
@@ -112,7 +101,7 @@ export default function Home() {
         <div className="container">
           <div className="home_2_titles">
             <h3 className="linear_gradient_title">
-              Take control of your revenue…the right way.
+              Take control of your revenue… the right way.
             </h3>
             <p>
               Achieve ASC 606 / IFRS 15 compliance with unmatched speed and
@@ -136,11 +125,47 @@ export default function Home() {
               Revenue recognition is becoming more complex. Traditional methods
               fail to meet you where you are and where you want to go.
             </h3>
-          </div>
         </div>
+        </div>
+</section>
+        <section className="cards_wrapper">
+          <div className="container">
+            <div className="cards_two">
+              <div className="cards_two_titles">
+                <h2 className="linear_gradient_title__light">
+                  Own your revenue from start to finish
+                </h2>
+                <p>Automate every use case for maximum performance</p>
+              </div>
+              <div className="box_cards_two">
+                {[
+                  ...cardsTwoBox,
+                  ...cardsTwoBox.slice(0, cardsTwoBox.length - 1),
+                ].map(({ title, desc, img }: ICard, i: number) => (
+                  <Link
+                    to={"/products"}
+                    key={i}
+                    style={{ cursor: "pointer", textDecoration: "none" }}
+                  >
+                    <div className="box">
+                      <img src={img} alt="" />
+                      <p>{title}</p>
+                      <p>{desc}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            </div>
+        
       </section>
 
-      <section className="accordion">
+      <section className="accordion" style={{ paddingTop: "2rem" }}>
+        <h2
+          className="linear_gradient_title"
+          style={{ marginBottom: "1rem", textAlign: "center" }}>
+          Own your revenue from start to finish
+        </h2>
         <div className="container">
           <div className="accordion_image_gallery">
             {accordionData.map((item: IAccordionGallery) => (
@@ -181,17 +206,25 @@ export default function Home() {
                 saying.
               </h2>
               <div className="documents">
-                {documentItems.map(({ id, title, desc, img }: ICard) => (
-                  <div className="box" key={id}>
-                    <img src={img} alt="Documents image" />
-                    <p>{title}</p>
-                    <p>{desc}</p>
-                  </div>
-                ))}
+                {documentItems.map(
+                  ({ id, title, desc, img, params }: IDocumentItems) => (
+                    <div key={id} className="box">
+                      <Link
+                        to={`/documents/${params}`}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <img src={img} alt="Documents image" />
+                        <h3>{title}</h3>
+                        <p>{desc}</p>
+                      </Link>
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </div>
         </div>
+        <Newsletter />
       </section>
     </Layout>
   );

@@ -5,7 +5,6 @@ import {
   ICardOneItems,
   FCard,
   IProductCategory,
-  Contactdetails,
 } from "../interface";
 import accordion_img_01 from "../assets/accordion_image_1.png";
 import accordion_img_02 from "../assets/accordion_image_2.png";
@@ -38,24 +37,19 @@ export const navbarMenu: INavberMenu[] = [
   },
   {
     id: 2,
+    route: "#documentation",
+    label: "Документация",
+  },
+  {
+    id: 3,
     route: "/products",
     label: "Продукты",
   },
   {
-    id: 3,
+    id: 4,
     route: "/company",
     label: "О компании",
   },
-  {
-    id: 4,
-    route: "/simple-projects",
-    label: "Типовые проекты",
-  },
-  {
-    id:5,
-    route:"/contacts",
-    label:"Contacts"
-  }
 ];
 
 export const accordionData: IAccordionGallery[] = [
@@ -240,6 +234,7 @@ export const categoryProduct: IProductCategory[] = [
     title: "Дополнительные комплектующие",
   },
 ];
+
 export const cardFiltered: ICardOneItems[] = [
   {
     id: 1,
@@ -297,24 +292,27 @@ export const infoContact: Contactdetails[] = [
   },
 ]
 
-export const documentItems = [
+export const documentItems: IDocumentItems[] = [
   {
     id: 1,
     title: "Документация",
     desc: "Identify performance obligations and assign proper revenue rules for separate performance obligations in a single revenue assign proper revenue rules for separate obligations in a single revenue contract.",
     img: cards_two_box_image_6,
+    params: "document",
   },
   {
     id: 2,
-    title: " Сертификаты",
+    title: "Сертификаты",
     desc: "Don’t limit revenue recognition to only bookings or billings; instead, configure unlimited events, such as product delivery, completed milestones, percentage of completion, provisioning, etc.",
     img: cards_two_box_image_6,
+    params: "certificate",
   },
   {
     id: 3,
-    title: " Типовые проекты",
+    title: "Типовые проекты",
     desc: "Automate tedious SSP calculations using intelligent historical analysis. Automatically apply SSPs to performance obligations and allocate across bundled contracts, saving you time and headaches.",
     img: cards_two_box_image_6,
+    params: "typical_projects",
   },
 ];
 export const aboutItems: ICard[] = [
@@ -355,3 +353,19 @@ export const aboutItems: ICard[] = [
     img: about_card_image_03,
   },
 ];
+export const productDetailLists_one: string[] = [
+  "242 адресных устройства на один шлейф ПС, любые типы устройств, макс. 1452 адреса",
+  "Поддержка до 32 панелей индикации/управления (ZCP) с индивидуальными программируемыми кнопками и светодиодными индикаторами.  Максимум 8 ZCP в одном шкафу",
+  "7-дюймовый цветной сенсорный дисплей 800 x 480",
+  "Встроенная поддержка нескольких языков",
+  "Программирование через ПК или клавиатуру на панели и сенсорный дисплей",
+  "USB-порт для настройки системы и обновления прошивки",
+  "Поддержка USB-ключа для защиты базы данных проекта",
+  "Архив на 100000 событий",
+  "Сообщение о несоответствии типа устройства и дубликатах адресов в шлейфе",
+  "Резервный ЦПУ (опционально)",
+  "Встроенная поддержка BACnet (код авторизации заказывается отдельно)",
+  "Возможность удаленной загрузки данных",
+  "2  выхода  управления  оповещателями  с  ограничением мощности класса B (NAC), общая нагрузка макс. 2,5 A/24 В  постоянного  тока.  2-ой  NAC  можно  настроить  как вспомогательный выход (AUX).",
+  "Мини-термопринтер (опционально) и дополнительный",
+];  
