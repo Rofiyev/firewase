@@ -1,58 +1,48 @@
-.category_products{
-    width: 100%;
-    text-align: center; 
-    padding-block: 100px;
+.category_products {
+  width: 100%;
+  text-align: center;
+  padding-block: 100px;
 }
 .category_products ul {
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-    text-align: left;
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    gap: 15px;
-    background-color: #f0ffee;
-    border-radius: 20px;
-    padding: 32px;
-    margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 15px;
+  background-color: #f0ffee;
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 100px;
 }
 
 .category_products ul li {
-    color: #072b18;
-    opacity: .7;
-    cursor: pointer;
+  color: #072b18;
+  opacity: 0.7;
+  cursor: pointer;
 }
 .category_products ul li:hover {
-    color: black;
-    opacity: 1;
+  color: black;
+  opacity: 1;
 }
-.category_products .filtered_products{
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
+.category_products .filtered_products {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .category_products .box_products {
-    border: 1px solid #69c04b;
-    border-radius: 20px;
-    width: 348px;
+  border: 1px solid #69c04b;
+  border-radius: 20px;
+  width: 348px;
+  overflow: hidden;
 }
-.category_products .box_products img{
-    height: 260px;
-    width: 100%;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+.category_products .box_products img {
+  height: 260px;
+  width: 100%;
 }
-.category_products .box_products .filtered_products .card-desc{
-    padding: 32px 32px 80px;
-}
-.category_products .box_products .filtered_products .card-desc p {
-    font-weight: 400 !important;
-    font-size: 16px !important;
-    line-height: 22px !important;
-    margin-bottom: 1rem !important;
-    color: #164234 !important;
-    text-align: left !important ;
+.category_products .box_products .filtered_products .card-desc {
+  padding: 0 !important;
 }

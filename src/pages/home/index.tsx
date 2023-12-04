@@ -1,10 +1,7 @@
 //?=== IMPORT HOME CSS FILE ===?//
 import "./index.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../../layout";
-import home__image from "../../assets/home__image.jpg";
-import { animated } from "react-spring";
-import { use3dEffect } from "use-3d-effect";
 import partners_1 from "../../assets/partners_1.webp";
 import partners_2 from "../../assets/partners_2.webp";
 import {
@@ -16,10 +13,9 @@ import {
 import { IAccordionGallery, ICard, IDocumentItems } from "../../interface";
 import { Newsletter } from "../../components";
 import { Link } from "react-router-dom";
+import home_svg from "../../assets/home_svg.svg";
 
 export default function Home() {
-  const ref = useRef<null>(null);
-  const { style, ...mouseHandlers } = use3dEffect(ref);
   const [bgIsActive, setBgIsActive] = useState<boolean>(false);
   const [accordionActive, setAccordionActive] = useState(1);
 
@@ -54,15 +50,7 @@ export default function Home() {
             </div>
           </div>
           <div className="images__wrapper">
-            <animated.div
-              ref={ref}
-              style={{
-                ...style,
-              }}
-              {...mouseHandlers}
-            >
-              <img src={home__image} alt="Certificate" />
-            </animated.div>
+            <img src={home_svg} alt="Home" />
           </div>
         </div>
       </section>
@@ -147,12 +135,18 @@ export default function Home() {
                 {[
                   ...cardsTwoBox,
                   ...cardsTwoBox.slice(0, cardsTwoBox.length - 1),
-                ].map(({ id, title, desc, img }: ICard) => (
-                  <div className="box" key={id}>
-                    <img src={img} alt="" />
-                    <p>{title}</p>
-                    <p>{desc}</p>
-                  </div>
+                ].map(({ title, desc, img }: ICard, i: number) => (
+                  <Link
+                    to={"/products"}
+                    key={i}
+                    style={{ cursor: "pointer", textDecoration: "none" }}
+                  >
+                    <div className="box">
+                      <img src={img} alt="" />
+                      <p>{title}</p>
+                      <p>{desc}</p>
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
