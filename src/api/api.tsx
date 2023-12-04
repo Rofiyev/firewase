@@ -4,7 +4,6 @@ import { BASE_URL } from "../config";
 export const getCategorys = async () => {
   try {
     const { data } = await axios.get(`${BASE_URL}/category/`);
-    console.log(data);
     return { success: true, data };
   } catch (error) {
     console.log(error);
@@ -16,9 +15,9 @@ export const getDocuments = async (types: string = "") => {
   const params = {
     document_type: types,
   };
+
   try {
     const { data } = await axios.get(`${BASE_URL}/document/`, { params });
-    console.log(data);
     return { success: true, data };
   } catch (error) {
     console.log(error);
@@ -26,15 +25,13 @@ export const getDocuments = async (types: string = "") => {
   }
 };
 
-export const getProducts = async (
-  product_id: string = "",
-  category_id: string = "",
-  product_last_count: string = ""
-) => {
+export const getProducts = async (objParams: {
+  product_last_count?: string;
+  category_id?: string;
+  product_id?: string;
+}) => {
   const params = {
-    product_id: product_id,
-    category_id: category_id,
-    product_last_count: product_last_count,
+    ...objParams,
   };
   try {
     const { data } = await axios.get(`${BASE_URL}/product/`, { params });

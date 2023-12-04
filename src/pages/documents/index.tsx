@@ -3,8 +3,22 @@ import Layout from "../../layout";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { MdDownload } from "react-icons/md";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getDocuments } from "../../api/api";
+import { IDocs } from "../../interface";
 
 export default function CategoryDocs() {
+  const { category } = useParams();
+  const [docs, setDocs] = useState<IDocs[] | []>([]);
+
+  useEffect(() => {
+    (async () => {
+      const { success, data } = await getDocuments(category);
+      success && setDocs(data);
+    })();
+  }, [category]);
+
   return (
     <>
       <Layout>
@@ -16,22 +30,22 @@ export default function CategoryDocs() {
                   <th>#</th>
                   <th>Тип</th>
                   <th>Имя</th>
-                  <th>размер</th>
                   <th>скачать</th>
                 </tr>
               </thead>
               <tbody>
-                {Array.from({ length: 10 }).map((_, i: number) => (
-                  <tr key={i}>
-                    <td>{i + 1}</td>
-                    <td width={"5%"}>PDF</td>
-                    <td>GST_каталог_2023</td>
-                    <td>4 МБ</td>
+                {docs.map((item: IDocs, i: number) => (
+                  <tr key={item.id}>
+                    <td width={'5%'}>{i + 1}</td>
+                    <td width={"20%"}>
+                      {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
+                    </td>
+                    <td>{item.title}</td>
                     <td width={"5%"} style={{ textAlign: "center" }}>
                       <a
-                        href="https://www.africau.edu/images/default/sample.pdf"
+                        href={item.file}
                         style={{ color: "inherit" }}
-                        download={"gst_company_file"}
+                        download={item.title}
                       >
                         <MdDownload
                           style={{ fontSize: "1.5rem", cursor: "pointer" }}

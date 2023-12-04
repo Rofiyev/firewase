@@ -4,26 +4,37 @@ import { useEffect, useState } from "react";
 import Layout from "../../layout";
 import partners_1 from "../../assets/partners_1.webp";
 import partners_2 from "../../assets/partners_2.webp";
-import {
-  accordionData,
-  cardCantrol,
-  documentItems,
-  cardsTwoBox
-} from "../../constants";
-import { IAccordionGallery, ICard, IDocumentItems } from "../../interface";
+import { cardCantrol } from "../../constants";
+import { ICard, ICategory, INewProducts } from "../../interface";
 import { Newsletter } from "../../components";
 import { Link } from "react-router-dom";
 import home_svg from "../../assets/home_svg.svg";
+import { getCategorys, getDocuments, getProducts } from "../../api/api";
+import img from "../../assets/Journal-Entries.svg";
 
 export default function Home() {
   const [bgIsActive, setBgIsActive] = useState<boolean>(false);
   const [accordionActive, setAccordionActive] = useState(1);
+  const [category, setCategory] = useState([]);
+  const [docs, setDocs] = useState<string[]>([]);
+  const [news, setNews] = useState<INewProducts[]>([]);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > window.innerHeight / 0.8) setBgIsActive(true);
       else setBgIsActive(false);
     });
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const { data, success } = await getCategorys();
+      success && setCategory(data);
+      const res = await getDocuments();
+      res.success && setDocs(res?.data?.types);
+      const res2 = await getProducts({ product_last_count: "3" });
+      res2.success && setNews(res2.data);
+    })();
   }, []);
 
   const handleScroll = () => {
@@ -37,16 +48,20 @@ export default function Home() {
         <div className="home__main">
           <div className="info">
             <h1 className="linear_gradient_title__light">
-              Powerful Revenue Recognition Software
+              GST - Building technology for fore & security
             </h1>
             <p>
-              Gain confidence in your revenue so you can close the books 5X
-              faster, maintain ASC 606 / IFRS 15 compliance, and deliver
-              insights that drive growth.
+              Компания Gulf Security Technology Co., Ltd, GST, является ключевым
+              игроком в сфере пожарной и охранной безопасности в Азии, а также
+              надежным поставщиком комплексных решений для противопожарных
+              систем по всему миру. Это дочерняя компания Carrier (Carrier
+              Global Corporation), ведущего мирового поставщика инновационных
+              технологий в области отопления, вентиляции и кондиционирования,
+              охлаждения, технологий пожарной, охранной безопасности и
+              автоматизации зданий.
             </p>
             <div className="btns__info">
               <button>Request a Demo</button>
-              <button>Watch Video</button>
             </div>
           </div>
           <div className="images__wrapper">
@@ -125,69 +140,69 @@ export default function Home() {
               Revenue recognition is becoming more complex. Traditional methods
               fail to meet you where you are and where you want to go.
             </h3>
+          </div>
         </div>
+      </section>
+      <section className="cards_wrapper">
+        <div className="container">
+          <div className="cards_two">
+            <div className="cards_two_titles">
+              <h2 className="linear_gradient_title__light">
+                Own your revenue from start to finish
+              </h2>
+              <p>Automate every use case for maximum performance</p>
+            </div>
+            <div className="box_cards_two">
+              {category?.map(({ title, id, image, description }: ICategory) => (
+                <Link
+                  to={`/products?category=${id}`}
+                  key={id}
+                  style={{ cursor: "pointer", textDecoration: "none" }}
+                >
+                  <div className="box">
+                    <img src={image} alt={title} />
+                    <p>{title}</p>
+                    <p>{description}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
-</section>
-        <section className="cards_wrapper">
-          <div className="container">
-            <div className="cards_two">
-              <div className="cards_two_titles">
-                <h2 className="linear_gradient_title__light">
-                  Own your revenue from start to finish
-                </h2>
-                <p>Automate every use case for maximum performance</p>
-              </div>
-              <div className="box_cards_two">
-                {[
-                  ...cardsTwoBox,
-                  ...cardsTwoBox.slice(0, cardsTwoBox.length - 1),
-                ].map(({ title, desc, img }: ICard, i: number) => (
-                  <Link
-                    to={"/products"}
-                    key={i}
-                    style={{ cursor: "pointer", textDecoration: "none" }}
-                  >
-                    <div className="box">
-                      <img src={img} alt="" />
-                      <p>{title}</p>
-                      <p>{desc}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            </div>
-        
       </section>
 
       <section className="accordion" style={{ paddingTop: "2rem" }}>
         <h2
           className="linear_gradient_title"
-          style={{ marginBottom: "1rem", textAlign: "center" }}>
+          style={{ marginBottom: "1rem", textAlign: "center" }}
+        >
           Own your revenue from start to finish
         </h2>
         <div className="container">
           <div className="accordion_image_gallery">
-            {accordionData.map((item: IAccordionGallery) => (
+            {news.map((item: INewProducts, i: number) => (
               <div
                 key={item.id}
                 className={`accordion_item ${
-                  item.id === accordionActive && "active"
+                  i + 1 === accordionActive && "active"
                 }`}
-                onClick={() => setAccordionActive(item.id)}
+                onClick={() => setAccordionActive(i + 1)}
               >
                 <div className="left">
                   <div className="accordion-header">
-                    <span className="numbers">{item.number}</span>
-                    <span className="title">{item.header_title}</span>
+                    <span className="numbers">{i + 1}</span>
+                    <span className="title">{item.title.slice(0, 30)}...</span>
                   </div>
                   <div className="accordion-body">
                     <div className="accordion-caption">
-                      <h4>{item.body_title}</h4>
-                      <p>{item.body_desc}</p>
+                      <h4>{item.title}</h4>
+                      <p>{item.description.slice(0, 400)}...</p>
                     </div>
                     <div className="accordion-images">
-                      <img src={item.img} alt="Accordion image 01" />
+                      <img
+                        src={item.product_images[0].image}
+                        alt="Accordion image 01"
+                      />
                     </div>
                   </div>
                 </div>
@@ -206,20 +221,18 @@ export default function Home() {
                 saying.
               </h2>
               <div className="documents">
-                {documentItems.map(
-                  ({ id, title, desc, img, params }: IDocumentItems) => (
-                    <div key={id} className="box">
-                      <Link
-                        to={`/documents/${params}`}
-                        style={{ textDecoration: "none" }}
-                      >
-                        <img src={img} alt="Documents image" />
-                        <h3>{title}</h3>
-                        <p>{desc}</p>
-                      </Link>
-                    </div>
-                  )
-                )}
+                {docs.map((str: string) => (
+                  <div key={str} className="box">
+                    <Link
+                      to={`/documents/${str}`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <img src={img} alt="Documents image" />
+                      <h3>{str.charAt(0).toUpperCase() + str.slice(1)}</h3>
+                      {/* <p>{desc}</p> */}
+                    </Link>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

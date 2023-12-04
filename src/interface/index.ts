@@ -43,7 +43,27 @@ export interface IDocumentItems {
   params: string;
 }
 export interface Contactdetails {
-  id:number,
-  title:string,
-  desc:string
+  id: number;
+  title: string;
+  desc: string;
+}
+export interface ICategory {
+  id: number;
+  title: string;
+  image: string;
+  description: string;
+}
+export interface IDocs {
+  file: string;
+  id: number;
+  title: string;
+  type: string;
+}
+
+export interface INewProducts {
+  category: number;
+  description: string;
+  id: number;
+  product_images: { image: string }[];
+  title: string;
 }
