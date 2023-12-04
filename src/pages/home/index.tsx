@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import home_svg from "../../assets/home_svg.svg";
 import { getCategorys, getDocuments, getProducts } from "../../api/api";
 import img from "../../assets/Journal-Entries.svg";
+import { BASE_URL } from "../../config";
 
 export default function Home() {
   const [bgIsActive, setBgIsActive] = useState<boolean>(false);
@@ -190,18 +191,18 @@ export default function Home() {
               >
                 <div className="left">
                   <div className="accordion-header">
-                    <span className="numbers">{i + 1}</span>
+                    <span className="numbers">0/{i + 1}</span>
                     <span className="title">{item.title.slice(0, 30)}...</span>
                   </div>
                   <div className="accordion-body">
                     <div className="accordion-caption">
                       <h4>{item.title}</h4>
-                      <p>{item.description.slice(0, 400)}...</p>
+                      <p>{item.description.slice(0, 300)}...</p>
                     </div>
                     <div className="accordion-images">
                       <img
-                        src={item.product_images[0].image}
-                        alt="Accordion image 01"
+                        src={`${BASE_URL}${item.product_images[0].image}`}
+                        alt={item.title}
                       />
                     </div>
                   </div>
