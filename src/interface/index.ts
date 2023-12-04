@@ -67,3 +67,20 @@ export interface INewProducts {
   product_images: { image: string }[];
   title: string;
 }
+
+export interface IAttributeName {
+  image: string;
+  title: string;
+  value: string;
+}
+
+export interface IProducts {
+  attribute_names: {
+    name: string;
+    attribute_values: { image: string; title: string; value: string }[];
+  }[];
+  category: number;
+  description: string;
+  product_images: { image: string }[];
+  title: string;
+}

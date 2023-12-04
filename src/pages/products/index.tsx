@@ -6,6 +6,7 @@ import { Newsletter } from "../../components";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getCategorys, getProducts } from "../../api/api";
+import { BASE_URL } from "../../config";
 
 export default function ProductPage() {
   const location = useLocation();
@@ -46,34 +47,41 @@ export default function ProductPage() {
         <div className="filter_products">
           <h3>Filtered by:</h3>
           <ul style={{ justifyContent: "center" }}>
-            <li
-              onClick={() => {
-                setActive("Все");
-                navigate(`/products`);
-              }}
-              style={{
-                color: active === "Все" ? "black" : "",
-                opacity: active === "Все" ? "1" : "",
-              }}
-            >
-              Все
-            </li>
-
-            {filtered.map((item: ICategory) => (
-              <li
-                onClick={() => {
-                  setActive(item.title);
-                  navigate(`/products?category=${item.id}`);
-                }}
-                style={{
-                  color: active === item.title ? "black" : "",
-                  opacity: active === item.title ? "1" : "",
-                }}
-                key={item.id}
-              >
-                {item.title}
-              </li>
-            ))}
+            {!filtered.length ? (
+              <div className="spinner-border text-success" role="status">
+                {/* <span className="sr-only">Loading...</span> */}
+              </div>
+            ) : (
+              <>
+                <li
+                  onClick={() => {
+                    setActive("Все");
+                    navigate(`/products`);
+                  }}
+                  style={{
+                    color: active === "Все" ? "black" : "",
+                    opacity: active === "Все" ? "1" : "",
+                  }}
+                >
+                  Все
+                </li>
+                {filtered.map((item: ICategory) => (
+                  <li
+                    onClick={() => {
+                      setActive(item.title);
+                      navigate(`/products?category=${item.id}`);
+                    }}
+                    style={{
+                      color: active === item.title ? "black" : "",
+                      opacity: active === item.title ? "1" : "",
+                    }}
+                    key={item.id}
+                  >
+                    {item.title}
+                  </li>
+                ))}
+              </>
+            )}
           </ul>
         </div>
         <div className="filtered_products">
@@ -90,42 +98,73 @@ export default function ProductPage() {
                   style={{ color: "inherit", textDecoration: "none" }}
                 >
                   <div className="box_products">
-                    <img src={item.product_images[0]?.image} alt="Image" />
+                    <img
+                      src={`${BASE_URL}${item.product_images[0]?.image}`}
+                      alt="Image"
+                    />
                     <div
                       className="card_desc"
-                      style={{ padding: "32px 22px 30px", textAlign: "left" }}
+                      style={{
+                        padding: "32px 22px 30px",
+                        textAlign: "left",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "flex-start",
+                        justifyContent: "space-between",
+                        height: "60%",
+                      }}
                     >
-                      <h4
-                        style={{
-                          color: "#69c04b",
-                          fontSize: "16px",
-                          fontWeight: "400",
-                          lineHeight: "140%",
-                        }}
-                      >
-                        Category ID: {item.category}
-                      </h4>
-                      <h3
-                        style={{
-                          marginBlock: "20px",
-                          fontSize: "20px",
-                          lineHeight: "24px",
-                          fontWeight: "500",
-                        }}
-                      >
-                        {item.title}
-                      </h3>
-                      <p
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "400",
-                          lineHeight: "22px",
-                          marginBottom: "1rem",
-                          color: "#164234",
-                        }}
-                      >
-                        {item.description.slice(0, 100)}...
-                      </p>
+                      <div>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            gap: "10px",
+                          }}
+                        >
+                          <h4
+                            style={{
+                              color: "#69c04b",
+                              fontSize: "16px",
+                              fontWeight: "400",
+                              lineHeight: "140%",
+                            }}
+                          >
+                            Category Id: {item.category}
+                          </h4>
+                          <h4
+                            style={{
+                              color: "#69c04b",
+                              fontSize: "16px",
+                              fontWeight: "400",
+                              lineHeight: "140%",
+                            }}
+                          >
+                            Product Id: {item.id}
+                          </h4>
+                        </div>
+                        <h3
+                          style={{
+                            marginBlock: "20px",
+                            fontSize: "20px",
+                            lineHeight: "24px",
+                            fontWeight: "500",
+                          }}
+                        >
+                          {item.title}
+                        </h3>
+                        <p
+                          style={{
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "22px",
+                            marginBottom: "1rem",
+                            color: "#164234",
+                          }}
+                        >
+                          {item.description.slice(0, 150)}
+                        </p>
+                      </div>
                       <button
                         style={{
                           background: "transparent",

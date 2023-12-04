@@ -35,7 +35,6 @@ export const getProducts = async (objParams: {
   };
   try {
     const { data } = await axios.get(`${BASE_URL}/product/`, { params });
-    console.log(data);
     return { success: true, data };
   } catch (error) {
     console.log(error);

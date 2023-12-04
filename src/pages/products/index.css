@@ -38,6 +38,8 @@
   border-radius: 20px;
   width: 348px;
   overflow: hidden;
+  object-fit: cover;
+  height: 650px;
 }
 .category_products .box_products img {
   height: 260px;
