@@ -1,23 +1,15 @@
-import React,{useEffect} from 'react'
+import axios from "axios";
+import { BASE_URL } from "../config";
 
-
-
-
-function api() {
-
-    useEffect(()=>{
-        fetch('gstuz.pythonanywhere.com/',{
-            method:"GET"
-        }).then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
-    })
-
-  return (
-    <div>
-
-    </div>
-  )
-}
-
-export default api
+export const getCategorys = async () => {
+  try {
+    const { data } = await axios.get(`${BASE_URL}/category/`);
+    console.log(data);
+    return { success: true, data };
+  } catch (error) {
+    console.log(error)
+    return { success: false, data: [] };
+  }
+};
+export const getDocuments = async () => {};
+export const getProducts = async () => {};
