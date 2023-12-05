@@ -1,5 +1,5 @@
 .contacts {
-  min-height: 80vh;
+  min-height: 100vh;
   background-color: var(--dark_green);
   width: 100%;
   margin-top: 8vh;
@@ -29,10 +29,8 @@
   color: white;
 }
 .contacts-main .contact .contact_titles p {
- 
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: -1px;
   font-family: "Jost", sans-serif;
   color: #fff;
   margin-top: 20px;
@@ -139,12 +137,15 @@
 
 @media only screen and (max-width: 900px) {
   .contacts {
-    min-height: 50vh !important;
+    min-height: 50vh !important; 
+  }
+  .contacts-main {
+    padding-top: 50px;
   }
   .contact{
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column-reverse !important;
 }
 .contacts-main .contact_titles {
     width: 100%;

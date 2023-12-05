@@ -2,7 +2,7 @@ import "./index.css";
 import Layout from "../../layout";
 import { IPostuserdata } from "../../interface";
 import { useState,} from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, set } from "react-hook-form";
 import { checkPhoneNumber, postContact } from "../../api/api";
 import home_svg from "../../assets/home_svg.svg";
 import { FaCheckCircle, FaLocationArrow, FaPhone } from "react-icons/fa";
@@ -16,7 +16,7 @@ import { SiMetrodeparis } from "react-icons/si";
 const resolveAfter35sec = new Promise((resolve) => setTimeout(resolve, 3000));
 
 export default function Contacts() {
-  const [phoneNumberCheck, setPhoneNumberCheck] = useState(true);
+  const [phoneNumberCheck, setPhoneNumberCheck] = useState(false);
   const [confirmEmail, setConfirmEmail] = useState(false);
   const [number, setNumber] = useState<string>("");
   const [activationcode, setActivationcode] = useState("");
@@ -35,27 +35,17 @@ export default function Contacts() {
     });
   };
 
-
-  function checkPhoneNumb(e){
-     const number = e.target.value
-     console.log(e.target.value);
-     setNumber(e.target.value)
-     
+  function openCode() {
     if (number.length > 12) {
       (async () => {
         const { data, success } = await checkPhoneNumber(number);
         console.log(data[number]);
         success && setActivationcode(data[number]);
         console.log("worked number effect");
+        setPhoneNumberCheck(true)
       })();
-    }
-  }
+    } 
 
-  function openCode() {
-    if (number.length > 12) {
-      setPhoneNumberCheck(true);
-    }
-    console.log(number);
     
   }
   function checkCode() {
@@ -188,7 +178,7 @@ export default function Contacts() {
                       message: "Надо выполнять",
                     },
                   })}
-                  onChange={(e)=>checkPhoneNumb(e)}
+                  onChange={(e)=>setNumber(e.target.value)}
                 />
                 <button onClick={openCode}>
                   <FaCheckCircle />
