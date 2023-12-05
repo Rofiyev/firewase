@@ -1,8 +1,6 @@
 import "./index.css";
 import Layout from "../../layout";
 import home__image from "../../assets/home__image.jpg";
-// import { animated } from "react-spring";
-// import { use3dEffect } from "use-3d-effect";
 import { useEffect } from "react";
 import { aboutItems } from "../../constants";
 import { ICard } from "../../interface";
@@ -13,9 +11,6 @@ import { SiMetrodeparis } from "react-icons/si";
 import { MdAttachEmail } from "react-icons/md";
 
 export default function About() {
-  // const ref = useRef<null>(null);
-  // const { style, ...mouseHandlers } = use3dEffect(ref);
-
   const handleScroll = () => {
     const elem = document.querySelector(".about_2") as HTMLDivElement;
     elem.scrollIntoView({ behavior: "smooth" });
@@ -43,15 +38,7 @@ export default function About() {
             </p>
           </div>
           <div className="images__wrapper">
-            {/* <animated.div
-              ref={ref}
-              style={{
-                ...style,
-              }}
-              {...mouseHandlers}
-            > */}
-              <img src={home__image} alt="Certificate" />
-            {/* </animated.div> */}
+            <img src={home__image} alt="Certificate" />
           </div>
         </div>
       </section>
