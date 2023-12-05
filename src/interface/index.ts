@@ -45,7 +45,8 @@ export interface IDocumentItems {
 export interface Contactdetails {
   id:number,
   title:string,
-  desc:string
+  desc:string,
+  img:string
 }
 export interface Category {
   id:number,
