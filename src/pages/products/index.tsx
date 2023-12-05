@@ -116,34 +116,6 @@ export default function ProductPage() {
                       }}
                     >
                       <div>
-                        {/* <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            gap: "10px",
-                          }}
-                        >
-                          <h4
-                            style={{
-                              color: "#69c04b",
-                              fontSize: "16px",
-                              fontWeight: "400",
-                              lineHeight: "140%",
-                            }}
-                          >
-                            Category Id: {item.category}
-                          </h4>
-                          <h4
-                            style={{
-                              color: "#69c04b",
-                              fontSize: "16px",
-                              fontWeight: "400",
-                              lineHeight: "140%",
-                            }}
-                          >
-                            Product Id: {item.id}
-                          </h4>
-                        </div> */}
                         <h3
                           style={{
                             marginBlock: "20px",

@@ -44,7 +44,10 @@
 .category_products .box_products img {
   height: 260px;
   width: 100%;
+  padding: 1rem;
+  object-fit: contain;
 }
 .category_products .box_products .filtered_products .card-desc {
   padding: 0 !important;
 }
+
