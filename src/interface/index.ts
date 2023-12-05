@@ -53,3 +53,11 @@ export interface Category {
   image:string,
   description:string
 }
+export interface IPostuserdata {
+  id:number,
+  full_name: string,
+  organization: string,
+  phone_number: string,
+  email: string,
+  desc: string
+}

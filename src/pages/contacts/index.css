@@ -109,15 +109,33 @@
 }
 .contacts_2 .contacts_right_sides button{
     cursor: pointer;
-    padding: 16px 32px;
-    text-decoration: none;
-    border-radius: 32px;
-    font-size: 13px;
-    line-height: 120%;
-    letter-spacing: 2px;
-    background-color: #69c04b;
-    border-color: #69c04b;
-    color: #072b18;
-    text-transform: uppercase;
-    border: 1px solid rgba(0,0,0,0);
+    padding: 5px 10px;
+    text-align: center;
+    align-items: center;
+    height: 45px;
+    background-color: green;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-size: 21px;
+    color: white;
+    border: none;
+    outline: none;
+}
+.contacts_2 .contacts_right_sides .codeStyle{
+    display: flex;
+    align-items: center; 
+}
+.contacts_2 .contacts_right_sides .codeStyle button{
+    cursor: pointer;
+    padding: 5px 10px;
+    text-align: center;
+    align-items: center;
+    height: 45px;
+    background-color: #2cb9d4;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-size: 21px;
+    color: white;
+    border: none;
+    outline: none;
 }

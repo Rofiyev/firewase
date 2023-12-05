@@ -57,7 +57,7 @@ export default function Navbar() {
               ))}
               <li>
                 <div className="nav__btn">
-                  <button>Где купить</button>
+                  <Link to={"/contacts"}><button>Где купить</button></Link>
                 </div>
               </li>
             </ul>
@@ -70,7 +70,7 @@ export default function Navbar() {
             )}
           </div>
           <div className="nav__btn">
-            <button>Где купить</button>
+          <Link to={"/contacts"}><button>Где купить</button></Link>
           </div>
         </header>
         </div>

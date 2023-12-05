@@ -45,6 +45,11 @@ export const navbarMenu: INavberMenu[] = [
     route: "/company",
     label: "О компании",
   },
+  {
+    id:5,
+    route:"/contact",
+    label:""
+  }
 ];
 
 export const accordionData: IAccordionGallery[] = [
