@@ -1,7 +1,6 @@
 import "./index.css";
 import Layout from "../../layout";
-import { infoContact } from "../../constants";
-import { Contactdetails, IPostuserdata } from "../../interface";
+import { IPostuserdata } from "../../interface";
 import { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { checkPhoneNumber, postContact } from "../../api/api";
@@ -104,7 +103,7 @@ export default function Contacts() {
           </div>
           <div className="box">
 
-          <div style={{marginBottom:"10px"}}><FaPhoneVolume/></div>
+          <div style={{marginBottom:"10px"}}><FaLocationDot/></div>
           <h5>Адрес:</h5>
           <p> Проспект Мира, Сухаревская</p>
           </div>
@@ -115,7 +114,7 @@ export default function Contacts() {
           <p style={{width:"64%"}}>+7-495-796-92-14 <a href="tel:+79252969383">+7-925-296-93-83</a></p>
           </div>
           <div className="box">
-          <div style={{marginBottom:"10px"}}><FaPhoneVolume/></div>
+          <div style={{marginBottom:"10px"}}><MdOutlineEmail/></div>
           <p><a href="mailto:info@m.nelt.ru">Email:info@m.nelt.ru</a></p>
           </div>
           <div className="box">
