@@ -135,7 +135,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  margin-top: 3rem;
+  margin-block: 3rem;
 }
 .info-about .row .col .head {
   display: flex;
@@ -180,6 +180,13 @@
 /*?=== Responsive ===?*/
 
 @media only screen and (max-width: 900px) {
+  .map_styles {
+    width: 100%;
+    margin: auto;
+  }
+  .info-about .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .about .about__main {
     flex-direction: column-reverse !important;
   }
@@ -204,5 +211,11 @@
   }
   .info-about {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .info-about .row {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
