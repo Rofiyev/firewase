@@ -5,23 +5,20 @@ import { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { checkPhoneNumber, postContact } from "../../api/api";
 import { ChangeEvent } from "react";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaLocationArrow, FaPhone } from "react-icons/fa";
 import { IoSend } from "react-icons/io5";
 import { toast } from "react-toastify";
-import companyname from '../../assets/insurance-company.png'
-import { FaLocationDot } from "react-icons/fa6";
-import { FaTrainSubway } from "react-icons/fa6";
-import { FaPhoneVolume } from "react-icons/fa6";
-import { MdOutlineEmail } from "react-icons/md";
-import website from '../../assets/world-wide-web.png'
-
+import { FaBuildingColumns } from "react-icons/fa6";
+import { FaEarthAmericas } from "react-icons/fa6";
+import { MdAttachEmail } from "react-icons/md";
+import { SiMetrodeparis } from "react-icons/si";
 
 const resolveAfter35sec = new Promise((resolve) => setTimeout(resolve, 3000));
 
 export default function Contacts() {
   const [phoneNumberCheck, setPhoneNumberCheck] = useState(false);
   const [confirmEmail, setConfirmEmail] = useState(false);
-  const [number, setNumber] = useState("");
+  const [number, setNumber] = useState<string>("");
   const [activationcode, setActivationcode] = useState("");
   const [activation, setActiovation] = useState("");
 
@@ -29,45 +26,30 @@ export default function Contacts() {
     (async () => {})();
   }, []);
 
-  const { register, handleSubmit } = useForm<IPostuserdata>();
+  const { register, handleSubmit, reset } = useForm<IPostuserdata>();
   const onSubmit: SubmitHandler<IPostuserdata> = async (data) => {
-    console.log(data);
-    const datas = await postContact(data)
+    const datas = await postContact(data);
     console.log(datas);
+    reset();
     toast.promise(resolveAfter35sec, {
       pending: "Отправляется",
       success: "Отправлено Заявление",
     });
-    
   };
 
   useEffect(() => {
-    if (number.length > 12) {
+    if (number.length < 12) {
       (async () => {
-        //   const { data, success } = await checkPhoneNumber(number);
-        // console.log(data[number]);
-        setActivationcode(data[number])
-
+        const { data, success } = await checkPhoneNumber(number);
+        console.log(data[number]);
+        setActivationcode(data[number]);
         console.log("worked number effect");
       })();
     }
   }, [number]);
 
-  // function checkPhoneNumber() {
-  //   if (number > 10) {
-  //     setActivationcode(number);
-  //     if (activationcode === activation) {
-  //       setPhoneNumberCheck(true);
-  //     } else {
-  //       alert("code xato");
-  //     }
-  //   } else {
-  //     alert("raqamingizni to'ldiring");
-  //   }
-  // }
-
   function openCode() {
-    if (number > 12) {
+    if (number.length > 12) {
       setPhoneNumberCheck(true);
     }
   }
@@ -75,7 +57,7 @@ export default function Contacts() {
     console.log(activation);
     console.log(typeof activationcode);
 
-    if (activationcode === activation) {
+    if (activationcode.toString() === activation.toString()) {
       setConfirmEmail(true);
     }
   }
@@ -92,37 +74,66 @@ export default function Contacts() {
           </div>
         </div>
       </section>
+
       <section id="contacts_2" className="contacts_2">
-        <div className="contacts_left_sides">
-          <p style={{paddingBottom:"0px"}}>Официальный дистрибьютер продукции GST в России.</p>
-          <div className="box">
-
-          <img src={companyname} alt="title" />
-          <h5>Название фирмы:</h5>
-          <p>ООО "НЭЛТ ДИСТРИБЬЮЦИЯ"</p>
-          </div>
-          <div className="box">
-
-          <div style={{marginBottom:"10px"}}><FaLocationDot/></div>
-          <h5>Адрес:</h5>
-          <p> Проспект Мира, Сухаревская</p>
-          </div>
-          <div className="box" style={{width:"40%"}}>
-
-          <div style={{marginBottom:"10px"}}><FaPhoneVolume/></div>
-          <h5>Телефон:</h5>
-          <p style={{width:"64%"}}>+7-495-796-92-14 <a href="tel:+79252969383">+7-925-296-93-83</a></p>
-          </div>
-          <div className="box">
-          <div style={{marginBottom:"10px"}}><MdOutlineEmail/></div>
-          <p><a href="mailto:info@m.nelt.ru">Email:info@m.nelt.ru</a></p>
-          </div>
-          <div className="box">
-
-          <img src={website} alt="title" />
-         <p> <a href="http://www.nelt.ru/">http://www.nelt.ru/</a></p>
+        <div className="info-about">
+          <h4>Официальный дистрибьютер продукции GST в России.</h4>
+          <div className="row">
+            <div className="col">
+              <div className="head">
+                <FaBuildingColumns className="icon" />
+                <h5>Название фирмы:</h5>
+              </div>
+              <span>ООО "НЭЛТ ДИСТРИБЬЮЦИЯ"</span>
+            </div>
+            <div className="col">
+              <div className="head">
+                <FaLocationArrow className="icon" />
+                <h5>Адрес:</h5>
+              </div>
+              <span>
+                129090, г. Москва, Грохольский переулок, 28, помещение 2/2
+              </span>
+            </div>
+            <div className="col">
+              <div className="head">
+                <SiMetrodeparis className="icon" />
+                <h5>Метро</h5>
+              </div>
+              <span>Проспект Мира, Сухаревская</span>
+            </div>
+            <div className="col">
+              <div className="head">
+                <FaPhone className="icon" />
+                <h5>Телефон:</h5>
+              </div>
+              <span>
+                <a href="tel:+7 495 796 92 14">+7 495 796 92 14</a>
+                <br />
+                <a href="tel:+7 925 296 93 83">+7 925 296 93 83</a>
+              </span>
+            </div>
+            <div className="col">
+              <div className="head">
+                <MdAttachEmail className="icon" />
+                <h5>E-mail:</h5>
+              </div>
+              <span>
+                <a href="mailto:info@m.nelt.ru">info@m.nelt.ru</a>
+              </span>
+            </div>
+            <div className="col">
+              <div className="head">
+                <FaEarthAmericas className="icon" />
+                <h5>Website:</h5>
+              </div>
+              <span>
+                <a href="http://www.nelt.ru/">http://www.nelt.ru/</a>
+              </span>
+            </div>
           </div>
         </div>
+
         <div className="contacts_right_sides">
           <div className="box_contact">
             <h4>Оставьте заявку</h4>

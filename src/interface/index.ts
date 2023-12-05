@@ -62,10 +62,7 @@ export interface IPostuserdata {
   email: string,
   desc: string
 }
-  id: number;
-  title: string;
-  desc: string;
-}
+  
 export interface ICategory {
   id: number;
   title: string;
