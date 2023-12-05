@@ -1,4 +1,3 @@
-//?=== IMPORT CSS FILE ABOUT ===?//
 import "./index.css";
 import Layout from "../../layout";
 import home__image from "../../assets/home__image.jpg";
