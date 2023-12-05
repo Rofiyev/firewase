@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 import { FormEvent } from "react";
 
 export default function Footer() {
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-  }
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => e.preventDefault();
 
   return (
     <footer>
