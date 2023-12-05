@@ -1,10 +1,10 @@
 import "./index.css";
 import Layout from "../../layout";
 import { IPostuserdata } from "../../interface";
-import { useState, useEffect } from "react";
+import { useState,} from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { checkPhoneNumber, postContact } from "../../api/api";
-import { ChangeEvent } from "react";
+import home_svg from "../../assets/home_svg.svg";
 import { FaCheckCircle, FaLocationArrow, FaPhone } from "react-icons/fa";
 import { IoSend } from "react-icons/io5";
 import { toast } from "react-toastify";
@@ -16,15 +16,13 @@ import { SiMetrodeparis } from "react-icons/si";
 const resolveAfter35sec = new Promise((resolve) => setTimeout(resolve, 3000));
 
 export default function Contacts() {
-  const [phoneNumberCheck, setPhoneNumberCheck] = useState(false);
+  const [phoneNumberCheck, setPhoneNumberCheck] = useState(true);
   const [confirmEmail, setConfirmEmail] = useState(false);
   const [number, setNumber] = useState<string>("");
   const [activationcode, setActivationcode] = useState("");
   const [activation, setActiovation] = useState("");
 
-  useEffect(() => {
-    (async () => {})();
-  }, []);
+  
 
   const { register, handleSubmit, reset } = useForm<IPostuserdata>();
   const onSubmit: SubmitHandler<IPostuserdata> = async (data) => {
@@ -37,22 +35,28 @@ export default function Contacts() {
     });
   };
 
-  useEffect(() => {
-    if (number.length < 12) {
+
+  function checkPhoneNumb(e){
+     const number = e.target.value
+     console.log(e.target.value);
+     setNumber(e.target.value)
+     
+    if (number.length > 12) {
       (async () => {
         const { data, success } = await checkPhoneNumber(number);
-
         console.log(data[number]);
         success && setActivationcode(data[number]);
         console.log("worked number effect");
       })();
     }
-  }, [number]);
+  }
 
   function openCode() {
     if (number.length > 12) {
       setPhoneNumberCheck(true);
     }
+    console.log(number);
+    
   }
   function checkCode() {
     console.log(activation);
@@ -68,10 +72,14 @@ export default function Contacts() {
         <div className="contacts-main">
           <div className="contact">
             <div className="contact_titles">
-              <h2 className="linear_gradient_title__light">
-                Получите демо-версию GST
-              </h2>
+              <h1 className="linear_gradient_title__light">GST - BUILDING TECHNOLOGY FOR FORE & SECURITY</h1>
+              <p>
+              GST предлагает широкий ассортимент противопожарной продукции и индивидуальные решения для противопожарных систем, адаптированные к потребностям различных отраслей промышленности. Имея инфраструктуру продаж, которая охватывает многие страны и регионы и включает в себя сеть из более чем 120 офисов продаж и несколько логистических центров по всему Китаю, GST стала важной частью глобального бизнеса Carrier. Чтобы удовлетворить потребности своей международной клиентской базы, GST создала обширные научно-исследовательские центры в Пекине и Циньхуандао на севере Китая. Компания постоянно стремится разрабатывать новые инновационные технологии и продукты.
+              </p>
             </div>
+            <div className="images__wrapper">
+            <img src={home_svg} alt="Home" />
+          </div>
           </div>
         </div>
       </section>
@@ -167,11 +175,11 @@ export default function Contacts() {
                   alignItems: "center",
                   textAlign: "center",
                 }}
-              >
+               className="phoneNumberStyle">
                 <input
                   type="text"
                   placeholder="Телефон номерь*"
-                  maxLength={13}
+                  maxLength={19}
                   defaultValue={"+998"}
                   {...register("phone_number", {
                     required: "Надо выполнять",
@@ -180,9 +188,7 @@ export default function Contacts() {
                       message: "Надо выполнять",
                     },
                   })}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    setNumber(e.target.value)
-                  }
+                  onChange={(e)=>checkPhoneNumb(e)}
                 />
                 <button onClick={openCode}>
                   <FaCheckCircle />
@@ -194,7 +200,7 @@ export default function Contacts() {
                     type="text"
                     onChange={(e) => setActiovation(e.target.value)}
                     placeholder="Введите код *"
-                  />
+                   style={{width:"50%"}}/>
                   <button onClick={checkCode}>
                     <IoSend />
                   </button>
@@ -217,8 +223,8 @@ export default function Contacts() {
                 style={{ cursor: !confirmEmail ? "no-drop" : "pointer" }}
               />
               <textarea
-                cols={40}
-                rows={10}
+                cols={30}
+                rows={2}
                 style={{ cursor: !confirmEmail ? "no-drop" : "pointer" }}
                 placeholder="Вопрос*"
                 {...register("desc", {
@@ -230,9 +236,8 @@ export default function Contacts() {
                 type="submit"
                 form="userdata"
                 style={{
-                  cursor: !phoneNumberCheck ? "no-drop" : "pointer",
-                  marginBlock: "10px",
-                  opacity: !phoneNumberCheck ? "0.4" : "1",
+                  cursor: !confirmEmail ? "no-drop" : "pointer",
+                  opacity: !confirmEmail ? "0.4" : "1",
                 }}
                 disabled={confirmEmail === false ? true : false}
               >

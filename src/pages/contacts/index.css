@@ -2,18 +2,49 @@
   min-height: 80vh;
   background-color: var(--dark_green);
   width: 100%;
-  margin-top: 13vh;
+  margin-top: 8vh;
   padding: 0 3rem;
 }
 
 .contacts-main {
-  padding-top: 130px;
+  padding-top: 100px;
 }
-.contacts-main .contact .contact_titles h2 {
-  width: 50%;
-  font-size: 76px;
-  line-height: 106%;
-  letter-spacing: -3px;
+.contact{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.contacts-main img {
+    width: 600px;
+    padding-left: 30px;
+}
+.contacts-main .images-wrapper{
+    width: 50%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contact_titles{
+    width: 50%;
+  color: white;
+}
+.contacts-main .contact .contact_titles p {
+ 
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -1px;
+  font-family: "Jost", sans-serif;
+  color: #fff;
+  margin-top: 20px;
+  padding-bottom: 1.5rem;
+}
+.contacts-main .contact .contact_titles h1{
+    line-height: 45px;
+    
+  color: white;
+  font-weight: 500;
+    font-size: 2.5rem;
+
 }
 .contacts_2 {
   min-height: 90vh;
@@ -31,15 +62,16 @@
   border: 1px solid #69c04b;
   border-radius: 10px;
   background-color: #f0ffee;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   width: 50%;
-  margin-top: -430px;
-  max-height: 800px;
+    
+  max-height: 550px;
+  margin-bottom: 100px;
 }
 .contacts_2 .contacts_right_sides h4 {
-  margin-bottom: 50px;
+  
   font-size: 40px;
   line-height: 106%;
   font-weight: 400;
@@ -48,7 +80,7 @@
 }
 .contacts_2 .contacts_right_sides input {
   border: 1px solid #69c04b;
-  padding: 12px 16px;
+  padding: 10px 16px;
   color: #072b18;
   font-size: 16px;
   line-height: 22px;
@@ -67,7 +99,7 @@
   line-height: 22px;
   font-weight: 300;
   background-color: #fff;
-  min-height: 150px;
+  min-height: 100px;
   width: 100%;
   border-radius: 7px;
   outline: #69c04b;
@@ -80,8 +112,8 @@
   height: 45px;
   background-color: green;
   border-radius: 10px;
-  margin-left: 10px;
-  font-size: 21px;
+  
+  font-size: 20px;
   color: white;
   border: none;
   outline: none;
@@ -109,9 +141,36 @@
   .contacts {
     min-height: 50vh !important;
   }
+  .contact{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contacts-main .contact_titles {
+    width: 100%;
+    min-height: 70vh !important;
+}
+.contacts-main .contact_titles h1{
+    font-size: 3rem !important;
+    line-height: 100%;
+}
+.contacts-main .images-wrapper{
+    width: 100%;
+    height: 60vh;
+}
+.contacts-main img {
+    padding-bottom: 2rem;
+    width: 400px !important;
+}
   .contacts-main .contact .contact_titles h2 {
     width: 100%;
     font-size: 3.5rem !important;
+  }
+  .contacts-main .contact .contact_titles p{
+    width: 100%;
+    font-size: 16px;
+    padding-bottom: 20px;
+    color:white;
   }
   .contacts_2 {
     flex-direction: column-reverse;
@@ -122,11 +181,40 @@
     margin: 0 auto;
     margin-bottom: 3rem;
   }
+  .contacts_2 .contacts_right_sides input{
+    height: 38px;
+  }
+  .contacts_2 .contacts_right_sides .phoneNumberStyle button{
+    height: 35px;
+    font-size: 18px;
+    padding: 5px 10px;
+    margin-left: 10px;
+  }
+  .contacts_2 .contacts_right_sides .codeStyle button{
+    height: 35px;
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+  .contacts_2 .contacts_right_sides button{
+    margin-left: 0;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   .contacts_2 .info-about .row {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .contacts-main .contact_titles {
+    width: 100%;
+    min-height: 100vh !important;
+}
+  .contacts-main .contact_titles p{
+    font-size: 1rem !important;
+  }
+  .contacts-main .contact_titles h1{
+    width: 100%!important;
+    font-size: 25px!important;
+    line-height: 30px;
   }
   .contacts_2 .contacts_right_sides {
     margin: 0;
@@ -134,7 +222,37 @@
     margin: 0 auto;
     margin-bottom: 3rem;
   }
+  .contacts-main .images-wrapper{
+    width: 100% !important;
+    height: 60vh !important;
+    padding-block: 3rem;
+    background: none !important;
+}
+  .contacts-main img {
+    width: 100%!important;
+  }
+ 
+  .contacts_2 .contacts_right_sides input{
+    height: 33px;
+    font-size: 13px;
+  }
+  .contacts_2 .contacts_right_sides .phoneNumberStyle button{
+    height: 35px;
+    font-size: 15px;
+    padding: 4px 10px;
+    margin-left: 10px;
+  }
+  .contacts_2 .contacts_right_sides .codeStyle button{
+    height: 35px;
+    font-size: 15px;
+    padding: 4px 10px;
+  }
   .contacts_2 {
     padding: 1rem;
+  }
+  .contacts_2 .contacts_right_sides button {
+    margin-left: 0;
+    font-size: 15px;
+    padding: 5px 10px;
   }
 }
