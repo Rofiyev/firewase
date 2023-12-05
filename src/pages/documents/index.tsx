@@ -23,7 +23,7 @@ export default function CategoryDocs() {
   return (
     <>
       <Layout>
-        <section className="table__wrapper">
+        <section className="table__wrapper" style={{ paddingTop: "20vh" }}>
           <div className="container">
             <Table striped bordered hover>
               <thead>
@@ -37,7 +37,7 @@ export default function CategoryDocs() {
               <tbody>
                 {docs.map((item: IDocs, i: number) => (
                   <tr key={item.id}>
-                    <td width={'5%'}>{i + 1}</td>
+                    <td width={"5%"}>{i + 1}</td>
                     <td width={"20%"}>
                       {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
                     </td>

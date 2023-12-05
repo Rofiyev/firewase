@@ -13,6 +13,7 @@ import { FaEarthAmericas } from "react-icons/fa6";
 import { MdAttachEmail } from "react-icons/md";
 import { SiMetrodeparis } from "react-icons/si";
 
+
 const resolveAfter35sec = new Promise((resolve) => setTimeout(resolve, 3000));
 
 export default function Contacts() {
@@ -21,6 +22,7 @@ export default function Contacts() {
   const [number, setNumber] = useState<string>("");
   const [activationcode, setActivationcode] = useState("");
   const [activation, setActiovation] = useState("");
+
 
   const { register, handleSubmit, reset } = useForm<IPostuserdata>();
   const onSubmit: SubmitHandler<IPostuserdata> = async (data) => {
@@ -34,6 +36,7 @@ export default function Contacts() {
   };
 
   useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     if (number.length < 12) {

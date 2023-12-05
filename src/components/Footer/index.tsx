@@ -4,10 +4,25 @@ import brand from "../../assets/logo.png";
 import { FaFacebook, FaTelegram, FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { FormEvent } from "react";
+import { FormEvent, useEffect, useState } from "react";
+import { getCategorys, getDocuments } from "../../api/api";
+import { ICategory } from "../../interface";
 
 export default function Footer() {
+  const [category, setCategory] = useState([]);
+  const [docs, setDocs] = useState<string[]>([]);
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => e.preventDefault();
+
+  useEffect(() => {
+    (async () => {
+      const { data, success } = await getCategorys();
+      success && setCategory(data);
+      const res = await getDocuments();
+      res.success && setDocs(res?.data?.types);
+    })();
+  }, []);
+
+  const ruDocsType: string[] = ["Документ", "Сертификат", "Проект"];
 
   return (
     <footer>
@@ -37,21 +52,29 @@ export default function Footer() {
           </div>
           <div className="col-2">
             <ul>
-              <li className="menu_title">Все продукты</li>
-              <li>Продукты</li>
+              <li className="menu_title">Все категории</li>
+              {category.length &&
+                category.map(({ id, title }: ICategory) => (
+                  <Link
+                    key={id}
+                    style={{ color: "inherit" }}
+                    to={`/products?category=${id}`}
+                  >
+                    <li>{title}</li>
+                  </Link>
+                ))}
             </ul>
             <ul>
-              <li className="menu_title">Решения</li>
-              <li>
-                <a style={{ color: "inherit" }} href="mailto:info@m.nelt.ru">
-                  Почтовый адрес
-                </a>
-              </li>
-              <li>
-                <a style={{ color: "inherit" }} href="tel:+7 (495) 796-92-14">
-                  Номер телефона
-                </a>
-              </li>
+              <li className="menu_title">Все документов</li>
+              {docs.map((str: string, i: number) => (
+                <Link
+                  key={str}
+                  to={`/documents/${str}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <li>{ruDocsType[i]}</li>
+                </Link>
+              ))}
             </ul>
             <ul>
               <li className="menu_title">О компании</li>

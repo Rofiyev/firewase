@@ -48,7 +48,7 @@ export default function Navbar() {
                         {label}
                       </a>
                     ) : (
-                      <Link to={"/"}>{label}</Link>
+                      <Link to={`/${route}`}>{label}</Link>
                     )
                   ) : (
                     <Link to={route}>{label}</Link>

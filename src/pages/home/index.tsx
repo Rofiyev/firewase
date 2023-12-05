@@ -12,6 +12,7 @@ import home_svg from "../../assets/home_svg.svg";
 import { getCategorys, getDocuments, getProducts } from "../../api/api";
 import img from "../../assets/Journal-Entries.svg";
 import { BASE_URL } from "../../config";
+import { useLocation } from "react-router-dom";
 
 export default function Home() {
   const [bgIsActive, setBgIsActive] = useState<boolean>(false);
@@ -19,6 +20,7 @@ export default function Home() {
   const [category, setCategory] = useState([]);
   const [docs, setDocs] = useState<string[]>([]);
   const [news, setNews] = useState<INewProducts[]>([]);
+  const { hash } = useLocation();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -38,6 +40,15 @@ export default function Home() {
     })();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  useEffect(() => {
+    if (hash.length) {
+      const elem = document.querySelector(hash);
+      setTimeout(() => {
+        elem?.scrollIntoView({ behavior: "smooth" });
+      }, 1000);
+    }
+  }, [hash]);
 
   const handleScroll = () => {
     const elem = document.querySelector(".home_2") as HTMLDivElement;
@@ -144,12 +155,6 @@ export default function Home() {
               </Link>
             </button>
           </div>
-          {/* <div style={{ margin: "10rem 0 5rem 0" }}>
-            <h3 className="linear_gradient_title">
-              Revenue recognition is becoming more complex. Traditional methods
-              fail to meet you where you are and where you want to go.
-            </h3>
-          </div> */}
         </div>
       </section>
       <section className="cards_wrapper">
