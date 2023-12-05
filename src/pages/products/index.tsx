@@ -39,13 +39,14 @@ export default function ProductPage() {
         setIsLoading(false);
       }
     })();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   return (
     <Layout>
       <div style={{ marginBlock: "15vh" }} className="category_products">
         <div className="filter_products">
-          <h3>Filtered by:</h3>
+          <h3>Отфильтровано по:</h3>
           <ul style={{ justifyContent: "center" }}>
             {!filtered.length ? (
               <div className="spinner-border text-success" role="status">
@@ -115,7 +116,7 @@ export default function ProductPage() {
                       }}
                     >
                       <div>
-                        <div
+                        {/* <div
                           style={{
                             display: "flex",
                             justifyContent: "space-between",
@@ -142,7 +143,7 @@ export default function ProductPage() {
                           >
                             Product Id: {item.id}
                           </h4>
-                        </div>
+                        </div> */}
                         <h3
                           style={{
                             marginBlock: "20px",

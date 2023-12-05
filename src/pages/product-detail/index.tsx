@@ -15,9 +15,8 @@ export default function ProductDetail() {
       const { data, success } = await getProducts({ product_id: product });
       success && setDetail([data]);
     })();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [product]);
-
-  console.log(detail);
 
   return (
     <Layout>

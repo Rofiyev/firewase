@@ -36,12 +36,15 @@ export default function Home() {
       const res2 = await getProducts({ product_last_count: "3" });
       res2.success && setNews(res2.data);
     })();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   const handleScroll = () => {
     const elem = document.querySelector(".home_2") as HTMLDivElement;
     elem.scrollIntoView({ behavior: "smooth" });
   };
+
+  const ruDocsType: string[] = ["Документ", "Сертификат", "Проект"];
 
   return (
     <Layout>
@@ -60,7 +63,7 @@ export default function Home() {
               технологий
             </p>
             <div className="btns__info">
-              <button>Request a Demo</button>
+              <button>Где купить</button>
             </div>
           </div>
           <div className="images__wrapper">
@@ -74,9 +77,7 @@ export default function Home() {
         style={{ background: bgIsActive ? "#fff" : "#164234" }}
       >
         <div className="slider-title">
-          <p>
-            Powering Top Accounting Teams with Automated Revenue Recognition
-          </p>
+          <p>Все наши партнеры, которые нас поддерживают</p>
         </div>
         <div
           className="logos"
@@ -114,13 +115,8 @@ export default function Home() {
         </div>
         <div className="container">
           <div className="home_2_titles">
-            <h3 className="linear_gradient_title">
-              Take control of your revenue… the right way.
-            </h3>
-            <p>
-              Achieve ASC 606 / IFRS 15 compliance with unmatched speed and
-              scalability.
-            </p>
+            <h3 className="linear_gradient_title">Наши основные цели</h3>
+            <p>Что мы можем сделать для вас и что можем гарантировать?</p>
           </div>
           <div className="home_2_box">
             {cardCantrol.map(({ id, title, desc, img }: ICard) => (
@@ -132,14 +128,14 @@ export default function Home() {
             ))}
           </div>
           <div style={{ textAlign: "center", marginBottom: "50px" }}>
-            <button className="home_2_btn">Why RIGHTREV</button>
+            <button className="home_2_btn">Где купить</button>
           </div>
-          <div style={{ margin: "10rem 0 5rem 0" }}>
+          {/* <div style={{ margin: "10rem 0 5rem 0" }}>
             <h3 className="linear_gradient_title">
               Revenue recognition is becoming more complex. Traditional methods
               fail to meet you where you are and where you want to go.
             </h3>
-          </div>
+          </div> */}
         </div>
       </section>
       <section className="cards_wrapper">
@@ -147,7 +143,7 @@ export default function Home() {
           <div className="cards_two">
             <div className="cards_two_titles">
               <h2 className="linear_gradient_title__light">
-                Own your revenue from start to finish
+                Все категории нашей продукции
               </h2>
               <p>Automate every use case for maximum performance</p>
             </div>
@@ -175,7 +171,7 @@ export default function Home() {
           className="linear_gradient_title"
           style={{ marginBottom: "1rem", textAlign: "center" }}
         >
-          Own your revenue from start to finish
+          О последних новостях
         </h2>
         <div className="container">
           <div className="accordion_image_gallery">
@@ -216,18 +212,17 @@ export default function Home() {
           <div className="row_1">
             <div className="feedback-title">
               <h2 className="linear_gradient_title">
-                Don`t just take our word for it. Read what our customers are
-                saying.
+                Просмотр и скачивание документов
               </h2>
               <div className="documents">
-                {docs.map((str: string) => (
+                {docs.map((str: string, i: number) => (
                   <div key={str} className="box">
                     <Link
                       to={`/documents/${str}`}
                       style={{ textDecoration: "none" }}
                     >
                       <img src={img} alt="Documents image" />
-                      <h3>{str.charAt(0).toUpperCase() + str.slice(1)}</h3>
+                      <h3>{ruDocsType[i]}</h3>
                       {/* <p>{desc}</p> */}
                     </Link>
                   </div>

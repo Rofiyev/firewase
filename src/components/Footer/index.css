@@ -89,7 +89,9 @@ footer .col-2 .menu_title {
   margin-bottom: 0.6rem;
   text-decoration: none !important;
   cursor: auto !important;
+  text-transform: uppercase;
 }
+
 footer .col-2 ul li {
   list-style-type: none;
   color: var(--light__green);

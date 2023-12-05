@@ -7,14 +7,14 @@ export default function Newsletter() {
     <div className="container">
       <div className="newsletter_component">
         <h3 className="linear_gradient_title__light">
-          Get out of spreadsheets and workarounds. Get back to Accounting.
+          Вы можете оставить сообщение, чтобы быстро связаться с нами
         </h3>
         <button className="home_2_btn">
           <Link
             style={{ color: "inherit", textDecoration: "none" }}
             to={"/buy"}
           >
-            Request Demo
+            Где купить
           </Link>
         </button>
       </div>

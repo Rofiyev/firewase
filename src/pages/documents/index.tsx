@@ -17,6 +17,7 @@ export default function CategoryDocs() {
       const { success, data } = await getDocuments(category);
       success && setDocs(data);
     })();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [category]);
 
   return (
