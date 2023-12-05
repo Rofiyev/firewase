@@ -43,6 +43,25 @@ export interface IDocumentItems {
   params: string;
 }
 export interface Contactdetails {
+  id:number,
+  title:string,
+  desc:string,
+  img:string
+}
+export interface Category {
+  id:number,
+  title:string,
+  image:string,
+  description:string
+}
+export interface IPostuserdata {
+  id:number,
+  full_name: string,
+  organization: string,
+  phone_number: string,
+  email: string,
+  desc: string
+}
   id: number;
   title: string;
   desc: string;

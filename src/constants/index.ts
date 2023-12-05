@@ -24,6 +24,10 @@ import FUImage_2 from "../assets/Chris-Neidlinger.png";
 import FUImage_3 from "../assets/Headshot_Alex-Amaya_Epicor.png";
 import productsImage from "../assets/imageproducts.png";
 
+
+
+
+
 export const navbarMenu: INavberMenu[] = [
   {
     id: 1,
@@ -45,6 +49,11 @@ export const navbarMenu: INavberMenu[] = [
     route: "/company",
     label: "О компании",
   },
+  {
+    id:5,
+    route:"/contact",
+    label:""
+  }
 ];
 
 export const accordionData: IAccordionGallery[] = [
@@ -217,38 +226,44 @@ export const cardFiltered: ICardOneItems[] = [
   },
 ];
 
-export const infoContact: Contactdetails[] = [
-  {
-    id:1,
-    title:"Название фирмы",
-    desc:"ООО НЭЛТ ДИСТРИБЬЮЦИЯ"
-  },
-  {
-    id:2,
-    title:"Адрес",
-    desc:"129090, г. Москва, Грохольский переулок, 28, помещение 2/2"
-  },
-  {
-    id:3,
-    title:"Метро",
-    desc:"Проспект Мира, Сухаревская"
-  },
-  {
-    id:4,
-    title:"Телефон",
-    desc:"+7 495 796 92 14 	+7 495 796 92 14"
-  },
-  {
-    id:5,
-    title:"E-mail",
-    desc:"	info@m.nelt.ru"
-  },
-  {
-    id:6,
-    title:"Website",
-    desc:"	http://www.nelt.ru/"
-  },
-]
+// export const infoContact: Contactdetails[] = [
+//   {
+//     id:1,
+//     title:"Название фирмы",
+//     desc:"ООО НЭЛТ ДИСТРИБЬЮЦИЯ",
+//     img:companyname
+//   },
+//   {
+//     id:2,
+//     title:"Адрес",
+//     desc:"129090, г. Москва, Грохольский переулок, 28, помещение 2/2",
+//     img:location
+//   },
+//   {
+//     id:3,
+//     title:"Метро",
+//     desc:"Проспект Мира, Сухаревская",
+//     img:metro
+//   },
+//   {
+//     id:4,
+//     title:"Телефон",
+//     desc:"+7 495 796 92 14 	+7 495 796 92 14",
+//     img:phone
+//   },
+//   {
+//     id:5,
+//     title:"E-mail",
+//     desc:"	info@m.nelt.ru",
+//     img:email,
+//   },
+//   {
+//     id:6,
+//     title:"Website",
+//     desc:"	http://www.nelt.ru/",
+//     img:website
+//   },
+// ]
 
 export const documentItems: IDocumentItems[] = [
   {
