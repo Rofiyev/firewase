@@ -20,7 +20,7 @@ export default function ProductDetail() {
 
   return (
     <Layout>
-      <section style={{ marginBlock: "15vh" }}>
+      <section style={{ paddingBlock: "15vh" }}>
         <div className="container">
           {detail?.length ? (
             detail.map((item: IProducts) => (

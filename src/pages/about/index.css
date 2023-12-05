@@ -3,7 +3,7 @@
   width: 100%;
   background-color: var(--dark_green);
   position: absolute;
-  top: calc(100vh - 87vh);
+  padding-top: 13vh;
   position: relative;
   margin-bottom: 4rem;
 }
@@ -48,8 +48,6 @@
 }
 .about .about__main .images__wrapper img {
   width: 250px;
-  /* cursor: pointer; */
-  /* transition: 0.5s ease; */
   border-radius: 4px;
 }
 
@@ -123,7 +121,7 @@
 }
 
 .info-about {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 .info-about h4 {
@@ -157,7 +155,7 @@
 }
 
 .map_styles {
-  width: 80%;
+  width: 93%;
   margin: 2rem auto;
 }
 .map_about {

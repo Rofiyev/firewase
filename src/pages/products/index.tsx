@@ -44,124 +44,126 @@ export default function ProductPage() {
 
   return (
     <Layout>
-      <div style={{ marginBlock: "15vh" }} className="category_products">
-        <div className="filter_products">
-          <h3>Отфильтровано по:</h3>
-          <ul style={{ justifyContent: "center" }}>
-            {!filtered.length ? (
+      <div className="container">
+        <div style={{ marginBlock: "15vh" }} className="category_products">
+          <div className="filter_products">
+            <h3>Отфильтровано по:</h3>
+            <ul style={{ justifyContent: "center" }}>
+              {!filtered.length ? (
+                <div className="spinner-border text-success" role="status">
+                  {/* <span className="sr-only">Loading...</span> */}
+                </div>
+              ) : (
+                <>
+                  <li
+                    onClick={() => {
+                      setActive("Все");
+                      navigate(`/products`);
+                    }}
+                    style={{
+                      color: active === "Все" ? "black" : "",
+                      opacity: active === "Все" ? "1" : "",
+                    }}
+                  >
+                    Все
+                  </li>
+                  {filtered.map((item: ICategory) => (
+                    <li
+                      onClick={() => {
+                        setActive(item.title);
+                        navigate(`/products?category=${item.id}`);
+                      }}
+                      style={{
+                        color: active === item.title ? "black" : "",
+                        opacity: active === item.title ? "1" : "",
+                      }}
+                      key={item.id}
+                    >
+                      {item.title}
+                    </li>
+                  ))}
+                </>
+              )}
+            </ul>
+          </div>
+          <div className="filtered_products">
+            {isLoading ? (
               <div className="spinner-border text-success" role="status">
                 {/* <span className="sr-only">Loading...</span> */}
               </div>
             ) : (
               <>
-                <li
-                  onClick={() => {
-                    setActive("Все");
-                    navigate(`/products`);
-                  }}
-                  style={{
-                    color: active === "Все" ? "black" : "",
-                    opacity: active === "Все" ? "1" : "",
-                  }}
-                >
-                  Все
-                </li>
-                {filtered.map((item: ICategory) => (
-                  <li
-                    onClick={() => {
-                      setActive(item.title);
-                      navigate(`/products?category=${item.id}`);
-                    }}
-                    style={{
-                      color: active === item.title ? "black" : "",
-                      opacity: active === item.title ? "1" : "",
-                    }}
-                    key={item.id}
+                {items.map((item: INewProducts, i: number) => (
+                  <Link
+                    key={i}
+                    to={`/products/${item.id}`}
+                    style={{ color: "inherit", textDecoration: "none" }}
                   >
-                    {item.title}
-                  </li>
+                    <div className="box_products">
+                      <img
+                        src={`${BASE_URL}${item.product_images[0]?.image}`}
+                        alt="Image"
+                      />
+                      <div
+                        className="card_desc"
+                        style={{
+                          padding: "32px 22px 30px",
+                          textAlign: "left",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                          justifyContent: "space-between",
+                          height: "60%",
+                        }}
+                      >
+                        <div>
+                          <h3
+                            style={{
+                              marginBlock: "20px",
+                              fontSize: "20px",
+                              lineHeight: "24px",
+                              fontWeight: "500",
+                            }}
+                          >
+                            {item.title}
+                          </h3>
+                          <p
+                            style={{
+                              fontSize: "16px",
+                              fontWeight: "400",
+                              lineHeight: "22px",
+                              marginBottom: "1rem",
+                              color: "#164234",
+                            }}
+                          >
+                            {item.description.slice(0, 150)}
+                          </p>
+                        </div>
+                        <button
+                          style={{
+                            background: "transparent",
+                            border: "none",
+                            fontSize: "13px",
+                            fontWeight: "500",
+                            textTransform: "uppercase",
+                            lineHeight: "123%",
+                            letterSpacing: "2px",
+                            color: "#69c04b",
+                            marginTop: "30px",
+                          }}
+                        >
+                          Подробнее
+                        </button>
+                      </div>
+                    </div>
+                  </Link>
                 ))}
               </>
             )}
-          </ul>
+          </div>
         </div>
-        <div className="filtered_products">
-          {isLoading ? (
-            <div className="spinner-border text-success" role="status">
-              {/* <span className="sr-only">Loading...</span> */}
-            </div>
-          ) : (
-            <>
-              {items.map((item: INewProducts, i: number) => (
-                <Link
-                  key={i}
-                  to={`/products/${item.id}`}
-                  style={{ color: "inherit", textDecoration: "none" }}
-                >
-                  <div className="box_products">
-                    <img
-                      src={`${BASE_URL}${item.product_images[0]?.image}`}
-                      alt="Image"
-                    />
-                    <div
-                      className="card_desc"
-                      style={{
-                        padding: "32px 22px 30px",
-                        textAlign: "left",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "flex-start",
-                        justifyContent: "space-between",
-                        height: "60%",
-                      }}
-                    >
-                      <div>
-                        <h3
-                          style={{
-                            marginBlock: "20px",
-                            fontSize: "20px",
-                            lineHeight: "24px",
-                            fontWeight: "500",
-                          }}
-                        >
-                          {item.title}
-                        </h3>
-                        <p
-                          style={{
-                            fontSize: "16px",
-                            fontWeight: "400",
-                            lineHeight: "22px",
-                            marginBottom: "1rem",
-                            color: "#164234",
-                          }}
-                        >
-                          {item.description.slice(0, 150)}
-                        </p>
-                      </div>
-                      <button
-                        style={{
-                          background: "transparent",
-                          border: "none",
-                          fontSize: "13px",
-                          fontWeight: "500",
-                          textTransform: "uppercase",
-                          lineHeight: "123%",
-                          letterSpacing: "2px",
-                          color: "#69c04b",
-                          marginTop: "30px",
-                        }}
-                      >
-                        Подробнее
-                      </button>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </>
-          )}
-        </div>
+        <Newsletter />
       </div>
-      <Newsletter />
     </Layout>
   );
 }

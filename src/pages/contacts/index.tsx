@@ -22,10 +22,6 @@ export default function Contacts() {
   const [activationcode, setActivationcode] = useState("");
   const [activation, setActiovation] = useState("");
 
-  useEffect(() => {
-    (async () => {})();
-  }, []);
-
   const { register, handleSubmit, reset } = useForm<IPostuserdata>();
   const onSubmit: SubmitHandler<IPostuserdata> = async (data) => {
     const datas = await postContact(data);
@@ -36,6 +32,8 @@ export default function Contacts() {
       success: "Отправлено Заявление",
     });
   };
+
+  useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), []);
 
   useEffect(() => {
     if (number.length < 12) {

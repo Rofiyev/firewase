@@ -3,7 +3,7 @@
   width: 100%;
   background-color: var(--dark_green);
   position: absolute;
-  top: calc(100vh - 87vh);
+  padding-top: 13vh;
   position: relative;
 }
 .home::before {
@@ -38,7 +38,8 @@
   background: linear-gradient(rgba(22, 66, 52, 0.1), rgba(22, 66, 52, 0.1)),
     url("../../assets/home-shape.webp");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 40rem;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -281,8 +282,7 @@
 .home__bottom {
   position: relative;
   background-color: var(--dark_green);
-  margin-top: 3rem;
-  padding: 4rem 0;
+  padding: 5rem 0;
   transition: background 0.5s ease;
 }
 
@@ -616,7 +616,7 @@
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
   margin: 3rem auto 0;
   margin-bottom: 10rem !important;
 }
@@ -634,6 +634,7 @@
   justify-content: center;
   align-items: center;
   width: 30%;
+  min-height: 350px !important;
 }
 .documents .box h3 {
   color: rgb(255, 255, 255);

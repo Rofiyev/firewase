@@ -48,7 +48,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <section id="home" className="home" style={{}}>
+      <section id="home" className="home">
         <div className="home__main">
           <div className="info">
             <h1 className="linear_gradient_title__light">
@@ -63,7 +63,14 @@ export default function Home() {
               технологий
             </p>
             <div className="btns__info">
-              <button>Где купить</button>
+              <button>
+                <Link
+                  style={{ color: "inherit", textDecoration: "none" }}
+                  to="/contacts"
+                >
+                  Где купить
+                </Link>
+              </button>
             </div>
           </div>
           <div className="images__wrapper">
@@ -128,7 +135,14 @@ export default function Home() {
             ))}
           </div>
           <div style={{ textAlign: "center", marginBottom: "50px" }}>
-            <button className="home_2_btn">Где купить</button>
+            <button className="home_2_btn">
+              <Link
+                style={{ color: "inherit", textDecoration: "none" }}
+                to="/contacts"
+              >
+                Где купить
+              </Link>
+            </button>
           </div>
           {/* <div style={{ margin: "10rem 0 5rem 0" }}>
             <h3 className="linear_gradient_title">

@@ -46,7 +46,8 @@ footer .col-1 .newsletter input::placeholder {
   color: rgb(218, 216, 216);
 }
 footer .col-1 .newsletter .btn {
-  padding: 0.6rem 1.8rem;
+  height: 2.5rem !important;
+  padding-inline: 20px;
   background-color: transparent;
   border: 1px solid var(--light__green);
   border-radius: 0.5rem;
