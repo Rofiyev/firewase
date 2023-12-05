@@ -34,6 +34,7 @@
 .contacts-main .contact .contact_titles p {
   font-size: 18px;
   line-height: normal;
+  line-height: 100%;
   font-family: "Jost", sans-serif;
   color: #fff;
   margin-top: 20px;
@@ -139,18 +140,19 @@
     padding-inline: 2rem;
   }
   .contacts {
-    min-height: 50vh !important;
+    min-height: 50vh !important; 
+  }
+  .contacts-main {
+    padding-top: 50px;
   }
   .contact {
     display: flex;
     align-items: center;
     flex-direction: column-reverse;
     padding-block: 5rem;
-  }
   .contacts-main .contact_titles {
     width: 100%;
   }
-  .contacts-main .contact_titles h1 {
     font-size: 3rem !important;
     line-height: 100%;
   }

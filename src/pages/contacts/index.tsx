@@ -1,8 +1,8 @@
 import "./index.css";
 import Layout from "../../layout";
 import { IPostuserdata } from "../../interface";
-import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useState, useEffect, ChangeEvent } from "react";
 import { checkPhoneNumber, postContact } from "../../api/api";
 import home_svg from "../../assets/home_svg.svg";
 import { FaCheckCircle, FaLocationArrow, FaPhone } from "react-icons/fa";
@@ -12,7 +12,6 @@ import { FaBuildingColumns } from "react-icons/fa6";
 import { FaEarthAmericas } from "react-icons/fa6";
 import { MdAttachEmail } from "react-icons/md";
 import { SiMetrodeparis } from "react-icons/si";
-import { useEffect, ChangeEvent } from "react";
 
 const resolveAfter35sec = new Promise((resolve) => setTimeout(resolve, 3000));
 
@@ -36,19 +35,15 @@ export default function Contacts() {
 
   useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), []);
 
-  function checkPhoneNumb(e: ChangeEvent<HTMLInputElement>) {
-    const number = e.target.value;
+  function openCode() {
     if (number.length > 12) {
       (async () => {
         const { data, success } = await checkPhoneNumber(number);
         success && setActivationcode(data[number]);
+        console.log("worked number effect");
+        setPhoneNumberCheck(true);
       })();
     }
-  }
-
-  function openCode() {
-    if (number.length > 12) setPhoneNumberCheck(true);
-    console.log(number);
   }
 
   function checkCode() {
@@ -163,6 +158,7 @@ export default function Contacts() {
                       message: "Надо выполнять",
                     },
                   })}
+                  onChange={(e) => setNumber(e.target.value)}
                 />
                 <input
                   type="text"
