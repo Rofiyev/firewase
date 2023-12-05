@@ -47,6 +47,7 @@ export const checkPhoneNumber = async (number: string) => {
     return { success: true, data };
   } catch (error) {
     console.log(error);
+    return { success: false, data:'' };
   }
 }
 export const getProducts = async (objParams: {

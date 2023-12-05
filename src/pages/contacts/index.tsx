@@ -41,8 +41,9 @@ export default function Contacts() {
     if (number.length < 12) {
       (async () => {
         const { data, success } = await checkPhoneNumber(number);
+
         console.log(data[number]);
-        setActivationcode(data[number]);
+        success && setActivationcode(data[number]);
         console.log("worked number effect");
       })();
     }

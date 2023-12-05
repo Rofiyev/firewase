@@ -5,6 +5,7 @@ import {
   ICardOneItems,
   FCard,
   IProductCategory,
+  
 } from "../interface";
 import accordion_img_01 from "../assets/accordion_image_1.png";
 import accordion_img_02 from "../assets/accordion_image_2.png";
@@ -12,7 +13,6 @@ import accordion_img_03 from "../assets/accordion_image_3.png";
 import Icard_image_1 from "../assets/Revenue-Accuracy.svg";
 import Icard_image_2 from "../assets/Real-Time-Visibility.svg";
 import Icard_image_3 from "../assets/Scalable-Revenue-Recognition.svg";
-import cards_two_box_image_6 from "../assets/Journal-Entries.svg";
 import about_card_image_01 from "../assets/heart.png";
 import about_card_image_02 from "../assets/star.png";
 import about_card_image_03 from "../assets/support.png";
@@ -226,68 +226,8 @@ export const cardFiltered: ICardOneItems[] = [
   },
 ];
 
-// export const infoContact: Contactdetails[] = [
-//   {
-//     id:1,
-//     title:"Название фирмы",
-//     desc:"ООО НЭЛТ ДИСТРИБЬЮЦИЯ",
-//     img:companyname
-//   },
-//   {
-//     id:2,
-//     title:"Адрес",
-//     desc:"129090, г. Москва, Грохольский переулок, 28, помещение 2/2",
-//     img:location
-//   },
-//   {
-//     id:3,
-//     title:"Метро",
-//     desc:"Проспект Мира, Сухаревская",
-//     img:metro
-//   },
-//   {
-//     id:4,
-//     title:"Телефон",
-//     desc:"+7 495 796 92 14 	+7 495 796 92 14",
-//     img:phone
-//   },
-//   {
-//     id:5,
-//     title:"E-mail",
-//     desc:"	info@m.nelt.ru",
-//     img:email,
-//   },
-//   {
-//     id:6,
-//     title:"Website",
-//     desc:"	http://www.nelt.ru/",
-//     img:website
-//   },
-// ]
 
-export const documentItems: IDocumentItems[] = [
-  {
-    id: 1,
-    title: "Документация",
-    desc: "Identify performance obligations and assign proper revenue rules for separate performance obligations in a single revenue assign proper revenue rules for separate obligations in a single revenue contract.",
-    img: cards_two_box_image_6,
-    params: "document",
-  },
-  {
-    id: 2,
-    title: "Сертификаты",
-    desc: "Don’t limit revenue recognition to only bookings or billings; instead, configure unlimited events, such as product delivery, completed milestones, percentage of completion, provisioning, etc.",
-    img: cards_two_box_image_6,
-    params: "certificate",
-  },
-  {
-    id: 3,
-    title: "Типовые проекты",
-    desc: "Automate tedious SSP calculations using intelligent historical analysis. Automatically apply SSPs to performance obligations and allocate across bundled contracts, saving you time and headaches.",
-    img: cards_two_box_image_6,
-    params: "typical_projects",
-  },
-];
+
 export const aboutItems: ICard[] = [
   {
     id: 1,
