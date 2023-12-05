@@ -1,6 +1,6 @@
 import "./index.css";
 import logo from "../../assets/logo.png";
-import { Link,  useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { navbarMenu } from "../../constants";
 import { INavberMenu } from "../../interface";
 import { useEffect, useState } from "react";
@@ -57,7 +57,14 @@ export default function Navbar() {
               ))}
               <li>
                 <div className="nav__btn">
-                  <Link to={"/contacts"}><button>Где купить</button></Link>
+                  <button>
+                    <Link
+                      style={{ textDecoration: "none", color: "inherit" }}
+                      to="/contacts"
+                    >
+                      Где купить
+                    </Link>
+                  </button>
                 </div>
               </li>
             </ul>
@@ -70,11 +77,17 @@ export default function Navbar() {
             )}
           </div>
           <div className="nav__btn">
-          <Link to={"/contacts"}><button>Где купить</button></Link>
+            <button>
+              <Link
+                style={{ textDecoration: "none", color: "inherit" }}
+                to="/contacts"
+              >
+                Где купить
+              </Link>
+            </button>
           </div>
         </header>
-        </div>
       </div>
-  
+    </div>
   );
 }

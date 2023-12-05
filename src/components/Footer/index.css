@@ -46,7 +46,7 @@ footer .col-1 .newsletter input::placeholder {
   color: rgb(218, 216, 216);
 }
 footer .col-1 .newsletter .btn {
-  padding: 0.6rem 2.2rem;
+  padding: 0.6rem 1.8rem;
   background-color: transparent;
   border: 1px solid var(--light__green);
   border-radius: 0.5rem;
@@ -89,7 +89,9 @@ footer .col-2 .menu_title {
   margin-bottom: 0.6rem;
   text-decoration: none !important;
   cursor: auto !important;
+  text-transform: uppercase;
 }
+
 footer .col-2 ul li {
   list-style-type: none;
   color: var(--light__green);
@@ -109,28 +111,10 @@ footer .copyright span {
   font-family: inherit;
 }
 
-@media only screen and (max-width: 600px) {
-  footer {
-    padding: 1rem;
-  }
-  footer .row .col-2,
-  footer .row .col-1 {
-    flex-direction: column;
-  }
-  footer .row .col-1 {
-    flex-direction: column;
-    align-items: flex-start !important;
-  }
-  footer .row .col-1 .socials {
-    flex-direction: row !important;
-    margin-bottom: 1rem;
-  }
-  footer .col-1 .newsletter input {
-    width: 220px !important;
-  }
-}
-
 @media only screen and (max-width: 900px) {
+  footer {
+    padding: 0.5rem;
+  }
   footer .row {
     flex-direction: column;
     align-items: center;
@@ -148,5 +132,26 @@ footer .copyright span {
   footer .row .col-2 {
     width: 100%;
     justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  footer {
+    padding: 0.2rem !important;
+  }
+  footer .row .col-2,
+  footer .row .col-1 {
+    flex-direction: column;
+  }
+  footer .row .col-1 {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  footer .row .col-1 .socials {
+    flex-direction: row !important;
+    margin-bottom: 1rem;
+  }
+  footer .col-1 .newsletter input {
+    width: 220px !important;
   }
 }

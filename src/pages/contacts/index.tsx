@@ -4,7 +4,7 @@ import { infoContact } from "../../constants";
 import { Contactdetails, IPostuserdata } from "../../interface";
 import { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { checkPhoneNumber } from "../../api/api";
+import { checkPhoneNumber, postContact } from "../../api/api";
 import { ChangeEvent } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { IoSend } from "react-icons/io5";
@@ -31,12 +31,15 @@ export default function Contacts() {
   }, []);
 
   const { register, handleSubmit } = useForm<IPostuserdata>();
-  const onSubmit: SubmitHandler<IPostuserdata> = (data) => {
+  const onSubmit: SubmitHandler<IPostuserdata> = async (data) => {
     console.log(data);
+    const datas = await postContact(data)
+    console.log(datas);
     toast.promise(resolveAfter35sec, {
       pending: "Отправляется",
       success: "Отправлено Заявление",
     });
+    
   };
 
   useEffect(() => {
@@ -44,7 +47,7 @@ export default function Contacts() {
       (async () => {
         //   const { data, success } = await checkPhoneNumber(number);
         // console.log(data[number]);
-        // setActivationcode(data[number])
+        setActivationcode(data[number])
 
         console.log("worked number effect");
       })();
@@ -105,7 +108,7 @@ export default function Contacts() {
           <h5>Адрес:</h5>
           <p> Проспект Мира, Сухаревская</p>
           </div>
-          <div className="box" style={{width:"43%"}}>
+          <div className="box" style={{width:"40%"}}>
 
           <div style={{marginBottom:"10px"}}><FaPhoneVolume/></div>
           <h5>Телефон:</h5>

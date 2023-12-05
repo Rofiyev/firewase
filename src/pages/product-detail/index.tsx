@@ -1,101 +1,100 @@
 import { useParams } from "react-router-dom";
 import Layout from "../../layout";
 import "./index.css";
-import { productDetailLists_one } from "../../constants";
-import { DetailInfo } from "../../components";
+import { Fragment, useEffect, useState } from "react";
+import { getProducts } from "../../api/api";
+import { BASE_URL } from "../../config";
+import { IAttributeName, IProducts } from "../../interface";
 
 export default function ProductDetail() {
   const { product } = useParams();
+  const [detail, setDetail] = useState<IProducts[] | []>([]);
+
+  useEffect(() => {
+    (async () => {
+      const { data, success } = await getProducts({ product_id: product });
+      success && setDetail([data]);
+    })();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [product]);
 
   return (
     <Layout>
       <section style={{ marginBlock: "15vh" }}>
         <div className="container">
-          <main
-            className="product_detail"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <img
-              style={{ objectFit: "cover" }}
-              src={
-                "http://www.gstrus.ru/assets/gst/catalog/2023-04-04_08-48-54.png"
-              }
-              alt="Product detail"
-            />
-            <div className="info_detail">
-              <h4>Отличительные особенности и преимущества</h4>
-              <ul>
-                {productDetailLists_one.map((str: string, i: number) => (
-                  <li key={i}>{str}</li>
-                ))}
-              </ul>
-            </div>
-          </main>
-          <div className="container" style={{ marginTop: "4rem" }}>
-            <h3 style={{ textAlign: "center" }}>Техническая спецификация</h3>
-            <table>
-              <tbody>
-                {Array.from({ length: 15 }).map((_, i: number) => (
-                  <tr key={i}>
-                    <td width={"20%"}>Основное питание</td>
-                    <td>
-                      120 В пер. тока / 60 Гц, 220 В пер. тока / 50 Гц 120 В
-                      пер. тока / 60 Гц, 220 В пер. тока / 50 Гц 120 В пер. тока
-                      / 60 Гц, 220 В пер. тока / 50 Гц 120 В пер. тока / 60 Гц,
-                      220 В пер. тока / 50 Гц
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <div style={{ marginTop: "1rem" }}>
-              <p style={{ marginBottom: "0px", textAlign: "center" }}>
-                10106176 GST-IFP4M Адресная панель управления пожарной
-                сигнализацией со шкафом серого цвета
-              </p>
-              <p style={{ textAlign: "center" }}>
-                10106178 GST-IFP4M Адресная панель управления пожарной
-                сигнализацией со шкафом красного цвета
-              </p>
-              <h3 style={{ marginTop: "4rem", textAlign: "center" }}>Клеммы</h3>
-              <div
-                className="product_detail_term"
-                style={{ display: "flex", gap: "10px" }}
-              >
-                <div className="item">
-                  <img
-                    width={"100%"}
-                    style={{ objectFit: "contain" }}
-                    src="http://www.gstrus.ru/assets/gst/catalog/2023-04-04_08-48-03.png"
-                    alt="Image"
-                  />
-                  <p>
-                    Выход общий пожар, выход общая техническая тревога, выход
-                    общая неисправность 2А при 30В пост. тока, выбор NO/NC
-                  </p>
-                </div>
-                <div className="info">
-                  {Array.from({ length: 10 }).map((_, i: number) => (
-                    <p key={i}>
-                      <b>Порт EIA-485:</b>&nbsp;
-                      <span>
-                        зарезервированный выходной порт, в настоящее время не
-                        используется
-                      </span>
-                    </p>
+          {detail?.length ? (
+            detail.map((item: IProducts) => (
+              <Fragment key={item.title}>
+                <main
+                  className="product_detail"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: "50px",
+                  }}
+                >
+                  <div className="image_wrap">
+                    <img
+                      style={{ objectFit: "cover" }}
+                      src={`${BASE_URL}${item.product_images[0].image}`}
+                      alt="Product detail"
+                    />
+                  </div>
+                  <div className="info_detail">
+                    <h4>{item.title}</h4>
+                    {/* <ul>
+                          {productDetailLists_one.map((str: string, i: number) => (
+                            <li key={i}>{str}</li>
+                          ))}
+                    </ul> */}
+                    <p>{item.description}</p>
+                  </div>
+                </main>
+                <div className="container" style={{ marginTop: "4rem" }}>
+                  {item?.attribute_names?.map((item) => (
+                    <div key={item.name} style={{ marginTop: "3rem" }}>
+                      <h3 style={{ textAlign: "center", width: "100%" }}>
+                        {item.name}
+                      </h3>
+                      {item.attribute_values.map((item_2: IAttributeName) => (
+                        <Fragment key={item_2.title}>
+                          <table>
+                            <tbody>
+                              <tr>
+                                <td width={"30%"}>{item_2.title}</td>
+                                <td>{item_2.value}</td>
+                                {item_2.image && (
+                                  <td width={"30%"}>
+                                    <img
+                                      width={"100%"}
+                                      src={`${BASE_URL}${item_2.image}`}
+                                      alt={item_2.title}
+                                    />
+                                  </td>
+                                )}
+                              </tr>
+                            </tbody>
+                          </table>
+                        </Fragment>
+                      ))}
+                    </div>
                   ))}
                 </div>
-              </div>
-
-              <section style={{ marginTop: "4rem" }}>
-                <h2>Дополнительная плата GST-IFP4M</h2>
-                <DetailInfo />
-                <DetailInfo />
-                <DetailInfo />
-                <DetailInfo />
-              </section>
+              </Fragment>
+            ))
+          ) : (
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "50vh",
+              }}
+            >
+              <div className="spinner-border text-success" role="status"></div>
             </div>
-          </div>
+          )}
         </div>
       </section>
     </Layout>

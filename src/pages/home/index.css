@@ -506,6 +506,16 @@
   .accordion-images
   img {
   width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.accordion
+  .accordion_image_gallery
+  .accordion_item
+  .left
+  .accordion-body
+  .accordion-images {
+  width: 40%;
 }
 
 .cards_wrapper {

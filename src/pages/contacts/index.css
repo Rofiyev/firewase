@@ -9,8 +9,8 @@
     margin-left: 4%;
 }
 .contacts-main .contact .contact_titles h2{
-    width: 34%;
-    font-size: 80px;
+    width: 42%;
+    font-size: 76px;
     line-height: 106%;
     letter-spacing: -3px;
     margin-bottom: 40px;
@@ -46,11 +46,10 @@
     font-size: 20px;
     line-height: 150%;
     color: #164234;
-    padding-left: 7%;
+    padding-left: 4%;
 }
 .contacts_2 .contacts_left_sides p {
     font-size: 19px;
-    
 }
 
 

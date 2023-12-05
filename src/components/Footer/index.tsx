@@ -20,14 +20,14 @@ export default function Footer() {
               <img src={brand} alt="Brand" />
             </Link>
             <div className="wrap">
-              <h5>Sign up for our newsletter</h5>
+              <h5>Будьте в курсе последних новостей</h5>
               <form onSubmit={handleSubmit} className="newsletter">
                 <input
                   name="email"
                   type="text"
-                  placeholder="Enter your email"
+                  placeholder="Введите адрес электронной почты"
                 />
-                <button className="btn">Submit</button>
+                <button className="btn">Отправка</button>
               </form>
             </div>
             <div className="socials">
@@ -39,21 +39,25 @@ export default function Footer() {
           </div>
           <div className="col-2">
             <ul>
-              <li className="menu_title">PRODUCTS</li>
-              <li>Standalone</li>
-              <li>Salesforce</li>
+              <li className="menu_title">Все продукты</li>
+              <li>Продукты</li>
             </ul>
             <ul>
-              <li className="menu_title">SOLUTIONS</li>
-              <li>Solutions Overview</li>
-              <li>Use Case - Subscription</li>
-              <li>Use Case - Consumption</li>
+              <li className="menu_title">Решения</li>
+              <li>
+                <a style={{ color: "inherit" }} href="mailto:info@m.nelt.ru">
+                  Почтовый адрес
+                </a>
+              </li>
+              <li>
+                <a style={{ color: "inherit" }} href="tel:+7 (495) 796-92-14">
+                  Номер телефона
+                </a>
+              </li>
             </ul>
             <ul>
-              <li className="menu_title">COMPANY</li>
-              <li>Careers</li>
-              <li>About US</li>
-              <li>Contact Us</li>
+              <li className="menu_title">О компании</li>
+              <li>О компании</li>
             </ul>
           </div>
         </div>
