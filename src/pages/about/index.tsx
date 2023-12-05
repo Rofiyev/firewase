@@ -158,17 +158,6 @@ export default function About() {
               height={"490px"}
             ></iframe>
           </div>
-          {/* <div className="info_map">
-            <h4>Дилерская сеть GST на территории РФ.</h4>
-            <h4>
-              Свердловская обл., Пермская обл., Ханты-Мансийский автономный
-              округ.
-            </h4>
-            <p>ООО "Азия-Рубеж"</p>
-            <p>тел. (343) 345-0202</p>
-            <p>Белов Вячеслав Леонидович</p>
-            <a href="mailto:asiaek@mail.ru">asiaek@mail.ru</a>
-          </div> */}
         </div>
       </section>
       <Newsletter />
