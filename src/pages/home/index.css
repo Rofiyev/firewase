@@ -658,6 +658,9 @@
 /*? Responsive ?*/
 
 @media only screen and (max-width: 900px) {
+  .home .home__main .info p {
+    width: 100%;
+  }
   .home .home__main {
     flex-direction: column-reverse !important;
   }
