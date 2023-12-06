@@ -94,9 +94,7 @@ export default function Contacts() {
                   <FaLocationArrow className="icon" />
                   <h5>Адрес:</h5>
                 </div>
-                <span>
-                  129090, г. Москва, Грохольский переулок, 28, помещение 2/2
-                </span>
+                <span>Москва, Грохольский переулок</span>
               </div>
               <div className="col">
                 <div className="head">
@@ -136,7 +134,6 @@ export default function Contacts() {
               </div>
             </div>
           </div>
-
           <div className="contacts_right_sides">
             <div className="box_contact">
               <h4>Оставьте заявку</h4>

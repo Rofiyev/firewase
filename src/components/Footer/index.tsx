@@ -4,7 +4,7 @@ import brand from "../../assets/logo.png";
 import { FaFacebook, FaTelegram, FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getCategorys, getDocuments } from "../../api/api";
 import { ICategory } from "../../interface";
 
@@ -31,14 +31,19 @@ export default function Footer() {
             <Link to={"/"}>
               <img src={brand} alt="Brand" />
             </Link>
-            <div className="wrap">
-              <h5>Будьте в курсе последних новостей</h5>
-            </div>
             <div className="socials">
-              <FaFacebook className="icon" />
-              <FaYoutube className="icon" />
-              <RiInstagramFill className="icon" />
-              <FaTelegram className="icon" />
+              <Link to="https://www.facebook.com/" target="_blank">
+                <FaFacebook className="icon" />
+              </Link>
+              <Link to="https://www.youtube.com/" target="_blank">
+                <FaYoutube className="icon" />
+              </Link>
+              <Link to="https://www.instagram.com/" target="_blank">
+                <RiInstagramFill className="icon" />
+              </Link>
+              <Link to="https://web.telegram.org/k/" target="_blank">
+                <FaTelegram className="icon" />
+              </Link>
             </div>
           </div>
           <div className="col-2">
@@ -69,15 +74,20 @@ export default function Footer() {
             </ul>
             <ul>
               <li className="menu_title">О компании</li>
-              <li>О компании</li>
+              <li>
+                <Link
+                  style={{ textDecoration: "none", color: "inherit" }}
+                  to="/company"
+                >
+                  О компании
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
         <hr className="line" />
         <div className="copyright">
-          <span>
-            &copy;{new Date().getFullYear()} GST a UTF Fire & Security Company
-          </span>
+          <span>&copy;{new Date().getFullYear()} FireWise Company</span>
         </div>
       </div>
     </footer>

@@ -63,7 +63,7 @@ export default function Home() {
         <div className="home__main">
           <div className="info">
             <h1 className="linear_gradient_title__light">
-              GST - Building technology for fore & security
+              Fire Wise - Building technology for fore & security
             </h1>
             <p>
               Компания Gulf Security Technology Co., Ltd, GST, является ключевым
@@ -205,7 +205,14 @@ export default function Home() {
                 <div className="left">
                   <div className="accordion-header">
                     <span className="numbers">0/{i + 1}</span>
-                    <span className="title">{item.title.slice(0, 30)}...</span>
+                    <span
+                      className="title"
+                      style={{
+                        display: i + 1 !== accordionActive ? "block" : "none",
+                      }}
+                    >
+                      {item.title.slice(0, 30)}...
+                    </span>
                   </div>
                   <div className="accordion-body">
                     <div className="accordion-caption">

@@ -9,6 +9,7 @@ import { FaLocationArrow, FaPhone } from "react-icons/fa";
 import { FaBuildingColumns, FaEarthAmericas } from "react-icons/fa6";
 import { SiMetrodeparis } from "react-icons/si";
 import { MdAttachEmail } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export default function About() {
   const handleScroll = () => {
@@ -24,7 +25,7 @@ export default function About() {
         <div className="about__main">
           <div className="info">
             <h1 className="linear_gradient_title__light">
-              Сертификат официальный дистрибьютер GST
+              FireWise - Building technology for fore & security
             </h1>
             <p>
               Компания Gulf Security Technology Co., Ltd, GST, является ключевым
@@ -32,10 +33,18 @@ export default function About() {
               надежным поставщиком комплексных решений для противопожарных
               систем по всему миру. Это дочерняя компания Carrier (Carrier
               Global Corporation), ведущего мирового поставщика инновационных
-              технологий в области отопления, вентиляции и кондиционирования,
-              охлаждения, технологий пожарной, охранной безопасности и
-              автоматизации зданий.
+              технологий
             </p>
+            <div className="btns__info">
+              <button>
+                <Link
+                  style={{ color: "inherit", textDecoration: "none" }}
+                  to="/contacts"
+                >
+                  Где купить
+                </Link>
+              </button>
+            </div>
           </div>
           <div className="images__wrapper">
             <img src={home__image} alt="Certificate" />
@@ -76,7 +85,7 @@ export default function About() {
         </div>
       </section>
 
-      <section>
+      <section className="map-wrapper">
         <div className="container">
           <div className="info-about">
             <h4>Официальный дистрибьютер продукции GST в России.</h4>

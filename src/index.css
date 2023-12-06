@@ -47,8 +47,7 @@ body {
   width: 80%;
   text-wrap: wrap;
   margin-bottom: 20px;
-  font-size: 3.7rem;
-  line-height: 106%;
+  font-size: 3.5rem;
   letter-spacing: -3px;
   margin: 0 auto;
   background: radial-gradient(
@@ -79,7 +78,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 10s linear infinite;
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 4rem;
 }
 

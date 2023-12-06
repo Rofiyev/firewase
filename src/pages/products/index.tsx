@@ -16,21 +16,33 @@ export default function ProductPage() {
   const [active, setActive] = useState("Все");
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
+  const [isFilterLoad, setIsFilterLoad] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
+    setIsFilterLoad(true);
     (async () => {
       const { data, success } = await getProducts({
         category_id: params as string,
       });
-      const res = await getCategorys();
-      if (success && res.success) {
+      if (success) {
+        setIsFilterLoad(false);
         setItems(data);
-        setFiltered(res.data);
-        setIsLoading(false);
       }
     })();
   }, [params]);
+
+  useEffect(() => {
+    setIsFilterLoad(true);
+    setIsLoading(true);
+    (async () => {
+      const { data, success } = await getCategorys();
+      if (success) {
+        setFiltered(data);
+        setIsFilterLoad(false);
+        setIsLoading(false);
+      }
+    })();
+  }, []);
 
   useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), []);
 
@@ -38,16 +50,24 @@ export default function ProductPage() {
     <Layout>
       <div className="container">
         <div style={{ marginBlock: "15vh" }} className="category_products">
-          <div className="filter_products">
-            <h3>Отфильтровано по:</h3>
-            <ul style={{ justifyContent: "center" }}>
-              {!filtered.length ? (
+          <section>
+            {isLoading ? (
+              <div
+                style={{
+                  height: "50vh",
+                  display: "grid",
+                  placeContent: "center",
+                }}
+              >
                 <div
                   className="spinner-border text-success"
                   role="status"
                 ></div>
-              ) : (
-                <>
+              </div>
+            ) : (
+              <>
+                <h3>Отфильтровано по:</h3>
+                <ul style={{ justifyContent: "center" }}>
                   <li
                     onClick={() => {
                       setActive("Все");
@@ -56,7 +76,7 @@ export default function ProductPage() {
                     style={{
                       color: active === "Все" ? "black" : "",
                       opacity: active === "Все" ? "1" : "",
-                      fontWeight: active === "Все" ? "600" : "normal",
+                      fontWeight: active === "Все" ? "700" : "normal",
                     }}
                   >
                     Все
@@ -70,90 +90,112 @@ export default function ProductPage() {
                       style={{
                         color: active === item.title ? "black" : "",
                         opacity: active === item.title ? "1" : "",
-                        fontWeight: active === item.title ? "600" : "normal",
+                        fontWeight: active === item.title ? "700" : "normal",
                       }}
                       key={item.id}
                     >
                       {item.title}
                     </li>
                   ))}
-                </>
-              )}
-            </ul>
-          </div>
-          <div className="filtered_products">
-            {isLoading ? (
-              <div className="spinner-border text-success" role="status"></div>
-            ) : (
-              <>
-                {items.map((item: INewProducts, i: number) => (
-                  <Link
-                    key={i}
-                    to={`/products/${item.id}`}
-                    style={{ color: "inherit", textDecoration: "none" }}
-                  >
-                    <div className="box_products">
-                      <img
-                        src={`${BASE_URL}${item.product_images[0]?.image}`}
-                        alt="Image"
-                      />
+                </ul>
+                <div className="filtered_products">
+                  {isFilterLoad ? (
+                    <div
+                      style={{
+                        height: "50vh",
+                        display: "grid",
+                        placeContent: "center",
+                      }}
+                    >
                       <div
-                        className="card_desc"
-                        style={{
-                          padding: "32px 22px 30px",
-                          textAlign: "left",
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "flex-start",
-                          justifyContent: "space-between",
-                          height: "60%",
-                        }}
-                      >
-                        <div>
-                          <h3
-                            style={{
-                              marginBlock: "20px",
-                              fontSize: "20px",
-                              lineHeight: "24px",
-                              fontWeight: "500",
-                            }}
-                          >
-                            {item.title}
-                          </h3>
-                          <p
-                            style={{
-                              fontSize: "16px",
-                              fontWeight: "400",
-                              lineHeight: "22px",
-                              marginBottom: "1rem",
-                              color: "#164234",
-                            }}
-                          >
-                            {item.description.slice(0, 150)}
-                          </p>
-                        </div>
-                        <button
-                          style={{
-                            background: "transparent",
-                            border: "none",
-                            fontSize: "13px",
-                            fontWeight: "500",
-                            textTransform: "uppercase",
-                            lineHeight: "123%",
-                            letterSpacing: "2px",
-                            color: "#69c04b",
-                            marginTop: "30px",
-                          }}
-                        >
-                          Подробнее
-                        </button>
-                      </div>
+                        className="spinner-border text-success"
+                        role="status"
+                      ></div>
                     </div>
-                  </Link>
-                ))}
+                  ) : (
+                    <>
+                      {" "}
+                      {items.map((item: INewProducts, i: number) => (
+                        <Link
+                          key={i}
+                          to={`/products/${item.id}`}
+                          style={{ color: "inherit", textDecoration: "none" }}
+                        >
+                          <div className="box_products">
+                            <img
+                              src={`${BASE_URL}${item.product_images[0]?.image}`}
+                              alt="Image"
+                            />
+                            <div
+                              className="card_desc"
+                              style={{
+                                padding: "32px 22px 30px",
+                                textAlign: "left",
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "flex-start",
+                                justifyContent: "space-between",
+                                height: "60%",
+                              }}
+                            >
+                              <div>
+                                <h3
+                                  style={{
+                                    marginBlock: "20px",
+                                    fontSize: "20px",
+                                    lineHeight: "24px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  {item.title}
+                                </h3>
+                                <p
+                                  style={{
+                                    fontSize: "16px",
+                                    fontWeight: "400",
+                                    lineHeight: "22px",
+                                    marginBottom: "1rem",
+                                    color: "#164234",
+                                  }}
+                                >
+                                  {item.description.slice(0, 150)}
+                                </p>
+                              </div>
+                              <button
+                                style={{
+                                  background: "transparent",
+                                  border: "none",
+                                  fontSize: "13px",
+                                  fontWeight: "500",
+                                  textTransform: "uppercase",
+                                  lineHeight: "123%",
+                                  letterSpacing: "2px",
+                                  color: "#69c04b",
+                                  marginTop: "30px",
+                                }}
+                              >
+                                Подробнее
+                              </button>
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
+                    </>
+                  )}
+                </div>
+                <div style={{ marginTop: "50px" }} className="btn-wrapper">
+                  <button>
+                    <Link
+                      style={{ color: "inherit", textDecoration: "none" }}
+                      to="/contacts"
+                    >
+                      Где купить
+                    </Link>
+                  </button>
+                </div>
               </>
             )}
-          </div>
+          </section>
         </div>
         <Newsletter />
       </div>
