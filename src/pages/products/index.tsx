@@ -56,6 +56,7 @@ export default function ProductPage() {
                     style={{
                       color: active === "Все" ? "black" : "",
                       opacity: active === "Все" ? "1" : "",
+                      fontWeight: active === "Все" ? "600" : "normal",
                     }}
                   >
                     Все
@@ -69,6 +70,7 @@ export default function ProductPage() {
                       style={{
                         color: active === item.title ? "black" : "",
                         opacity: active === item.title ? "1" : "",
+                        fontWeight: active === item.title ? "600" : "normal",
                       }}
                       key={item.id}
                     >

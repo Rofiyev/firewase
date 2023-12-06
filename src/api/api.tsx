@@ -28,10 +28,10 @@ export const getDocuments = async (types: string = "") => {
 export const postContact = async (body: IPostuserdata) => {
   try {
     const { data } = await axios.post(`${BASE_URL}/form/`, body);
-    console.log(data);
-    
+    return { data, success: true };
   } catch (error) {
     console.log(error);
+    return { success: false };
   }
 };
 
@@ -47,9 +47,9 @@ export const checkPhoneNumber = async (number: string) => {
     return { success: true, data };
   } catch (error) {
     console.log(error);
-    return { success: false, data:'' };
+    return { success: false, data: "" };
   }
-}
+};
 export const getProducts = async (objParams: {
   product_last_count?: string;
   category_id?: string;

@@ -55,7 +55,7 @@ export interface Category {
   description:string
 }
 export interface IPostuserdata {
-  id:number,
+  id?:number,
   full_name: string,
   organization: string,
   phone_number: string,

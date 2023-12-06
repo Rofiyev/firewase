@@ -1,55 +1,64 @@
 import "./index.css";
 import Layout from "../../layout";
-import { IPostuserdata } from "../../interface";
-import { useForm, SubmitHandler } from "react-hook-form";
+// import { IPostuserdata } from "../../interface";
+import { useForm } from "react-hook-form";
 import { useState, useEffect, ChangeEvent } from "react";
 import { checkPhoneNumber, postContact } from "../../api/api";
-import home_svg from "../../assets/home_svg.svg";
-import { FaCheckCircle, FaLocationArrow, FaPhone } from "react-icons/fa";
-import { IoSend } from "react-icons/io5";
-import { toast } from "react-toastify";
+import { FaLocationArrow, FaPhone } from "react-icons/fa";
 import { FaBuildingColumns } from "react-icons/fa6";
 import { FaEarthAmericas } from "react-icons/fa6";
 import { MdAttachEmail } from "react-icons/md";
 import { SiMetrodeparis } from "react-icons/si";
+import { toast } from "react-toastify";
 
-const resolveAfter35sec = new Promise((resolve) => setTimeout(resolve, 3000));
+type Inputs = {
+  full_name: string;
+  organization: string;
+  phone_number: string;
+  email: string;
+  desc: string;
+};
 
 export default function Contacts() {
-  const [phoneNumberCheck, setPhoneNumberCheck] = useState<boolean>(false);
-  const [confirmEmail, setConfirmEmail] = useState(false);
-  const [number, setNumber] = useState<string>("");
-  const [activationcode, setActivationcode] = useState("");
-  const [activation, setActiovation] = useState("");
-
-  const { register, handleSubmit, reset } = useForm<IPostuserdata>();
-  const onSubmit: SubmitHandler<IPostuserdata> = async (data) => {
-    const datas = await postContact(data);
-    console.log(datas);
-    reset();
-    toast.promise(resolveAfter35sec, {
-      pending: "Отправляется",
-      success: "Отправлено Заявление",
-    });
-  };
+  const [isPhoneActive, setIsPhoneActive] = useState<boolean>(false);
+  const [fullName, setFullName] = useState<string>("");
+  const [organiz, setOrganiz] = useState<string>("");
+  const [tel, setTel] = useState<string>("");
+  const [actiteCode, setActive] = useState<string>("");
+  const [userCode, setUserCode] = useState<string>("");
+  const [disabled, setDisabled] = useState<boolean>(true);
 
   useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), []);
+  const { register, handleSubmit, reset } = useForm<Inputs>();
 
-  function openCode() {
-    if (number.length > 12) {
-      (async () => {
-        const { data, success } = await checkPhoneNumber(number);
-        success && setActivationcode(data[number]);
-        console.log("worked number effect");
-        setPhoneNumberCheck(true);
-      })();
+  const onSubmit = async (values: Inputs) => {
+    const { data, success } = await postContact(values);
+    success && data && toast.success("Сообщения отправлены!");
+    reset();
+    setIsPhoneActive(false);
+    setActive("");
+    setUserCode("");
+    setDisabled(true);
+  };
+
+  const handleCode = () => {
+    if (userCode === actiteCode) {
+      setDisabled(false);
+      toast.success("Номер телефона подтвержден.");
+      setIsPhoneActive(false);
     }
-  }
+  };
 
-  function checkCode() {
-    if (activationcode.toString() === activation.toString())
-      setConfirmEmail(true);
-  }
+  const handleActivePhone = async () => {
+    if (fullName && organiz && tel) {
+      const { success, data } = await checkPhoneNumber(tel);
+      if (success) {
+        setActive(data[tel]);
+        toast.success("На номер телефона отправлен код подтверждения");
+        setIsPhoneActive(true);
+      }
+    }
+  };
 
   return (
     <Layout>
@@ -61,24 +70,8 @@ export default function Contacts() {
                 <h1 className="linear_gradient_title__light">
                   GST - BUILDING TECHNOLOGY FOR FORE & SECURITY
                 </h1>
-                <p>
-                  GST предлагает широкий ассортимент противопожарной продукции и
-                  индивидуальные решения для противопожарных систем,
-                  адаптированные к потребностям различных отраслей
-                  промышленности. Имея инфраструктуру продаж, которая охватывает
-                  многие страны и регионы и включает в себя сеть из более чем
-                  120 офисов продаж и несколько логистических центров по всему
-                  Китаю, GST стала важной частью глобального бизнеса Carrier.
-                  Чтобы удовлетворить потребности своей международной клиентской
-                  базы, GST создала обширные научно-исследовательские центры в
-                  Пекине и Циньхуандао на севере Китая. Компания постоянно
-                  стремится разрабатывать новые инновационные технологии и
-                  продукты.
-                </p>
               </div>
-              <div className="images__wrapper">
-                <img src={home_svg} alt="Home" />
-              </div>
+              <div className="images__wrapper"></div>
             </div>
           </div>
         </div>
@@ -147,29 +140,22 @@ export default function Contacts() {
           <div className="contacts_right_sides">
             <div className="box_contact">
               <h4>Оставьте заявку</h4>
-              <form onSubmit={handleSubmit(onSubmit)} id="userdata">
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                   type="text"
                   placeholder="ИМЯ ФАМИЛИЯ*"
-                  {...register("full_name", {
-                    required: "Надо выполнять",
-                    minLength: {
-                      value: 4,
-                      message: "Надо выполнять",
-                    },
-                  })}
-                  onChange={(e) => setNumber(e.target.value)}
+                  {...register("full_name", { required: true })}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setFullName(e.target.value)
+                  }
                 />
                 <input
                   type="text"
                   placeholder="Организация*"
-                  {...register("organization", {
-                    required: "Надо выполнять",
-                    minLength: {
-                      value: 4,
-                      message: "Надо выполнять",
-                    },
-                  })}
+                  {...register("organization", { required: true })}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setOrganiz(e.target.value)
+                  }
                 />
                 <div
                   style={{
@@ -181,72 +167,70 @@ export default function Contacts() {
                   className="phoneNumberStyle"
                 >
                   <input
-                    type="text"
+                    type="tel"
                     placeholder="Телефон номерь*"
-                    maxLength={19}
+                    maxLength={13}
                     defaultValue={"+998"}
                     {...register("phone_number", {
-                      required: "Надо выполнять",
-                      minLength: {
-                        value: 11,
-                        message: "Надо выполнять",
-                      },
+                      required: true,
                     })}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      setNumber(e.target.value)
+                      setTel(e.target.value)
                     }
                   />
-                  <button onClick={openCode}>
-                    <FaCheckCircle />
+                  <button className="inputBtn" onClick={handleActivePhone}>
+                    Подтвердите
                   </button>
                 </div>
-                {phoneNumberCheck ? (
+                {isPhoneActive && (
                   <div className="codeStyle">
                     <input
-                      type="text"
-                      onChange={(e) => setActiovation(e.target.value)}
+                      type="number"
                       placeholder="Введите код *"
-                      style={{ width: "50%" }}
+                      maxLength={6}
+                      style={{ width: "100%" }}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                        setUserCode(e.target.value)
+                      }
+                      required
+                      autoFocus
                     />
-                    <button onClick={checkCode}>
-                      <IoSend />
+                    <button className="inputBtn" onClick={handleCode}>
+                      Активация
                     </button>
                   </div>
-                ) : (
-                  ""
                 )}
-
                 <input
                   type="text"
                   placeholder="Еmail*"
+                  disabled={disabled}
                   {...register("email", {
-                    required: "Надо выполнять",
-                    minLength: {
-                      value: 6,
-                      message: "Надо выполнять",
-                    },
+                    required: true,
                   })}
-                  disabled={confirmEmail === false ? true : false}
-                  style={{ cursor: !confirmEmail ? "no-drop" : "pointer" }}
+                  style={{
+                    cursor: disabled ? "no-drop" : "pointer",
+                    opacity: disabled ? "0.6" : "1",
+                  }}
                 />
                 <textarea
                   cols={30}
                   rows={2}
-                  style={{ cursor: !confirmEmail ? "no-drop" : "pointer" }}
+                  disabled={disabled}
+                  style={{
+                    cursor: disabled ? "no-drop" : "pointer",
+                    opacity: disabled ? "0.6" : "1",
+                  }}
                   placeholder="Вопрос*"
                   {...register("desc", {
-                    required: "Надо выполнять",
+                    required: true,
                   })}
-                  disabled={confirmEmail === false ? true : false}
                 ></textarea>
                 <button
                   type="submit"
-                  form="userdata"
                   style={{
-                    cursor: !confirmEmail ? "no-drop" : "pointer",
-                    opacity: !confirmEmail ? "0.4" : "1",
+                    cursor: disabled ? "no-drop" : "pointer",
+                    opacity: disabled ? "0.6" : "1",
                   }}
-                  disabled={confirmEmail === false ? true : false}
                 >
                   Отправить
                 </button>

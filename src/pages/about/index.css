@@ -1,8 +1,8 @@
 .about {
-  min-height: 120vh;
+  min-height: 80vh;
   width: 100%;
   background-color: var(--dark_green);
-  position: absolute;
+  position: relative;
   padding-top: 13vh;
   position: relative;
   margin-bottom: 4rem;
@@ -30,24 +30,23 @@
 .about .about__main .info {
   width: 50%;
   color: white;
-  padding-left: 50px;
+  padding-left: 4rem;
   margin-left: auto;
 }
 .about .about__main .images__wrapper {
   width: 50%;
-  min-height: 100vh;
+  min-height: 70vh;
   background: linear-gradient(rgba(22, 66, 52, 0.1), rgba(22, 66, 52, 0.1)),
     url("../../assets/home-shape.webp");
   background-repeat: no-repeat;
   background-size: 40rem;
-  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: background_animation 10s infinite linear;
 }
 .about .about__main .images__wrapper img {
-  width: 250px;
+  width: 280px;
   border-radius: 4px;
 }
 
@@ -112,7 +111,7 @@
 }
 
 .about_2 {
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 .about_2_titles p {
   margin-inline: auto;
