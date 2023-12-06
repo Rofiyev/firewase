@@ -244,7 +244,8 @@
     margin: 0;
     width: 100%;
     margin: 1rem auto 3rem !important;
-    padding: .7rem !important;
+    padding: 0.7rem !important;
+    min-height: 600px;
   }
   .contacts_2 .contacts_right_sides .phoneNumberStyle button {
     margin-left: 0 !important;
