@@ -11,7 +11,6 @@ import { ICategory } from "../../interface";
 export default function Footer() {
   const [category, setCategory] = useState([]);
   const [docs, setDocs] = useState<string[]>([]);
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => e.preventDefault();
 
   useEffect(() => {
     (async () => {
@@ -34,14 +33,6 @@ export default function Footer() {
             </Link>
             <div className="wrap">
               <h5>Будьте в курсе последних новостей</h5>
-              <form onSubmit={handleSubmit} className="newsletter">
-                <input
-                  name="email"
-                  type="text"
-                  placeholder="Введите адрес электронной почты"
-                />
-                <button className="btn">Отправка</button>
-              </form>
             </div>
             <div className="socials">
               <FaFacebook className="icon" />

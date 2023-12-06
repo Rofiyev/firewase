@@ -1,5 +1,5 @@
 .home {
-  min-height: 100vh;
+  min-height: 80vh;
   width: 100%;
   background-color: var(--dark_green);
   position: absolute;
@@ -29,12 +29,12 @@
 .home .home__main .info {
   width: 50%;
   color: white;
-  padding-left: 50px;
+  padding-left: 4rem;
   margin-left: auto;
 }
 .home .home__main .images__wrapper {
   width: 50%;
-  height: 100vh;
+  height: 70vh;
   background: linear-gradient(rgba(22, 66, 52, 0.1), rgba(22, 66, 52, 0.1)),
     url("../../assets/home-shape.webp");
   background-repeat: no-repeat;
@@ -104,7 +104,6 @@
 
 .home .home__main .info p {
   width: 75%;
-  margin-top: 1rem;
 }
 
 .home .home__main .info .btns__info {
@@ -152,7 +151,8 @@
   overflow-x: hidden;
   padding: 0 0;
   white-space: nowrap;
-  height: 200px;
+  height: 40px;
+  overflow: hidden;
   position: relative;
   display: flex;
   gap: 0px;
@@ -216,7 +216,7 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  height: 60px;
+  height: 50px;
   width: 40px;
   display: flex;
   justify-content: center;
@@ -387,6 +387,7 @@
   margin: 0 auto;
   display: flex;
   padding-block: 2rem;
+ 
 }
 .accordion .accordion_image_gallery .accordion_item {
   max-height: 800px;
@@ -397,8 +398,9 @@
   margin: 0 10px;
   border-radius: 1.2rem;
   flex: 0.5;
-  padding: 1rem;
   transition: 1s ease-in-out;
+  border: 1px solid var(--light__green);
+  overflow: hidden;
 }
 .accordion .accordion_image_gallery .accordion_item.active {
   flex: 5;
@@ -426,10 +428,11 @@
   height: 100%;
   align-items: center;
   justify-content: space-between;
-  padding-left: 15px;
   display: none;
   opacity: 0;
   transition: 0.7s ease-in-out;
+  gap: 20px;
+  padding: 0 !important;
 }
 .accordion
   .accordion_image_gallery
@@ -503,10 +506,20 @@
   .accordion_item
   .left
   .accordion-body
+  .accordion-images {
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+  }
+.accordion
+  .accordion_image_gallery
+  .accordion_item
+  .left
+  .accordion-body
   .accordion-images
   img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
 }
 .accordion

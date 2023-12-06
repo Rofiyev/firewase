@@ -16,14 +16,14 @@
   width: 100%;
 }
 .header .brand {
-  width: 120px;
-  height: 60px;
+  width: 200px;
+  height: 40px;
 }
 .header .brand img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
-  filter: grayscale(100%) sepia(100%) hue-rotate(90deg);
+  object-fit: contain;
+  filter: brightness(0) invert(1);
   cursor: pointer;
 }
 .header nav ul {

@@ -10,11 +10,12 @@ footer .col-1 {
   width: 40%;
 }
 footer .col-1 img {
-  filter: grayscale(100%) sepia(100%) hue-rotate(90deg);
-  width: 120px;
-  height: 60px;
+  width: 350px;
+  height: 100px;
   object-fit: cover;
   cursor: pointer;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 footer .col-1 h5 {
   color: white;

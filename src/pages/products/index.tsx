@@ -23,24 +23,16 @@ export default function ProductPage() {
       const { data, success } = await getProducts({
         category_id: params as string,
       });
-      if (success) {
+      const res = await getCategorys();
+      if (success && res.success) {
         setItems(data);
+        setFiltered(res.data);
         setIsLoading(false);
       }
     })();
   }, [params]);
 
-  useEffect(() => {
-    setIsLoading(true);
-    (async () => {
-      const { data, success } = await getCategorys();
-      if (success) {
-        setFiltered(data);
-        setIsLoading(false);
-      }
-    })();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), []);
 
   return (
     <Layout>
@@ -50,9 +42,10 @@ export default function ProductPage() {
             <h3>Отфильтровано по:</h3>
             <ul style={{ justifyContent: "center" }}>
               {!filtered.length ? (
-                <div className="spinner-border text-success" role="status">
-                  {/* <span className="sr-only">Loading...</span> */}
-                </div>
+                <div
+                  className="spinner-border text-success"
+                  role="status"
+                ></div>
               ) : (
                 <>
                   <li
@@ -88,9 +81,7 @@ export default function ProductPage() {
           </div>
           <div className="filtered_products">
             {isLoading ? (
-              <div className="spinner-border text-success" role="status">
-                {/* <span className="sr-only">Loading...</span> */}
-              </div>
+              <div className="spinner-border text-success" role="status"></div>
             ) : (
               <>
                 {items.map((item: INewProducts, i: number) => (

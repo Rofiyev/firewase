@@ -24,7 +24,7 @@ export default function Home() {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > window.innerHeight / 0.8) setBgIsActive(true);
+      if (window.scrollY > window.innerHeight / 1.2) setBgIsActive(true);
       else setBgIsActive(false);
     });
   }, []);
@@ -46,7 +46,7 @@ export default function Home() {
       const elem = document.querySelector(hash);
       setTimeout(() => {
         elem?.scrollIntoView({ behavior: "smooth" });
-      }, 1000);
+      }, 1500);
     }
   }, [hash]);
 
