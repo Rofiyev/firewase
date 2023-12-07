@@ -67,13 +67,16 @@ export default function ProductPage() {
             ) : (
               <>
                 <h3>Отфильтровано по:</h3>
-                <ul style={{ justifyContent: "center" }}>
+                <ul
+                 
+                >
                   <li
                     onClick={() => {
                       setActive("Все");
                       navigate(`/products`);
                     }}
                     style={{
+                      whiteSpace: "nowrap",
                       color: active === "Все" ? "black" : "",
                       opacity: active === "Все" ? "1" : "",
                       fontWeight: active === "Все" ? "700" : "normal",
@@ -88,6 +91,7 @@ export default function ProductPage() {
                         navigate(`/products?category=${item.id}`);
                       }}
                       style={{
+                        whiteSpace: "nowrap",
                         color: active === item.title ? "black" : "",
                         opacity: active === item.title ? "1" : "",
                         fontWeight: active === item.title ? "700" : "normal",
@@ -182,16 +186,6 @@ export default function ProductPage() {
                       ))}
                     </>
                   )}
-                </div>
-                <div style={{ marginTop: "50px" }} className="btn-wrapper">
-                  <button>
-                    <Link
-                      style={{ color: "inherit", textDecoration: "none" }}
-                      to="/contacts"
-                    >
-                      Где купить
-                    </Link>
-                  </button>
                 </div>
               </>
             )}

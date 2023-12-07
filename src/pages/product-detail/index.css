@@ -38,6 +38,19 @@ table {
 }
 
 @media only screen and (max-width: 900px) {
+  table tbody tr {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  table tbody tr td {
+    width: 100% !important;
+  }
+  .product_detail .image_wrap img {
+    height: 80%;
+    width: 100%;
+    object-fit: contain !important;
+  }
   .product_detail {
     flex-direction: column;
   }

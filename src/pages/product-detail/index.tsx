@@ -5,6 +5,7 @@ import { Fragment, useEffect, useState } from "react";
 import { getProducts } from "../../api/api";
 import { BASE_URL } from "../../config";
 import { IAttributeName, IProducts } from "../../interface";
+import { Newsletter } from "../../components";
 
 export default function ProductDetail() {
   const { product } = useParams();
@@ -20,7 +21,7 @@ export default function ProductDetail() {
 
   return (
     <Layout>
-      <section style={{ paddingBlock: "15vh" }}>
+      <section style={{ paddingBlock: "15vh", minHeight: "70vh" }}>
         <div className="container">
           {detail?.length ? (
             detail.map((item: IProducts) => (
@@ -97,6 +98,8 @@ export default function ProductDetail() {
           )}
         </div>
       </section>
+
+      <Newsletter />
     </Layout>
   );
 }

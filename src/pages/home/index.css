@@ -29,7 +29,7 @@
 .home .home__main .info {
   width: 50%;
   color: white;
-  padding-left: 4rem;
+  padding-left: 2rem;
   margin-left: auto;
 }
 .home .home__main .images__wrapper {
@@ -301,7 +301,7 @@
   padding: 30px;
   gap: 5px;
   height: 100%;
-  width: 26%;
+  width: 29%;
   height: 450px;
 }
 
@@ -361,7 +361,7 @@
   z-index: -1;
 }
 .accordion .accordion_image_gallery {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   display: flex;
   padding-block: 2rem;
