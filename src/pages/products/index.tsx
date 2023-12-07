@@ -77,7 +77,8 @@ export default function ProductPage() {
                     }}
                     style={{
                       whiteSpace: "nowrap",
-                      color: active === "Все" ? "var(--light__green)" : "",
+                      background: active === "Все" ? "var(--light__green)" : "",
+                      color: active === "Все" ? "#fff" : "",
                       opacity: active === "Все" ? "1" : "",
                       fontWeight: active === "Все" ? "500" : "normal",
                     }}
@@ -93,9 +94,11 @@ export default function ProductPage() {
                       style={{
                         whiteSpace: "nowrap",
                         color:
-                          active === item.title ? "var(--light__green)" : "",
+                          active === item.title ? "#fff" : "",
                         opacity: active === item.title ? "1" : "",
                         fontWeight: active === item.title ? "500" : "normal",
+                        background:
+                          active === item.title ? "var(--light__green)" : "",
                       }}
                       key={item.id}
                     >

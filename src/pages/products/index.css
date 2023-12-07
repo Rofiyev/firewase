@@ -14,12 +14,12 @@
   width: 92%;
 }
 .category_products ul li {
-  background-color: #ddd;
   border-radius: 4px;
   padding: 0 6px;
   margin-bottom: 10px;
   white-space: nowrap;
   user-select: none;
+  border: 1px solid var(--light__green);
 }
 
 .category_products ul::-webkit-scrollbar {
