@@ -39,6 +39,8 @@ export default function ProductPage() {
       if (success) {
         setFiltered(data);
         setIsFilterLoad(false);
+        const c = data.filter((c: ICategory) => c.id === +params!);
+        params ? setActive(c[0].title) : setActive("Все");
         setIsLoading(false);
       }
     })();
@@ -67,9 +69,7 @@ export default function ProductPage() {
             ) : (
               <>
                 <h3>Отфильтровано по:</h3>
-                <ul
-                 
-                >
+                <ul>
                   <li
                     onClick={() => {
                       setActive("Все");
@@ -77,12 +77,12 @@ export default function ProductPage() {
                     }}
                     style={{
                       whiteSpace: "nowrap",
-                      color: active === "Все" ? "black" : "",
+                      color: active === "Все" ? "var(--light__green)" : "",
                       opacity: active === "Все" ? "1" : "",
-                      fontWeight: active === "Все" ? "700" : "normal",
+                      fontWeight: active === "Все" ? "500" : "normal",
                     }}
                   >
-                    Все
+                    Все категории
                   </li>
                   {filtered.map((item: ICategory) => (
                     <li
@@ -92,9 +92,10 @@ export default function ProductPage() {
                       }}
                       style={{
                         whiteSpace: "nowrap",
-                        color: active === item.title ? "black" : "",
+                        color:
+                          active === item.title ? "var(--light__green)" : "",
                         opacity: active === item.title ? "1" : "",
-                        fontWeight: active === item.title ? "700" : "normal",
+                        fontWeight: active === item.title ? "500" : "normal",
                       }}
                       key={item.id}
                     >

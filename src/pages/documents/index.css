@@ -1,7 +1,7 @@
 .table__wrapper {
   padding-inline: 1.5rem;
   padding-block: 2rem;
-  min-height: 70vh;
+  min-height: 580px;
 }
 .table__wrapper .heading {
   font-family: inherit !important;

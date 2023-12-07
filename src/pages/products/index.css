@@ -5,14 +5,13 @@
 }
 .category_products ul {
   display: flex;
-  list-style-type: none;
+  flex-wrap: wrap;
   gap: 10px;
-  padding-inline: 5px;
-  overflow-x: auto;
-  width: 90%;
+  list-style-type: none;
   margin: 1rem auto 3rem;
-  cursor: grab;
-  scroll-snap-points-x: calc(100px);
+  justify-content: flex-start;
+  padding: 0;
+  width: 92%;
 }
 .category_products ul li {
   background-color: #ddd;
@@ -34,7 +33,7 @@
   font-size: 1.2rem;
 }
 .category_products ul li:hover {
-  color: black;
+  color: var(--light__green);
   opacity: 1;
 }
 .category_products .filtered_products {
