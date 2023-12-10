@@ -27,10 +27,10 @@
   position: relative;
 }
 .home .home__main .info {
-  width: 50%;
+  width: 55%;
   color: white;
+  margin-top: 2rem;
   padding-left: 2rem;
-  margin-left: auto;
 }
 .home .home__main .images__wrapper {
   width: 50%;
@@ -75,6 +75,7 @@
 .home .home__main .info h1 {
   text-transform: uppercase;
   font-weight: 500;
+  font-size: 3rem;
 }
 
 @keyframes textclip {
@@ -90,7 +91,7 @@
 }
 
 .home .home__main .info p {
-  width: 75%;
+  width: 95% !important;
 }
 
 .home .home__main .info .btns__info {

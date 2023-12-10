@@ -71,7 +71,7 @@ export default function Contacts() {
             <div className="contact">
               <div className="contact_titles">
                 <h1 className="linear_gradient_title__light">
-                  GST - BUILDING TECHNOLOGY FOR FORE & SECURITY
+                  ПРОФЕССИОНАЛИЗМ, НАДЕЖНОСТЬ И КАЧЕСТВО ВМЕСТЕ С НАМИ
                 </h1>
               </div>
               <div className="images__wrapper"></div>
@@ -83,28 +83,34 @@ export default function Contacts() {
       <div className="container">
         <section id="contacts_2" className="contacts_2">
           <div className="info-about">
-            <h4>Официальный дистрибьютер продукции GST в России.</h4>
+            <h4>
+              Официальный дистрибьютер продукции «FireWise Enterprises» в
+              Ташкент.
+            </h4>
             <div className="row">
               <div className="col">
                 <div className="head">
                   <FaBuildingColumns className="icon" />
                   <h5>Название фирмы:</h5>
                 </div>
-                <span>ООО "НЭЛТ ДИСТРИБЬЮЦИЯ"</span>
+                <span>ООО «FireWise Enterprises»</span>
               </div>
               <div className="col">
                 <div className="head">
                   <FaLocationArrow className="icon" />
                   <h5>Адрес:</h5>
                 </div>
-                <span>Москва, Грохольский переулок</span>
+                <span>
+                  Ташкент, Юнусабадский район,
+                  <br /> 8 квартал, дом 35, кв. 14
+                </span>
               </div>
               <div className="col">
                 <div className="head">
                   <SiMetrodeparis className="icon" />
                   <h5>Метро</h5>
                 </div>
-                <span>Проспект Мира, Сухаревская</span>
+                <span>Юнусабад Метро</span>
               </div>
               <div className="col">
                 <div className="head">
@@ -112,9 +118,9 @@ export default function Contacts() {
                   <h5>Телефон:</h5>
                 </div>
                 <span>
-                  <a href="tel:+7 495 796 92 14">+7 495 796 92 14</a>
+                  <a href="tel:+998 90 950-90-06">+998 90 950-90-06</a>
                   <br />
-                  <a href="tel:+7 925 296 93 83">+7 925 296 93 83</a>
+                  <a href="tel:+998 71 224-47-61">+998 71 224-47-61</a>
                 </span>
               </div>
               <div className="col">
@@ -123,7 +129,7 @@ export default function Contacts() {
                   <h5>E-mail:</h5>
                 </div>
                 <span>
-                  <a href="mailto:info@m.nelt.ru">info@m.nelt.ru</a>
+                  <a href="mailto:OOOFEN88@gmail.com">OOOFEN88@gmail.com</a>
                 </span>
               </div>
               <div className="col">

@@ -25,15 +25,13 @@ export default function About() {
         <div className="about__main">
           <div className="info">
             <h1 className="linear_gradient_title__light">
-              FireWise - Building technology for fore & security
+              ПРОФЕССИОНАЛИЗМ, НАДЕЖНОСТЬ И КАЧЕСТВО ВМЕСТЕ С НАМИ
             </h1>
             <p>
-              Компания Gulf Security Technology Co., Ltd, GST, является ключевым
-              игроком в сфере пожарной и охранной безопасности в Азии, а также
-              надежным поставщиком комплексных решений для противопожарных
-              систем по всему миру. Это дочерняя компания Carrier (Carrier
-              Global Corporation), ведущего мирового поставщика инновационных
-              технологий
+              Наличие лицензий: Монтаж, наладка и техническое обслуживание
+              средств противопожарной автоматики (систем пожарной сигнализации,
+              видеонаблюдения и установок пожаротушения). Лицензия МЧС № 068026
+              от 10 марта 2023 г.
             </p>
             <div className="btns__info">
               <button>
@@ -67,10 +65,11 @@ export default function About() {
               Что мы делаем?
             </h3>
             <p>
-              Компания GST получила ряд национальных и международных
-              сертификатов соответствия стандартам, таким как российский ТР
-              ЕАЭС, китайский CCC, международный UL, глобальный LPCB,
-              европейский CE и т.д.
+              Любой из наших специалистов ответит на все Ваши вопросы по
+              системам пожарной безопасности и предложит наилучший вариант
+              решения поставленной задачи. Фирма на сегодняшний день является
+              одной из ведущих по консультации и сопровождению проектной
+              документации по вопросам.
             </p>
           </div>
           <div className="documents">
@@ -88,14 +87,17 @@ export default function About() {
       <section className="map-wrapper">
         <div className="container">
           <div className="info-about">
-            <h4>Официальный дистрибьютер продукции GST в России.</h4>
+            <h4>
+              Официальный дистрибьютер продукции «FireWise Enterprises» в
+              Ташкент.
+            </h4>
             <div className="row">
               <div className="col">
                 <div className="head">
                   <FaBuildingColumns className="icon" />
                   <h5>Название фирмы:</h5>
                 </div>
-                <span>ООО "НЭЛТ ДИСТРИБЬЮЦИЯ"</span>
+                <span>ООО «FireWise Enterprises»</span>
               </div>
               <div className="col">
                 <div className="head">
@@ -103,7 +105,7 @@ export default function About() {
                   <h5>Адрес:</h5>
                 </div>
                 <span>
-                  129090, г. Москва, Грохольский переулок, 28, помещение 2/2
+                  Ташкент, Юнусабадский район, <br /> 8 квартал, дом 35, кв. 14
                 </span>
               </div>
               <div className="col">
@@ -111,7 +113,7 @@ export default function About() {
                   <SiMetrodeparis className="icon" />
                   <h5>Метро</h5>
                 </div>
-                <span>Проспект Мира, Сухаревская</span>
+                <span>Юнусабад Метро</span>
               </div>
               <div className="col">
                 <div className="head">
@@ -119,9 +121,9 @@ export default function About() {
                   <h5>Телефон:</h5>
                 </div>
                 <span>
-                  <a href="tel:+7 495 796 92 14">+7 495 796 92 14</a>
+                  <a href="tel:+998 90 950-90-06">+998 90 950-90-06</a>
                   <br />
-                  <a href="tel:+7 925 296 93 83">+7 925 296 93 83</a>
+                  <a href="tel:+998 71 224-47-61">+998 71 224-47-61</a>
                 </span>
               </div>
               <div className="col">
@@ -130,7 +132,7 @@ export default function About() {
                   <h5>E-mail:</h5>
                 </div>
                 <span>
-                  <a href="mailto:info@m.nelt.ru">info@m.nelt.ru</a>
+                  <a href="mailto:OOOFEN88@gmail.com">OOOFEN88@gmail.com</a>
                 </span>
               </div>
               <div className="col">
@@ -139,7 +141,7 @@ export default function About() {
                   <h5>Website:</h5>
                 </div>
                 <span>
-                  <a href="	http://www.nelt.ru/">http://www.nelt.ru/</a>
+                  <a href="http://www.nelt.ru/">http://www.nelt.ru/</a>
                 </span>
               </div>
             </div>
@@ -147,7 +149,7 @@ export default function About() {
           <div className="map_styles">
             <h5 className="map_title">Схема проезда</h5>
             <iframe
-              src="https://yandex.ru/map-widget/v1/?lang=ru_RU&scroll=false&um=constructor%3Abec71da5496075704655c41de91ed168045adc6800832f7886dfe8a4ad77b714"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2994.2441956180337!2d69.28291471115344!3d41.36877897118252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDIyJzA3LjYiTiA2OcKwMTcnMDcuOCJF!5e0!3m2!1suz!2s!4v1702217536904!5m2!1suz!2s"
               className="map_about"
               allowFullScreen={true}
               width={"720px"}

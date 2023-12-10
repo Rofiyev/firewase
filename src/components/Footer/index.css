@@ -23,44 +23,6 @@ footer .col-1 h5 {
   font-weight: 400;
   letter-spacing: -1.5px;
 }
-footer .col-1 .newsletter {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  width: 100%;
-  margin-top: 0.8rem;
-}
-footer .col-1 .newsletter input {
-  width: 300px !important;
-  height: 2.5rem !important;
-  margin-top: 0.6rem;
-  background: transparent;
-  border: 1px solid #fff;
-  color: white;
-  outline: none;
-  border-radius: 0.5rem;
-  padding-left: 1rem;
-  font-size: 1rem;
-  margin: 0;
-}
-footer .col-1 .newsletter input::placeholder {
-  color: rgb(218, 216, 216);
-}
-footer .col-1 .newsletter .btn {
-  height: 2.5rem !important;
-  padding-inline: 20px;
-  background-color: transparent;
-  border: 1px solid var(--light__green);
-  border-radius: 0.5rem;
-  cursor: pointer;
-  color: white;
-  letter-spacing: 1.01px;
-  transition: 0.4s ease-in-out;
-}
-footer .col-1 .newsletter .btn:hover {
-  background-color: var(--light__green);
-  color: white;
-}
 footer .col-1 .socials {
   margin-top: 2rem;
   display: flex;
@@ -78,6 +40,14 @@ footer .col-1 .socials .icon {
 }
 footer .col-1 .socials .icon:hover {
   background-color: white;
+}
+footer .col-1 p {
+  color: white;
+  width: 70%;
+}
+footer .col-1 .email:hover {
+  color: var(--light__green);
+  text-decoration: underline;
 }
 footer .col-2 {
   width: 60%;

@@ -45,6 +45,10 @@ export default function Footer() {
                 <FaTelegram className="icon" />
               </Link>
             </div>
+            <p style={{ marginTop: "1rem" }}>
+              Офис расположен по адресу: город Ташкент, Юнусабадский район, 8
+              квартал, дом 35, кв. 14
+            </p>
           </div>
           <div className="col-2">
             <ul>

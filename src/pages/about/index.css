@@ -36,6 +36,8 @@
 
 .about .about__main .info h1{
   text-transform: uppercase;
+  font-size: 3rem !important;
+  line-height: 4rem !important;
 }
 .about .about__main .btns__info {
   margin-top: 1.5rem;
