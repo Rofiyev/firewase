@@ -2,9 +2,6 @@ import { INavberMenu, ICard } from "../interface";
 import Icard_image_1 from "../assets/Revenue-Accuracy.svg";
 import Icard_image_2 from "../assets/Real-Time-Visibility.svg";
 import Icard_image_3 from "../assets/Scalable-Revenue-Recognition.svg";
-import about_card_image_01 from "../assets/heart.png";
-import about_card_image_02 from "../assets/star.png";
-import about_card_image_03 from "../assets/support.png";
 
 export const navbarMenu: INavberMenu[] = [
   {
@@ -59,37 +56,37 @@ export const aboutItems: ICard[] = [
   {
     id: 1,
     title: "Integrity",
-    desc: "Always making decisions with our clients’ best interests at heart best interests at heart nterests at heart",
-    img: about_card_image_01,
+    desc: "Проектирование и составление проектносметной документации",
+    img: "https://www.ktbbeton.com/upload/images/content-img(13).png",
   },
   {
     id: 2,
     title: "Value",
-    desc: "We constantly seek new ways to incorporate value-adding features tailored to our clients’ needs.",
-    img: about_card_image_02,
+    desc: "Монтаж и наладка системы автоматического пожаротушения",
+    img: "https://expertpozh.by/wp-content/uploads/2021/02/montaj_pozharnoy_signalizacii.jpg",
   },
   {
     id: 3,
     title: "Support",
-    desc: "Offering custom-tailored attention, placing customers in the best position possible to get the most out of our software.",
-    img: about_card_image_03,
+    desc: "Монтаж и наладка системы пожарной сигнализации, оповещения",
+    img: "https://gulfstream.ru/wp-content/uploads/2023/06/pozharnye-signalizac.jpg",
   },
   {
     id: 1,
     title: "Integrity",
-    desc: "Always making decisions with our clients’ best interests at heart best interests at heart nterests at heart",
-    img: about_card_image_01,
+    desc: "Реализация оборудования GST",
+    img: "https://publishernews.ru/images/PressReleases/201909/press_r_8F666D92-1D66-4EE7-8CCF-09FBA7E5CBD9.jpg",
   },
   {
     id: 2,
     title: "Value",
-    desc: "We constantly seek new ways to incorporate value-adding features tailored to our clients’ needs.",
-    img: about_card_image_02,
+    desc: "Обслуживание противопожарного оборудования",
+    img: "https://antifire.ua/assets/images/header_photo/bg-17-1.jpg",
   },
   {
     id: 3,
     title: "Support",
-    desc: "Offering custom-tailored attention, placing customers in the best position possible to get the most out of our software.",
-    img: about_card_image_03,
+    desc: "Консультация и сопровождение проектной документации",
+    img: "https://tp-sk.ru/uploads/s/b/n/x/bnxpj6lzolwi/img/autocrop/dc1cc1077e68ab2655064d5d54d018fc.jpg",
   },
 ];

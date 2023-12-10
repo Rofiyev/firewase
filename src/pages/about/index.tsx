@@ -76,7 +76,7 @@ export default function About() {
             {aboutItems.map(({ id, title, desc, img }: ICard) => (
               <div className="box" key={id}>
                 <img src={img} alt={title} />
-                <h3>{title}</h3>
+                {/* <h3>{title}</h3> */}
                 <p>{desc}</p>
               </div>
             ))}

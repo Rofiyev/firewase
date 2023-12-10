@@ -34,7 +34,7 @@
   margin-left: auto;
 }
 
-.about .about__main .info h1{
+.about .about__main .info h1 {
   text-transform: uppercase;
   font-size: 3rem !important;
   line-height: 4rem !important;
@@ -168,7 +168,21 @@
   color: var(--dark_green);
   font-weight: 500;
 }
-
+.documents .box {
+  padding: 0px;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.documents .box img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.documents .box p {
+  font-size: 1.3rem;
+  text-align: center;
+  padding-inline: 10px;
+}
 .map_styles {
   width: 93%;
   margin: 2rem auto;
