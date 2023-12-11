@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import Layout from "../../layout";
 import partners_1 from "../../assets/partners_1.webp";
 import partners_2 from "../../assets/partners_2.webp";
-import { cardCantrol } from "../../constants";
-import { ICard, ICategory, INewProducts } from "../../interface";
+import { ICategory, INewProducts } from "../../interface";
 import { Newsletter } from "../../components";
 import { Link } from "react-router-dom";
 import home_svg from "../../assets/home_svg.svg";
@@ -136,31 +135,6 @@ export default function Home() {
           <div className="chevron"></div>
           <div className="chevron"></div>
           <div className="chevron"></div>
-        </div>
-        <div className="container">
-          <div className="home_2_titles">
-            <h3 className="linear_gradient_title">Наши основные цели</h3>
-            <p>Что мы можем сделать для вас и что можем гарантировать?</p>
-          </div>
-          <div className="home_2_box">
-            {cardCantrol.map(({ id, title, desc, img }: ICard) => (
-              <div key={id} className="box">
-                <img src={img} alt={title} />
-                <p>{title}</p>
-                <p>{desc}</p>
-              </div>
-            ))}
-          </div>
-          <div style={{ textAlign: "center", marginBottom: "50px" }}>
-            <button className="home_2_btn">
-              <Link
-                style={{ color: "inherit", textDecoration: "none" }}
-                to="/contacts"
-              >
-                Где купить
-              </Link>
-            </button>
-          </div>
         </div>
       </section>
       <section className="cards_wrapper">
