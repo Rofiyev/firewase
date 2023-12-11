@@ -248,12 +248,24 @@ export default function Home() {
               </h2>
               <div className="documents">
                 {docs.map((str: string, i: number) => (
-                  <div key={str} className="box">
+                  <div
+                    key={str}
+                    className="box"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
                     <Link
                       to={`/documents/${str}`}
                       style={{ textDecoration: "none" }}
                     >
-                      <img src={img} alt="Documents image" />
+                      <img
+                        style={{ width: "130px", height: "130px" }}
+                        src={img}
+                        alt="Documents image"
+                      />
                       <h3>{ruDocsType[i]}</h3>
                       {/* <p>{desc}</p> */}
                     </Link>
