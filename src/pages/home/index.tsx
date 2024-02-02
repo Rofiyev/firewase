@@ -12,10 +12,11 @@ import { getCategorys, getDocuments, getProducts } from "../../api/api";
 import img from "../../assets/Journal-Entries.svg";
 import { BASE_URL } from "../../config";
 import { useLocation } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
-export default function Home() {
+const Home = () => {
   const [bgIsActive, setBgIsActive] = useState<boolean>(false);
-  const [accordionActive, setAccordionActive] = useState(1);
+  const [accordionActive, setAccordionActive] = useState<number>(1);
   const [category, setCategory] = useState([]);
   const [docs, setDocs] = useState<string[]>([]);
   const [news, setNews] = useState<INewProducts[]>([]);
@@ -108,7 +109,7 @@ export default function Home() {
         >
           <div className="logos-slide">
             {[...Array(6)].map((_, i) => (
-              <img
+              <LazyLoadImage
                 key={i}
                 src={`${i % 2 === 0 ? partners_1 : partners_2}`}
                 alt="logo"
@@ -154,7 +155,7 @@ export default function Home() {
                   style={{ cursor: "pointer", textDecoration: "none" }}
                 >
                   <div className="box">
-                    <img src={image} alt={title} />
+                    <LazyLoadImage src={image} alt={title} effect="blur" />
                     <p>{title}</p>
                     <p>{description}</p>
                   </div>
@@ -200,9 +201,10 @@ export default function Home() {
                       <p>{item.description.slice(0, 300)}...</p>
                     </div>
                     <div className="accordion-images">
-                      <img
+                      <LazyLoadImage
                         src={`${BASE_URL}${item.product_images[0].image}`}
                         alt={item.title}
+                        effect="blur"
                       />
                     </div>
                   </div>
@@ -253,4 +255,6 @@ export default function Home() {
       </section>
     </Layout>
   );
-}
+};
+
+export default Home;

@@ -548,6 +548,10 @@
   width: 380px;
   background-color: white;
 }
+.box .lazy-load-image-background {
+  display: block !important;
+  margin: 0 auto !important;
+}
 .box_cards_two .box p:nth-child(2) {
   color: var(--dark_green);
   font-size: 22px;

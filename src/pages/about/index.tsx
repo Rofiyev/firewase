@@ -10,6 +10,7 @@ import { FaBuildingColumns, FaEarthAmericas } from "react-icons/fa6";
 import { SiMetrodeparis } from "react-icons/si";
 import { MdAttachEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function About() {
   const handleScroll = () => {
@@ -75,7 +76,7 @@ export default function About() {
           <div className="documents">
             {aboutItems.map(({ id, title, desc, img }: ICard) => (
               <div className="box" key={id}>
-                <img src={img} alt={title} />
+                <LazyLoadImage src={img} alt={title} effect="blur" />
                 {/* <h3>{title}</h3> */}
                 <p>{desc}</p>
               </div>

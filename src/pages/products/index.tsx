@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getCategorys, getProducts } from "../../api/api";
 import { BASE_URL } from "../../config";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function ProductPage() {
   const location = useLocation();
@@ -93,8 +94,7 @@ export default function ProductPage() {
                       }}
                       style={{
                         whiteSpace: "nowrap",
-                        color:
-                          active === item.title ? "#fff" : "",
+                        color: active === item.title ? "#fff" : "",
                         opacity: active === item.title ? "1" : "",
                         fontWeight: active === item.title ? "500" : "normal",
                         background:
@@ -130,9 +130,10 @@ export default function ProductPage() {
                           style={{ color: "inherit", textDecoration: "none" }}
                         >
                           <div className="box_products">
-                            <img
+                            <LazyLoadImage
                               src={`${BASE_URL}${item.product_images[0]?.image}`}
                               alt="Image"
+                              effect="blur"
                             />
                             <div
                               className="card_desc"
